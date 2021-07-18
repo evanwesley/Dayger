@@ -1,0 +1,966 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C881CB19A2235B32BC77EAD /* Pods_dayger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5A0040F88686BAFF713538 /* Pods_dayger.framework */; };
+		510DCD97268A47F1007ADA29 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510DCD95268A47F1007ADA29 /* TableViewCell.swift */; };
+		510DCD98268A47F1007ADA29 /* managerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510DCD96268A47F1007ADA29 /* managerCell.xib */; };
+		51363A3C267C6075000EFF1A /* cellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51363A3B267C6075000EFF1A /* cellDataModel.swift */; };
+		51386FD4269E666A0086FF0A /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51386FD3269E666A0086FF0A /* testViewController.swift */; };
+		51386FE4269E81C30086FF0A /* inboxDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51386FE3269E81C30086FF0A /* inboxDetailsViewController.swift */; };
+		513959E0269128A2006F9AC7 /* detailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513959DF269128A2006F9AC7 /* detailsViewController.swift */; };
+		5142A10126A0A84D007D22C2 /* scannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5142A10026A0A84D007D22C2 /* scannerViewController.swift */; };
+		514C8AFC25F1DA5A0080C3D8 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514C8AFB25F1DA5A0080C3D8 /* signUpViewController.swift */; };
+		514DDBC925B524FE007AF34B /* createEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514DDBC825B524FE007AF34B /* createEventViewController.swift */; };
+		515BE35826A2CAEA00ECA810 /* snapchatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515BE35726A2CAEA00ECA810 /* snapchatViewController.swift */; };
+		5160C7D1269577FE008336C8 /* inboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5160C7D0269577FE008336C8 /* inboxViewController.swift */; };
+		5160C7F22697C2BC008336C8 /* inboxDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5160C7F12697C2BC008336C8 /* inboxDataModel.swift */; };
+		51612EEA259D9B350014119B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51612EE9259D9B350014119B /* Constants.swift */; };
+		5168D193269E091B00A0F57D /* inboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5168D191269E091B00A0F57D /* inboxTableViewCell.swift */; };
+		5168D194269E091B00A0F57D /* inboxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5168D192269E091B00A0F57D /* inboxTableViewCell.xib */; };
+		517A68A726825CE100A1E9F0 /* mainFeedDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517A68A626825CE100A1E9F0 /* mainFeedDataModel.swift */; };
+		517A68C4268439FD00A1E9F0 /* ticketCreationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517A68C3268439FD00A1E9F0 /* ticketCreationDataModel.swift */; };
+		51856E6F259BB93100802C9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51856E6E259BB93100802C9E /* AppDelegate.swift */; };
+		51856E71259BB93100802C9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51856E70259BB93100802C9E /* SceneDelegate.swift */; };
+		51856E76259BB93100802C9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51856E74259BB93100802C9E /* Main.storyboard */; };
+		51856E78259BB93300802C9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51856E77259BB93300802C9E /* Assets.xcassets */; };
+		51856E7B259BB93300802C9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51856E79259BB93300802C9E /* LaunchScreen.storyboard */; };
+		51856E86259BB93300802C9E /* daygerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51856E85259BB93300802C9E /* daygerTests.swift */; };
+		51856E91259BB93300802C9E /* daygerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51856E90259BB93300802C9E /* daygerUITests.swift */; };
+		51856EBD259BBCCB00802C9E /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51856EBC259BBCCB00802C9E /* loginViewController.swift */; };
+		51856EC2259BBCDC00802C9E /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51856EC1259BBCDC00802C9E /* homeViewController.swift */; };
+		51936AB325A178B90066C223 /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51936AB125A178B90066C223 /* HomePageTableViewCell.swift */; };
+		51936AB425A178B90066C223 /* HomePageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51936AB225A178B90066C223 /* HomePageTableViewCell.xib */; };
+		5199C108266593FA00B7EE49 /* activitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5199C107266593FA00B7EE49 /* activitiesViewController.swift */; };
+		519AA32725BE6CC20066AE28 /* QRCodeViewFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519AA32625BE6CC10066AE28 /* QRCodeViewFile.swift */; };
+		51AE019D263B9AC700809032 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AE019C263B9AC700809032 /* File.swift */; };
+		51AEE9FD259D1E990093E5FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51AEE9FC259D1E990093E5FD /* GoogleService-Info.plist */; };
+		51AEEA20259D1FBC0093E5FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51AEE9FC259D1E990093E5FD /* GoogleService-Info.plist */; };
+		51AEEA24259D1FBC0093E5FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51AEE9FC259D1E990093E5FD /* GoogleService-Info.plist */; };
+		51AEEA2C259D3E2D0093E5FD /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AEEA2B259D3E2D0093E5FD /* utilities.swift */; };
+		51C55E6326814D76000795A6 /* statisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C55E6226814D76000795A6 /* statisticsViewController.swift */; };
+		51C6A04525E459D10055BA30 /* startViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C6A04425E459D10055BA30 /* startViewController.swift */; };
+		51EC828E25E4DCCC007737E4 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EC828D25E4DCCC007737E4 /* profileViewController.swift */; };
+		51F3521A26899E5700525D60 /* eventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F3521926899E5700525D60 /* eventViewController.swift */; };
+		51F7710E266EB17C005D369F /* finalizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F7710D266EB17C005D369F /* finalizeViewController.swift */; };
+		51F7717C267025CB005D369F /* locationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F7717B267025CB005D369F /* locationSearchTableViewController.swift */; };
+		9B1E0EA5AA2C78C9A05EF017 /* Pods_daygerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31400AF03B8C55C9C1DD49A1 /* Pods_daygerTests.framework */; };
+		EF4B2D1CC25F5E6134EBC82B /* Pods_dayger_daygerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3640CFF6C3365535E825E909 /* Pods_dayger_daygerUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		51856E82259BB93300802C9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51856E63259BB93100802C9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51856E6A259BB93100802C9E;
+			remoteInfo = dayger;
+		};
+		51856E8D259BB93300802C9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51856E63259BB93100802C9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51856E6A259BB93100802C9E;
+			remoteInfo = dayger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B9FB2E9E05D6CC2F5330DB2 /* Pods-daygerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daygerTests.debug.xcconfig"; path = "Target Support Files/Pods-daygerTests/Pods-daygerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1F9362D095E27E103B859587 /* Pods-daygerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daygerTests.release.xcconfig"; path = "Target Support Files/Pods-daygerTests/Pods-daygerTests.release.xcconfig"; sourceTree = "<group>"; };
+		28DA36C6E8D0344496792174 /* Pods-dayger-daygerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayger-daygerUITests.debug.xcconfig"; path = "Target Support Files/Pods-dayger-daygerUITests/Pods-dayger-daygerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		31400AF03B8C55C9C1DD49A1 /* Pods_daygerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daygerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3640CFF6C3365535E825E909 /* Pods_dayger_daygerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dayger_daygerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42E1C1A1EF5C1987916CE07B /* Pods-dayger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayger.release.xcconfig"; path = "Target Support Files/Pods-dayger/Pods-dayger.release.xcconfig"; sourceTree = "<group>"; };
+		510DCD95268A47F1007ADA29 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		510DCD96268A47F1007ADA29 /* managerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = managerCell.xib; sourceTree = "<group>"; };
+		51363A3B267C6075000EFF1A /* cellDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellDataModel.swift; sourceTree = "<group>"; };
+		51386FD3269E666A0086FF0A /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		51386FE3269E81C30086FF0A /* inboxDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inboxDetailsViewController.swift; sourceTree = "<group>"; };
+		513959DF269128A2006F9AC7 /* detailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsViewController.swift; sourceTree = "<group>"; };
+		5142A10026A0A84D007D22C2 /* scannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scannerViewController.swift; sourceTree = "<group>"; };
+		514C8AFB25F1DA5A0080C3D8 /* signUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
+		514DDBC825B524FE007AF34B /* createEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createEventViewController.swift; sourceTree = "<group>"; };
+		515BE35726A2CAEA00ECA810 /* snapchatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = snapchatViewController.swift; sourceTree = "<group>"; };
+		5160C7D0269577FE008336C8 /* inboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inboxViewController.swift; sourceTree = "<group>"; };
+		5160C7F12697C2BC008336C8 /* inboxDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inboxDataModel.swift; sourceTree = "<group>"; };
+		51612EE9259D9B350014119B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5168D191269E091B00A0F57D /* inboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inboxTableViewCell.swift; sourceTree = "<group>"; };
+		5168D192269E091B00A0F57D /* inboxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = inboxTableViewCell.xib; sourceTree = "<group>"; };
+		517A68A626825CE100A1E9F0 /* mainFeedDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainFeedDataModel.swift; sourceTree = "<group>"; };
+		517A68C3268439FD00A1E9F0 /* ticketCreationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ticketCreationDataModel.swift; sourceTree = "<group>"; };
+		51856E6B259BB93100802C9E /* dayger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dayger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		51856E6E259BB93100802C9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		51856E70259BB93100802C9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		51856E75259BB93100802C9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		51856E77259BB93300802C9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		51856E7A259BB93300802C9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		51856E7C259BB93300802C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51856E81259BB93300802C9E /* daygerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = daygerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		51856E85259BB93300802C9E /* daygerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daygerTests.swift; sourceTree = "<group>"; };
+		51856E87259BB93300802C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51856E8C259BB93300802C9E /* daygerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = daygerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		51856E90259BB93300802C9E /* daygerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daygerUITests.swift; sourceTree = "<group>"; };
+		51856E92259BB93300802C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51856EBC259BBCCB00802C9E /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		51856EC1259BBCDC00802C9E /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
+		51936AB125A178B90066C223 /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
+		51936AB225A178B90066C223 /* HomePageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageTableViewCell.xib; sourceTree = "<group>"; };
+		5199C107266593FA00B7EE49 /* activitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activitiesViewController.swift; sourceTree = "<group>"; };
+		519AA32625BE6CC10066AE28 /* QRCodeViewFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewFile.swift; sourceTree = "<group>"; };
+		51AE019C263B9AC700809032 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		51AEE9FC259D1E990093E5FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		51AEEA2B259D3E2D0093E5FD /* utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
+		51C55E6226814D76000795A6 /* statisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = statisticsViewController.swift; sourceTree = "<group>"; };
+		51C6A04425E459D10055BA30 /* startViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startViewController.swift; sourceTree = "<group>"; };
+		51EC828D25E4DCCC007737E4 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
+		51F3521926899E5700525D60 /* eventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventViewController.swift; sourceTree = "<group>"; };
+		51F3840026A2940F0029E851 /* SCSDKCoreKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SCSDKCoreKit.xcframework; path = Pods/SnapSDK/SCSDKCoreKit.xcframework; sourceTree = "<group>"; };
+		51F3840626A2941F0029E851 /* SCSDKLoginKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SCSDKLoginKit.xcframework; path = Pods/SnapSDK/SCSDKLoginKit.xcframework; sourceTree = "<group>"; };
+		51F7710D266EB17C005D369F /* finalizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = finalizeViewController.swift; path = dayger/finalizeViewController.swift; sourceTree = SOURCE_ROOT; };
+		51F7717B267025CB005D369F /* locationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationSearchTableViewController.swift; sourceTree = "<group>"; };
+		BA5A0040F88686BAFF713538 /* Pods_dayger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dayger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2F0FE827437D018D27E8239 /* Pods-dayger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayger.debug.xcconfig"; path = "Target Support Files/Pods-dayger/Pods-dayger.debug.xcconfig"; sourceTree = "<group>"; };
+		D09AB797E79B6E373AFEB545 /* Pods-dayger-daygerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayger-daygerUITests.release.xcconfig"; path = "Target Support Files/Pods-dayger-daygerUITests/Pods-dayger-daygerUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		51856E68259BB93100802C9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C881CB19A2235B32BC77EAD /* Pods_dayger.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51856E7E259BB93300802C9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B1E0EA5AA2C78C9A05EF017 /* Pods_daygerTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51856E89259BB93300802C9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF4B2D1CC25F5E6134EBC82B /* Pods_dayger_daygerUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		51363A30267C126C000EFF1A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				51363A3B267C6075000EFF1A /* cellDataModel.swift */,
+				510DCD95268A47F1007ADA29 /* TableViewCell.swift */,
+				510DCD96268A47F1007ADA29 /* managerCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5142A0FF26A0A81F007D22C2 /* scanner */ = {
+			isa = PBXGroup;
+			children = (
+				5142A10026A0A84D007D22C2 /* scannerViewController.swift */,
+			);
+			path = scanner;
+			sourceTree = "<group>";
+		};
+		5160C7F02697C28E008336C8 /* inbox */ = {
+			isa = PBXGroup;
+			children = (
+				5160C7D0269577FE008336C8 /* inboxViewController.swift */,
+				5160C7F12697C2BC008336C8 /* inboxDataModel.swift */,
+				5168D191269E091B00A0F57D /* inboxTableViewCell.swift */,
+				5168D192269E091B00A0F57D /* inboxTableViewCell.xib */,
+				51386FE3269E81C30086FF0A /* inboxDetailsViewController.swift */,
+			);
+			path = inbox;
+			sourceTree = "<group>";
+		};
+		517A68A226825CB600A1E9F0 /* main feed  */ = {
+			isa = PBXGroup;
+			children = (
+				5199C107266593FA00B7EE49 /* activitiesViewController.swift */,
+				51EC828D25E4DCCC007737E4 /* profileViewController.swift */,
+				51856EC1259BBCDC00802C9E /* homeViewController.swift */,
+				517A68A626825CE100A1E9F0 /* mainFeedDataModel.swift */,
+				5142A0FF26A0A81F007D22C2 /* scanner */,
+				5160C7F02697C28E008336C8 /* inbox */,
+			);
+			path = "main feed ";
+			sourceTree = "<group>";
+		};
+		51856E62259BB93100802C9E = {
+			isa = PBXGroup;
+			children = (
+				51856E6D259BB93100802C9E /* dayger */,
+				51856E84259BB93300802C9E /* daygerTests */,
+				51856E8F259BB93300802C9E /* daygerUITests */,
+				51856E6C259BB93100802C9E /* Products */,
+				9318A4E67BCDD5C44B27C63D /* Pods */,
+				7B7558902069F3B1AA989B8D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		51856E6C259BB93100802C9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				51856E6B259BB93100802C9E /* dayger.app */,
+				51856E81259BB93300802C9E /* daygerTests.xctest */,
+				51856E8C259BB93300802C9E /* daygerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		51856E6D259BB93100802C9E /* dayger */ = {
+			isa = PBXGroup;
+			children = (
+				51AE019B263B9A8A00809032 /* ViewModels */,
+				51856EC6259BBDAD00802C9E /* ViewControllers */,
+				51386FD3269E666A0086FF0A /* testViewController.swift */,
+				51856E74259BB93100802C9E /* Main.storyboard */,
+				51856E6E259BB93100802C9E /* AppDelegate.swift */,
+				51856E70259BB93100802C9E /* SceneDelegate.swift */,
+				51856E77259BB93300802C9E /* Assets.xcassets */,
+				51856E79259BB93300802C9E /* LaunchScreen.storyboard */,
+				51856E7C259BB93300802C9E /* Info.plist */,
+				51AEE9FC259D1E990093E5FD /* GoogleService-Info.plist */,
+			);
+			path = dayger;
+			sourceTree = "<group>";
+		};
+		51856E84259BB93300802C9E /* daygerTests */ = {
+			isa = PBXGroup;
+			children = (
+				51856E85259BB93300802C9E /* daygerTests.swift */,
+				51856E87259BB93300802C9E /* Info.plist */,
+			);
+			path = daygerTests;
+			sourceTree = "<group>";
+		};
+		51856E8F259BB93300802C9E /* daygerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				51856E90259BB93300802C9E /* daygerUITests.swift */,
+				51856E92259BB93300802C9E /* Info.plist */,
+			);
+			path = daygerUITests;
+			sourceTree = "<group>";
+		};
+		51856EC6259BBDAD00802C9E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				517A68A226825CB600A1E9F0 /* main feed  */,
+				5199C12826669DA500B7EE49 /* Host Management */,
+				5199C12426669B9800B7EE49 /* Create Event Route  */,
+				5199C0FD2664681800B7EE49 /* StartVC */,
+				51936AB925A178DF0066C223 /* HomePageCell */,
+				51AEEA2B259D3E2D0093E5FD /* utilities.swift */,
+				51612EE9259D9B350014119B /* Constants.swift */,
+				519AA32625BE6CC10066AE28 /* QRCodeViewFile.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		51936AB925A178DF0066C223 /* HomePageCell */ = {
+			isa = PBXGroup;
+			children = (
+				51936AB125A178B90066C223 /* HomePageTableViewCell.swift */,
+				51936AB225A178B90066C223 /* HomePageTableViewCell.xib */,
+			);
+			path = HomePageCell;
+			sourceTree = "<group>";
+		};
+		5199C0FD2664681800B7EE49 /* StartVC */ = {
+			isa = PBXGroup;
+			children = (
+				51C6A04425E459D10055BA30 /* startViewController.swift */,
+				514C8AFB25F1DA5A0080C3D8 /* signUpViewController.swift */,
+				51856EBC259BBCCB00802C9E /* loginViewController.swift */,
+				515BE35726A2CAEA00ECA810 /* snapchatViewController.swift */,
+			);
+			path = StartVC;
+			sourceTree = "<group>";
+		};
+		5199C12426669B9800B7EE49 /* Create Event Route  */ = {
+			isa = PBXGroup;
+			children = (
+				51F7710D266EB17C005D369F /* finalizeViewController.swift */,
+				514DDBC825B524FE007AF34B /* createEventViewController.swift */,
+				51F7717B267025CB005D369F /* locationSearchTableViewController.swift */,
+				517A68C3268439FD00A1E9F0 /* ticketCreationDataModel.swift */,
+			);
+			path = "Create Event Route ";
+			sourceTree = "<group>";
+		};
+		5199C12826669DA500B7EE49 /* Host Management */ = {
+			isa = PBXGroup;
+			children = (
+				51F3521926899E5700525D60 /* eventViewController.swift */,
+				51363A30267C126C000EFF1A /* Cell */,
+				51C55E6226814D76000795A6 /* statisticsViewController.swift */,
+				513959DF269128A2006F9AC7 /* detailsViewController.swift */,
+			);
+			path = "Host Management";
+			sourceTree = "<group>";
+		};
+		51AE019B263B9A8A00809032 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				51AE019C263B9AC700809032 /* File.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7B7558902069F3B1AA989B8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51F3840626A2941F0029E851 /* SCSDKLoginKit.xcframework */,
+				51F3840026A2940F0029E851 /* SCSDKCoreKit.xcframework */,
+				BA5A0040F88686BAFF713538 /* Pods_dayger.framework */,
+				3640CFF6C3365535E825E909 /* Pods_dayger_daygerUITests.framework */,
+				31400AF03B8C55C9C1DD49A1 /* Pods_daygerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9318A4E67BCDD5C44B27C63D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C2F0FE827437D018D27E8239 /* Pods-dayger.debug.xcconfig */,
+				42E1C1A1EF5C1987916CE07B /* Pods-dayger.release.xcconfig */,
+				28DA36C6E8D0344496792174 /* Pods-dayger-daygerUITests.debug.xcconfig */,
+				D09AB797E79B6E373AFEB545 /* Pods-dayger-daygerUITests.release.xcconfig */,
+				0B9FB2E9E05D6CC2F5330DB2 /* Pods-daygerTests.debug.xcconfig */,
+				1F9362D095E27E103B859587 /* Pods-daygerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		51856E6A259BB93100802C9E /* dayger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51856E95259BB93300802C9E /* Build configuration list for PBXNativeTarget "dayger" */;
+			buildPhases = (
+				A3150A5030ABE848987D4E77 /* [CP] Check Pods Manifest.lock */,
+				51856E67259BB93100802C9E /* Sources */,
+				51856E68259BB93100802C9E /* Frameworks */,
+				51856E69259BB93100802C9E /* Resources */,
+				6753D36E86067CF155922E12 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dayger;
+			productName = dayger;
+			productReference = 51856E6B259BB93100802C9E /* dayger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		51856E80259BB93300802C9E /* daygerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51856E98259BB93300802C9E /* Build configuration list for PBXNativeTarget "daygerTests" */;
+			buildPhases = (
+				AC95E97EC7EA6F52431E21C6 /* [CP] Check Pods Manifest.lock */,
+				51856E7D259BB93300802C9E /* Sources */,
+				51856E7E259BB93300802C9E /* Frameworks */,
+				51856E7F259BB93300802C9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				51856E83259BB93300802C9E /* PBXTargetDependency */,
+			);
+			name = daygerTests;
+			productName = daygerTests;
+			productReference = 51856E81259BB93300802C9E /* daygerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		51856E8B259BB93300802C9E /* daygerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51856E9B259BB93300802C9E /* Build configuration list for PBXNativeTarget "daygerUITests" */;
+			buildPhases = (
+				ACBD3E8BFB471080BA63C5F4 /* [CP] Check Pods Manifest.lock */,
+				51856E88259BB93300802C9E /* Sources */,
+				51856E89259BB93300802C9E /* Frameworks */,
+				51856E8A259BB93300802C9E /* Resources */,
+				0F18F59C23BFA71A2BE0200C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				51856E8E259BB93300802C9E /* PBXTargetDependency */,
+			);
+			name = daygerUITests;
+			productName = daygerUITests;
+			productReference = 51856E8C259BB93300802C9E /* daygerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		51856E63259BB93100802C9E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					51856E6A259BB93100802C9E = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					51856E80259BB93300802C9E = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 51856E6A259BB93100802C9E;
+					};
+					51856E8B259BB93300802C9E = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 51856E6A259BB93100802C9E;
+					};
+				};
+			};
+			buildConfigurationList = 51856E66259BB93100802C9E /* Build configuration list for PBXProject "dayger" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 51856E62259BB93100802C9E;
+			productRefGroup = 51856E6C259BB93100802C9E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				51856E6A259BB93100802C9E /* dayger */,
+				51856E80259BB93300802C9E /* daygerTests */,
+				51856E8B259BB93300802C9E /* daygerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		51856E69259BB93100802C9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51936AB425A178B90066C223 /* HomePageTableViewCell.xib in Resources */,
+				510DCD98268A47F1007ADA29 /* managerCell.xib in Resources */,
+				51856E7B259BB93300802C9E /* LaunchScreen.storyboard in Resources */,
+				51856E78259BB93300802C9E /* Assets.xcassets in Resources */,
+				5168D194269E091B00A0F57D /* inboxTableViewCell.xib in Resources */,
+				51856E76259BB93100802C9E /* Main.storyboard in Resources */,
+				51AEE9FD259D1E990093E5FD /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51856E7F259BB93300802C9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51AEEA20259D1FBC0093E5FD /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51856E8A259BB93300802C9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51AEEA24259D1FBC0093E5FD /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F18F59C23BFA71A2BE0200C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dayger-daygerUITests/Pods-dayger-daygerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dayger-daygerUITests/Pods-dayger-daygerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dayger-daygerUITests/Pods-dayger-daygerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6753D36E86067CF155922E12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dayger/Pods-dayger-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dayger/Pods-dayger-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dayger/Pods-dayger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3150A5030ABE848987D4E77 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dayger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC95E97EC7EA6F52431E21C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-daygerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACBD3E8BFB471080BA63C5F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dayger-daygerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		51856E67259BB93100802C9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51EC828E25E4DCCC007737E4 /* profileViewController.swift in Sources */,
+				519AA32725BE6CC20066AE28 /* QRCodeViewFile.swift in Sources */,
+				5168D193269E091B00A0F57D /* inboxTableViewCell.swift in Sources */,
+				51C55E6326814D76000795A6 /* statisticsViewController.swift in Sources */,
+				51386FE4269E81C30086FF0A /* inboxDetailsViewController.swift in Sources */,
+				5160C7D1269577FE008336C8 /* inboxViewController.swift in Sources */,
+				51C6A04525E459D10055BA30 /* startViewController.swift in Sources */,
+				513959E0269128A2006F9AC7 /* detailsViewController.swift in Sources */,
+				51936AB325A178B90066C223 /* HomePageTableViewCell.swift in Sources */,
+				514C8AFC25F1DA5A0080C3D8 /* signUpViewController.swift in Sources */,
+				517A68C4268439FD00A1E9F0 /* ticketCreationDataModel.swift in Sources */,
+				51AEEA2C259D3E2D0093E5FD /* utilities.swift in Sources */,
+				51363A3C267C6075000EFF1A /* cellDataModel.swift in Sources */,
+				51856EC2259BBCDC00802C9E /* homeViewController.swift in Sources */,
+				51F7710E266EB17C005D369F /* finalizeViewController.swift in Sources */,
+				51856E6F259BB93100802C9E /* AppDelegate.swift in Sources */,
+				51AE019D263B9AC700809032 /* File.swift in Sources */,
+				51F7717C267025CB005D369F /* locationSearchTableViewController.swift in Sources */,
+				51856E71259BB93100802C9E /* SceneDelegate.swift in Sources */,
+				517A68A726825CE100A1E9F0 /* mainFeedDataModel.swift in Sources */,
+				5160C7F22697C2BC008336C8 /* inboxDataModel.swift in Sources */,
+				51F3521A26899E5700525D60 /* eventViewController.swift in Sources */,
+				51386FD4269E666A0086FF0A /* testViewController.swift in Sources */,
+				510DCD97268A47F1007ADA29 /* TableViewCell.swift in Sources */,
+				5142A10126A0A84D007D22C2 /* scannerViewController.swift in Sources */,
+				51856EBD259BBCCB00802C9E /* loginViewController.swift in Sources */,
+				5199C108266593FA00B7EE49 /* activitiesViewController.swift in Sources */,
+				51612EEA259D9B350014119B /* Constants.swift in Sources */,
+				515BE35826A2CAEA00ECA810 /* snapchatViewController.swift in Sources */,
+				514DDBC925B524FE007AF34B /* createEventViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51856E7D259BB93300802C9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51856E86259BB93300802C9E /* daygerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51856E88259BB93300802C9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51856E91259BB93300802C9E /* daygerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		51856E83259BB93300802C9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 51856E6A259BB93100802C9E /* dayger */;
+			targetProxy = 51856E82259BB93300802C9E /* PBXContainerItemProxy */;
+		};
+		51856E8E259BB93300802C9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 51856E6A259BB93100802C9E /* dayger */;
+			targetProxy = 51856E8D259BB93300802C9E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		51856E74259BB93100802C9E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				51856E75259BB93100802C9E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		51856E79259BB93300802C9E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				51856E7A259BB93300802C9E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		51856E93259BB93300802C9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		51856E94259BB93300802C9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		51856E96259BB93300802C9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2F0FE827437D018D27E8239 /* Pods-dayger.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NX224AY43U;
+				INFOPLIST_FILE = dayger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.dayger.dayger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		51856E97259BB93300802C9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42E1C1A1EF5C1987916CE07B /* Pods-dayger.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NX224AY43U;
+				INFOPLIST_FILE = dayger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.dayger.dayger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		51856E99259BB93300802C9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B9FB2E9E05D6CC2F5330DB2 /* Pods-daygerTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NX224AY43U;
+				INFOPLIST_FILE = daygerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.dayger.daygerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dayger.app/dayger";
+			};
+			name = Debug;
+		};
+		51856E9A259BB93300802C9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F9362D095E27E103B859587 /* Pods-daygerTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NX224AY43U;
+				INFOPLIST_FILE = daygerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.dayger.daygerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dayger.app/dayger";
+			};
+			name = Release;
+		};
+		51856E9C259BB93300802C9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28DA36C6E8D0344496792174 /* Pods-dayger-daygerUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NX224AY43U;
+				INFOPLIST_FILE = daygerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.dayger.daygerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = dayger;
+			};
+			name = Debug;
+		};
+		51856E9D259BB93300802C9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D09AB797E79B6E373AFEB545 /* Pods-dayger-daygerUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NX224AY43U;
+				INFOPLIST_FILE = daygerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.dayger.daygerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = dayger;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		51856E66259BB93100802C9E /* Build configuration list for PBXProject "dayger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51856E93259BB93300802C9E /* Debug */,
+				51856E94259BB93300802C9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51856E95259BB93300802C9E /* Build configuration list for PBXNativeTarget "dayger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51856E96259BB93300802C9E /* Debug */,
+				51856E97259BB93300802C9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51856E98259BB93300802C9E /* Build configuration list for PBXNativeTarget "daygerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51856E99259BB93300802C9E /* Debug */,
+				51856E9A259BB93300802C9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51856E9B259BB93300802C9E /* Build configuration list for PBXNativeTarget "daygerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51856E9C259BB93300802C9E /* Debug */,
+				51856E9D259BB93300802C9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 51856E63259BB93100802C9E /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module Pods_dayger_daygerUITests {
+  umbrella header "Pods-dayger-daygerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
