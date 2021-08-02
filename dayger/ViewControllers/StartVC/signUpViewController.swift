@@ -9,9 +9,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class signUpViewController: UIViewController {
-    
-    
+class signUpViewController: UIViewController , UITextFieldDelegate {
     
     
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -22,22 +20,52 @@ class signUpViewController: UIViewController {
     //we are trying to make this variable accesible throughout the project, that is why it is public.
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var sexTextField: UITextField!
     
+    
+    @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
-    @IBOutlet weak var nextButton: UIButton!
+    let borderColor : UIColor = UIColor(red: 230/255.0, green: 165/255.0, blue: 98/255.0, alpha: 0.8)
+
     //this is to continue to the snapchatview controller
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.nextButton.alpha = 0.25
-        self.nextButton.isEnabled = false
+        self.emailTextField.backgroundColor = UIColor.white
+        self.passwordTextField.backgroundColor = UIColor.white
+        self.firstNameTextField.backgroundColor = UIColor.white
+        self.lastNameTextField.backgroundColor = UIColor.white
+        self.sexTextField.backgroundColor = UIColor.white
+        
+        self.emailTextField.layer.borderColor = borderColor.cgColor
+        self.passwordTextField.layer.borderColor = borderColor.cgColor
+        self.firstNameTextField.layer.borderColor = borderColor.cgColor
+        self.lastNameTextField.layer.borderColor = borderColor.cgColor
+        self.sexTextField.layer.borderColor = borderColor.cgColor
+        
+        self.emailTextField.layer.borderWidth = 1.5
+        self.passwordTextField.layer.borderWidth = 1.5
+        self.firstNameTextField.layer.borderWidth = 1.5
+        self.lastNameTextField.layer.borderWidth = 1.5
+        self.sexTextField.layer.borderWidth = 1.5
+        
+        self.emailTextField.layer.cornerRadius = 5
+        self.passwordTextField.layer.cornerRadius = 5
+        self.firstNameTextField.layer.cornerRadius = 5
+        self.lastNameTextField.layer.cornerRadius = 5
+        self.sexTextField.layer.cornerRadius = 5
 
         errorLabel.alpha = 0
         // Do any additional setup after loading the view.
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        
+        
     }
     func validateFields() -> String? {
            
@@ -100,22 +128,15 @@ class signUpViewController: UIViewController {
                             
                             db.collection("users").document("\(userEmail)").collection("profile").document("personal_information").setData(["firstname":firstname, "lastname":lastname, "uid": result!.user.uid])
                             //this sets data into the profile component
+                            
                            }
                        }
                    }
                }
-            UserDefaults.standard.set(firstNameTextField.text, forKey: "First_Name")
-            
-            
-            UserDefaults.standard.set(lastNameTextField.text, forKey: "Last_Name")
-              
-               
-               
-               //transition to home screen
-             //  self.transitionToHome()
-            self.nextButton.alpha = 1
-            self.nextButton.isEnabled = true 
            
+               //transition to home screen
+             self.transitionToHome()
+          
                
                
            }
@@ -125,7 +146,8 @@ class signUpViewController: UIViewController {
            
            //transition to home screen
        }
-       
+    
+    
        func showError(_ message:String){
            
            errorLabel.text = message

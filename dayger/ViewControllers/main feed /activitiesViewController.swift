@@ -10,6 +10,7 @@ import Firebase
 import FirebaseAuth
 import MapKit
 import CoreLocation
+import AudioToolbox
 
 //Why the fuck did I call this the activities view controller? Who knows.
 class activitiesViewController: UIViewController {
@@ -22,7 +23,9 @@ class activitiesViewController: UIViewController {
     @IBOutlet weak var topView: UIView!
     @IBOutlet var qrImage: UIImageView!
     
-    @IBOutlet weak var bitMoji: UIImageView!
+
+    @IBOutlet weak var circleView: UIView!
+    @IBOutlet weak var selfieImage: UIImageView!
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -57,7 +60,7 @@ class activitiesViewController: UIViewController {
     
     
     
-    
+    var uid = ""
     var hostFirstName = ""
     var hostLastName = ""
    //we are going to append these together and display them on the ticket view
@@ -83,14 +86,17 @@ class activitiesViewController: UIViewController {
     let daygerColor = UIColor(red: 240/255.0, green: 162/255.0, blue: 87/255.0, alpha: 1)
     let passiveColor = UIColor(red: 231/255.0, green: 230/255.0, blue: 223/255.0, alpha: 1)
     
-    //Test Data
-    let randomInt = Int.random(in: 100..<400) //likes
-    let randomInt2 = Int.random(in: 500..<1200) //shares
+    
+    //for the likes and shares
     var sharesCount : Int = 0
     var fun : Int = 0
+
+    var likes : Int = 0
+    var shares : Int = 0
     
     
     let userID = (Auth.auth().currentUser?.uid)!
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,6 +122,9 @@ class activitiesViewController: UIViewController {
        self.topView.layer.shadowOffset = .zero
        self.topView.layer.shadowRadius = 2
         
+        self.qrImage.layer.magnificationFilter = CALayerContentsFilter.nearest
+        //allows the QRcode to render properly
+    
         //top view
         
         
@@ -131,17 +140,31 @@ class activitiesViewController: UIViewController {
         self.mapView.layer.cornerRadius = 10
         self.mapView.layer.masksToBounds = true
         
-        self.buttonView.layer.cornerRadius = 10
+        self.buttonView.layer.cornerRadius = 30
         self.buttonView.layer.shadowColor = UIColor.black.cgColor
        self.buttonView.layer.shadowOpacity = 0.25
        self.buttonView.layer.shadowOffset = .zero
        self.buttonView.layer.shadowRadius = 2
         
         
+        self.selfieImage.layer.masksToBounds = true
+        self.selfieImage.layer.cornerRadius = selfieImage.bounds.width / 2
+        self.selfieImage.layer.borderWidth = 2
+        self.selfieImage.layer.borderColor = UIColor.white.cgColor
+        
+        self.circleView.layer.cornerRadius = circleView.bounds.width / 2
+        
+        self.circleView.layer.shadowColor = UIColor.black.cgColor
+        self.circleView.layer.shadowOpacity = 0.25
+        self.circleView.layer.shadowOffset = .zero
+        self.circleView.layer.shadowRadius = 2
+        
+        
         
         // address view
         self.displayMapCoordinates()
-  
+        self.displayHostSelfie()
+        
         self.configureInviteState()
         self.configureQRCodeState()
         //migos reference
@@ -149,6 +172,17 @@ class activitiesViewController: UIViewController {
         self.assignData()
         self.generateQRCode()
         
+        self.listenForSharesData()
+        
+        
+        if isSelected == true {
+            
+            self.likeButton.isSelected = true
+        } else {
+            
+            self.likeButton.isSelected = false
+            
+        }
         
         print("this shit works") //indeed it does
         print(generateQRCodeInput())
@@ -156,17 +190,45 @@ class activitiesViewController: UIViewController {
         
     }
     
+    func listenForSharesData () {
+        
+        db.collection("active_events").document("\(eventID)")
+            .addSnapshotListener { documentSnapshot, error in
+              guard let document = documentSnapshot else {
+                print("Error fetching document: \(error!)")
+                return
+              }
+              guard let data = document.data() else {
+                print("Document data was empty.")
+                return
+              }
+                
+                let liveShares = data["shares"] as! Int
+                
+                self.shares = liveShares
+                
+                
+                
+                
+                print("Current shares: \(String(describing: data["shares"]))")
+            }
+        
+        
+        
+        
+    }
+    
     func assignData() {
         //this function is going to be for all the data stuff
        
         
-        self.timeLabel.text = "@\(time)" //switching these bc Im too lazy ugh.
+        self.timeLabel.text = "\(time)" //switching these bc Im too lazy ugh.
         self.dateLabel.text = "\(date)"
         self.addressTextView.text = "@ \(address)"
         self.InfoTextField.text = "\(additionalInfo)"
         ticketName.text = name
-        self.likesLabel.text = "\(randomInt)"
-        self.sharesLabel.text = "\(randomInt2)"
+        self.likesLabel.text = "\(likes)"
+        self.sharesLabel.text = "\(shares)"
         //test
         
         if live == true {
@@ -186,12 +248,13 @@ class activitiesViewController: UIViewController {
         if anonymous == true {
             //for the bitmoji
             self.hostLabel.text = "Host | Anonymous"
-            self.bitMoji.alpha = 0.25
+            self.selfieImage.alpha = 0.035
+            self.circleView.backgroundColor = UIColor.white
             
         } else {
             
             self.hostLabel.text = "Host | \(hostFirstName) \(hostLastName)"
-            self.bitMoji.alpha = 1
+            self.selfieImage.alpha = 1
         }
         
         
@@ -232,6 +295,26 @@ class activitiesViewController: UIViewController {
         
     }
     
+    func displayHostSelfie () {
+        
+        let storageRef = Storage.storage().reference(withPath: "user_selfies/\(uid).jpg")
+        storageRef.getData(maxSize: 4 * 1024 * 1024) { [weak self] data, error in
+            if let error = error {
+                
+                print("there was a problem fetching data for the event \(self!.name) : \(error.localizedDescription)")
+            }
+            if let data = data {
+                self?.selfieImage.image = UIImage(data: data)
+            }
+        }
+
+        
+        
+        
+        
+        
+    }
+    
     func configureQRCodeState () {
         
         if qrCode == true {
@@ -245,8 +328,6 @@ class activitiesViewController: UIViewController {
             qrCodeLabel.alpha = 0
         }
      
-        
-        
     }
     
     func configureInviteState () {
@@ -258,26 +339,27 @@ class activitiesViewController: UIViewController {
             
             inviteLabel.text = "Invite Status: Open"
         }
-        
-        
-        
-        
+
     }
     
 
     @IBAction func likeButtonTapped(_ sender: UIButton) {
         sender.isSelected.toggle()
+        
+        self.isSelected = true
         //so the text labels initial value wont be mutated
+        let likesRef = db.collection("active_events").document("\(eventID)")
+        
         let liked = likeButton.isSelected
         //is selected means liked
         
         if liked == true {
             
-            likesLabel.text = "\(randomInt + 1)"
+            likesLabel.text = "\(likes + 1)"
          //not initial function
         } else{
-            
-            likesLabel.text = "\(randomInt)"
+            self.isSelected = false
+            likesLabel.text = "\(likes)"
             //do not need to do -1 because that is initial value
         }
         return
@@ -294,15 +376,27 @@ class activitiesViewController: UIViewController {
         sharesCount = sharesCount + 1
         print(sharesCount)
         
-        self.sharesLabel.text = "\(randomInt2 + sharesCount)"
+        
+        self.sharesLabel.text = "\(shares + 1)"
+        
+        let sharesRef = db.collection("active_events").document("\(eventID)")
+        
+        
+        sharesRef.updateData(["shares": shares + 1])
+        //updates the data when the button is tapped
+        
+        
         return
-        
     
-        
-       
         
         
     }
+    
+    @IBAction func funButtonTapped(_ sender: Any) {
+        AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) { } //the button is going to vibrate
+        
+    }
+    
     
     func generateQRCodeInput() -> String {
         //the string for the qr code

@@ -6,24 +6,64 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
 
 class verifiedViewController: UIViewController {
 
+    
+    var firstname = ""
+    var lastname = ""
+    var uid = ""
+    var social = ""
+    
+    @IBOutlet weak var circleView: UIView!
+    @IBOutlet weak var selfieImage: UIImageView!
+    
+    @IBOutlet weak var socialLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.selfieImage.layer.masksToBounds = true
+        self.selfieImage.layer.cornerRadius = 124
+        self.selfieImage.layer.borderWidth = 2
+        self.selfieImage.layer.borderColor = UIColor.white.cgColor
+        
+        self.circleView.layer.cornerRadius = 125
+        self.circleView.layer.shadowColor = UIColor.black.cgColor
+        self.circleView.layer.shadowOpacity = 0.25
+        self.circleView.layer.shadowOffset = .zero
+        self.circleView.layer.shadowRadius = 2
+        
+       
+        
+        self.assignLabels()
+        self.displayHostSelfie()
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func assignLabels(){
+        
+        
+        self.nameLabel.text = "\(firstname) \(lastname)!"
+        self.socialLabel.text = "@\(social)"
+        
+        
     }
-    */
-
+    func displayHostSelfie () {
+        
+        let storageRef = Storage.storage().reference(withPath: "user_selfies/\(uid).jpg")
+        storageRef.getData(maxSize: 4 * 1024 * 1024) { [weak self] data, error in
+            if let error = error {
+                
+                print("there was a problem fetching data: \(error.localizedDescription)")
+            }
+            if let data = data {
+                self?.selfieImage.image = UIImage(data: data)
+            }
+        }
+    }
 }

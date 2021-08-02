@@ -4,6 +4,12 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Dayger</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict/>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -18,7 +24,18 @@
 	<string>1.0</string>
 	<key>CFBundleURLSchemes</key>
 	<array>
-		<string>Dayger</string>
+		<string>dayger-app</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>dayger-app</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string>dayger-app://snap-kit/oauth2</string>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -32,12 +49,16 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Dayger uses camera in order to verify guest tickets.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Dayger uses a photo of your choice as a profile picture</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Dayger uses location services to pinpoint events for users</string>
 	<key>SCSDKClientId</key>
-	<string>4cd7bfa0-f5ae-4e38-ae65-614104b86e63</string>
+	<string>3892bae1-edb4-4a00-a3e5-768093bfc7cb</string>
 	<key>SCSDKRedirectUrl</key>
-	<string>dayger://snap-kit/oauth2</string>
+	<string>dayger-app://snap-kit/oauth2</string>
 	<key>SCSDKScopes</key>
 	<array>
 		<string>https://auth.snapchat.com/oauth2/api/user.display_name</string>
@@ -75,8 +96,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -84,6 +103,32 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeIconFiles</key>
+			<array/>
+			<key>UTTypeReferenceURL</key>
+			<string>dayger-app://snap-kit/oauth2</string>
+			<key>UTTypeTagSpecification</key>
+			<dict/>
+		</dict>
+	</array>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array/>
+			<key>UTTypeIconFiles</key>
+			<array/>
+			<key>UTTypeReferenceURL</key>
+			<string>dayger-app://snap-kit/oauth2</string>
+			<key>UTTypeTagSpecification</key>
+			<dict/>
+		</dict>
 	</array>
 </dict>
 </plist>

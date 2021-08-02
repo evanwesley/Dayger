@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SCSDKLoginKit
+
 
 
 class startViewController: UIViewController {
@@ -17,7 +17,8 @@ class startViewController: UIViewController {
     
     @IBOutlet weak var logoLabel: UILabel!
     
-    @IBOutlet weak var snapChatButton: UIButton!
+    @IBOutlet weak var defaultImage: UIImageView!
+    
     
 
     let graphQLQuery = "{me{displayName, bitmoji{avatar}}}"
@@ -27,52 +28,15 @@ class startViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+        self.defaultImage.alpha = 0
+        let defaultImage = defaultImage.image!.pngData()
+        UserDefaults().set(defaultImage, forKey: "default_image") //sets a user default for profile image
 
         // Do any additional setup after loading the view.
     }
     
     
-    @IBAction func snapChatButtonTapped(_ sender: Any) {
-        SCSDKLoginClient.login(from: self, completion: { success, error in
-
-              if let error = error {
-                  print(error.localizedDescription)
-                  return
-              }
-
-              if success {
-                  self.fetchSnapUserInfo() //example code
-                //this code works. The user has not been logged in yet however.
-              }
-          })
-        //for the custom login button
-    }
-    
-    
-    
-    func fetchSnapUserInfo () {
-        SCSDKLoginClient.fetchUserData(withQuery: graphQLQuery, variables: variables, success: { (resources: [AnyHashable: Any]?) in
-          guard let resources = resources,
-            let data = resources["data"] as? [String: Any],
-            let me = data["me"] as? [String: Any] else { return }
-
-          let displayName = me["displayName"] as? String
-          var bitmojiAvatarUrl: String?
-          if let bitmoji = me["bitmoji"] as? [String: Any] {
-            bitmojiAvatarUrl = bitmoji["avatar"] as? String
-            
-            print("\(displayName ?? "nil")")
-            print("\(bitmojiAvatarUrl ?? "nil")")
-            
-          }
-        }, failure: { (error: Error?, isUserLoggedOut: Bool) in
-            // handle error
-        })
-        
-    }
-  
+   
     
     /*    // MARK: - Navigation
 

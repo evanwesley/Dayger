@@ -11,13 +11,26 @@ import UIKit
 import CoreLocation
 import Firebase
 import FirebaseDatabase
+import SCSDKLoginKit
 
 class homeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // in regards to the Side Menu
     
+    let graphQLQuery = "{me{displayName, bitmoji{avatar}}}"
+    let variables = ["page": "bitmoji"]
+    
+    
+    
+    
+    
 
     let db = Firestore.firestore()
+    
     var ticketArray = [ticketDataModel]() //data that holds the information in the tickets
+    var inviteArray = [Invites] ()
+    var requestArray = [Requests] () //both of these arrays are going to be stored in another array in the tableview function
+    var invites : [String] = [] //the eventID's are going to be stored in either of these two variables
+    var requests : [String] = []
     
     var menu: SideMenuNavigationController?
     
@@ -27,11 +40,17 @@ class homeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var hostManagerButton: UIButton!
 
+    @IBOutlet weak var queueLabel: UILabel!
+    
+    @IBOutlet weak var footerLabel: UILabel!
+    //slogans n shit
     let userID = (Auth.auth().currentUser?.uid)!
     let currentUserEmail = Auth.auth().currentUser!.email
-    var cellData = [ticketDataModel]() //not needed
     
-    @IBOutlet weak var ticketsInQueue: UILabel!
+    
+    
+    
+    //oddly enough these became our slogans
     
     
     let passiveColor = UIColor(red: 231/255.0, green: 230/255.0, blue: 223/255.0, alpha: 1)
@@ -45,8 +64,8 @@ class homeViewController: UIViewController, UITableViewDelegate, UITableViewData
     let manager = CLLocationManager()
 
 
-    let slogan : [Int: String] = [ 1 : "Everyone loves Thursday" , 2 : "The party doesn't stop... except here :(" , 3 : "PREGAME : (noun)" , 4 : "You only live once, do it :)" , 5 : "No matter what, atleast you still have a play" ]
-    let randomInt = Int.random(in: 1..<6) //tickets in queue placeholder data.
+    let slogan : [Int: String] = [ 1 : "Everyone loves Thursday 😌" , 2 : "The party never ends... except here 🥺" , 3 : "Have fun... responsibly" , 4 : "You only live once, do it 👍" , 5 : "It's like an Endless Summer ;)" , 6 : "Guys.. we aren't Fyre Fest!" , 7 : "Quarantine theme?" , 8 : "Dayger to the 🌙!" ]
+    let randomInt = Int.random(in: 1..<9) //tickets in queue placeholder data.
     
     
     //this is for immediate location request
@@ -72,44 +91,116 @@ class homeViewController: UIViewController, UITableViewDelegate, UITableViewData
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
         
         //ticketsInQueue.text = "Tickets in Queue: \(randomInt)"
-        ticketsInQueue.text = slogan[Int.random(in: 1..<6)] //haha lets see
-        self.loadData()
+        
+    
         
         
+      
+       
+        //self.loadData()
+        self.getInvites()
+        self.getRequests()
+      
+
+        
+        print(self.inviteArray.count)
+        print("view did load test \(self.invites)")
+       
         //this is obviously the menu VC
         //correction we seriously don't know that and need to clean up our code
     }
     
-  
-    
     //function query's data with parameters from the struct we defined. Any future things need to be added to the Ticket model data struct within the main feed data file
-    func loadData() {
-        db.collection("active_events").getDocuments { (querySnapshot,error) in
+    func getRequests () {
+        //get all of the users requests
+        db.collection("users").document(currentUserEmail!).collection("requests").getDocuments { (querySnapshot,error) in
             if let error = error {
                print("\(error)")
             } else{
-                self.ticketArray = querySnapshot!.documents.compactMap({ticketDataModel(dictionary: $0.data())})
-                DispatchQueue.main.async {
-                self.tableView.reloadData()
-                    //print("\(self.ticketArray)")
+                //works
+                self.requestArray =
+                    querySnapshot!.documents.compactMap({Requests(dictionary: $0.data())})
+                let retrievedData : Array = self.requestArray.filter ({$0.accepted == false }).map({ return $0.docID })
+                print("these are your request as of right now \(retrievedData)")
+                
+                self.queueLabel.text = "In Queue: \(retrievedData.count)"
             }
         }
     }
-}
-   public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+
     
-    return ticketArray.count
-    //we can arrange this code into delegate
-    //this is where we define the amount of cells showing up, then we populate accordingly
-        
-        //I can add more cells here
-    // lets add "you've reached the end or something"
+    func getInvites () {
+        db.collection("users").document(currentUserEmail!).collection("requests").getDocuments { [self] (querySnapshot,error) in
+            if let error = error {
+               print("\(error)")
+            } else{
+                //works
+                self.inviteArray =
+                    querySnapshot!.documents.compactMap({Invites(dictionary: $0.data())})
+                var data : [String]  = self.inviteArray.filter ({$0.accepted == true }).map({ return ($0.docID) })
+                    //works
+                    print("these are the invitations as of right now \(data)")
+                //data is all of the documents where accepted equals true
+                data.append("filler")
+                //we need to append this because the array cannot be empty.
+                
+                print(data.count)
+                if data.count == 1{
+                    
+                    self.footerLabel.text = "Looks like you have no tickets right now 😒. Click the ➕ button to create one! "
+                    
+                } else {
+                    
+                    if data.count > 1 {
+                        
+                        footerLabel.text = slogan[Int.random(in: 1..<9)]
+                        
+                    }
+                }
+                print("Test \(data)")
+                //Invites
+                db.collection("active_events").whereField("docID", in: data).getDocuments {(querySnapshot,error) in
+                    if let error = error {
+                       print("\(error)")
+                    } else{
+                        print("\(String(describing: querySnapshot?.documents.count))")
+                        //
+                        self.ticketArray =
+                            querySnapshot!.documents.compactMap({ticketDataModel(dictionary: $0.data())})
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                            //print("\(self.ticketArray)")
+                    }
+                }
+            }
+                
+            }
+        }
     }
+
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        
+        return ticketArray.count
+    }
+    
+    
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomePageTableViewCell",
                                                  for: indexPath) as! HomePageTableViewCell
         let ticket = ticketArray[indexPath.row]
+        
+        let storageRef = Storage.storage().reference(withPath: "user_selfies/\(ticket.uid).jpg")
+        storageRef.getData(maxSize: 4 * 1024 * 1024) { data, error in
+            if let error = error {
+                
+                print("there was a problem fetching data for the event \(ticket.name) : \(error.localizedDescription)")
+            }
+            if let data = data {
+                cell.selfieImage.image = UIImage(data: data)
+            }
+        }
         
         let anon = ticket.anonymous
         let atMax = ticket.atCapacity
@@ -131,13 +222,14 @@ class homeViewController: UIViewController, UITableViewDelegate, UITableViewData
         if anon == true {
             
             
-            cell.hostNameLabel.text = "Host | Anonymous"
-            cell.bitmoji.alpha = 0.25
+            cell.hostNameLabel.text = "Anonymous"
+            cell.selfieImage.alpha = 0.05
+            cell.circleView.backgroundColor = UIColor.white
             
         } else {
             
-            cell.hostNameLabel.text = "Host | \(ticket.firstname) \(ticket.lastname)"
-            cell.bitmoji.alpha = 1
+            cell.hostNameLabel.text = "\(ticket.firstname) \(ticket.lastname)"
+            cell.selfieImage.alpha = 1.0
         }
         if live == true {
             cell.liveLabel.alpha = 1
@@ -162,28 +254,21 @@ class homeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.liveLabel.alpha = 1
             cell.liveLine.alpha = 0
         }
-    
-        
-        
         cell.hostLabel.text = "\(ticket.name)"
         cell.dateLabel.text = "\(ticket.date)"
-        cell.timeLabel.text = "@\(ticket.time)"
-        cell.eventIDLabel.text = ""//empty going to fill with docID eventually
+        cell.timeLabel.text = "\(ticket.time)"
         
         
-        
-        //populate data accordingly
         cell.accessoryType = .none
         return cell
         //formatting cell
-        
     }
-    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow {
-            
-            
             guard let destinationVC = segue.destination as? activitiesViewController else {return}
             destinationVC.name = ticketArray[indexPath.row].name
             destinationVC.date = ticketArray[indexPath.row].date
@@ -193,6 +278,7 @@ class homeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 ticketArray[indexPath.row].firstname
             destinationVC.hostLastName =
                 ticketArray[indexPath.row].lastname
+            destinationVC.uid = ticketArray[indexPath.row].uid
             //below is all for map view. I cannot believe I figured that out wow
             let location = ticketArray[indexPath.row].location //pulls that specific location from firestore in that specific path
             let point = location as GeoPoint
@@ -209,6 +295,9 @@ class homeViewController: UIViewController, UITableViewDelegate, UITableViewData
             destinationVC.anonymous = ticketArray[indexPath.row].anonymous
             
             destinationVC.eventID = ticketArray[indexPath.row].docID
+            
+           destinationVC.likes = ticketArray[indexPath.row].likes
+            destinationVC.shares = ticketArray[indexPath.row].shares
             //passing this on to retrieve the event info
             
             
@@ -217,23 +306,16 @@ class homeViewController: UIViewController, UITableViewDelegate, UITableViewData
             //this is the shit that works for passing data from cell to view controller. It's all coming together. NOTE: use this to add more data to the view activities view controller scene. This is like step 4 in the process. I probably should connect these all together but irdc
         }
     }
-    
-    
     @IBAction func menuButtonTapped() {
         present(menu!, animated: true)
-        
         //Self explanatory
         
     }
-    
     @IBAction func createEventButtonTapped(_ sender: Any) {
         self.transitionToCreateEvent()
         //lets add a little animation
     }
-    
     func transitionToCreateEvent (){
-    
-        
         let createEventViewController = self.storyboard?.instantiateViewController(identifier: "createEventVC")
         
         self.view.window?.rootViewController = createEventViewController
@@ -250,24 +332,16 @@ class homeViewController: UIViewController, UITableViewDelegate, UITableViewData
         //function for transitioning to Party Manager
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     
     //@IBAction func transitionToPartyManager(_ sender: Any) {
         
         //self.transitionToPartyManager()
     //}
     
-    
 }
-
-
-
-//Menu
-
-
-
-
-
-
 class MenuListController: UITableViewController {
     //cocao pod
     var items = [" "," ","Past Events", "Refer a Friend","Payment", "Sponsored", "Socials","Privacy","Help","About"]

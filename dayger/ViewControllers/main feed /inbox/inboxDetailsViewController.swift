@@ -9,7 +9,9 @@ import UIKit
 
 class inboxDetailsViewController: UIViewController {
 
-    var name  = ""
+    var guestName = ""
+    
+    var guestUid  = ""
     //guest name
     var handle  = ""
     //social media
@@ -49,7 +51,7 @@ class inboxDetailsViewController: UIViewController {
     func retrieveData(){
         
         
-        self.nameLabel.text = "\(name)"
+        self.nameLabel.text = "\(guestName)"
         self.ageLabel.text = "Age: \(age)"
         self.handleLabel.text = "@\(handle)"
         self.sexLabel.text = "Sex: \(sex)"

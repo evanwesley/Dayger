@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 //for the inbox
-//for now we are going to do host verification. Thru links
+//for now we are going to do host verification. Thru links // we'll eventually allow other ppl to verify on hosts behalf
 
 
 
@@ -18,15 +18,15 @@ protocol verificationDocumentSerializeable {
 
 struct VerificationDataModel {
     
-    var guest : String //this is going to be full name
+    var firstname : String //this is going to be full name
+   
+    var lastname : String
     
     var guestUid : String
-    
-    var invite_accepted : Bool
-    
-    var event : String
+
+    var event : String //name in this case
         
-    var docID : String
+    var docID : String //the events unique ID
     
     var age : String
     
@@ -35,13 +35,13 @@ struct VerificationDataModel {
     var handle : String
     //specific party
     
-    var bitmoji : String? // later
+
     
     //adding profile information
     //you can accept and decline from cell but click on cell for further details.
     
     var dictionary : [String:Any]{
-        return ["guest":guest , "guestUid" : guestUid , "invite_accepted" : invite_accepted , "event" : event, "docID" : docID , "age" : age , "sex" : sex , "handle" : handle ]
+        return ["firstname":firstname , "lastname" : lastname, "guestUid" : guestUid , "event" : event, "docID" : docID , "age" : age , "sex" : sex , "handle" : handle ]
         
         
         
@@ -61,13 +61,12 @@ extension VerificationDataModel : verificationDocumentSerializeable {
     
     init?(dictionary : [String:Any]){
         
-        guard let guest = dictionary["guest"] as? String ,
+        guard let firstname = dictionary["firstname"] as? String , let lastname = dictionary["lastname"] as? String ,
               let guestUid = dictionary["guestUid"] as? String ,
-              let invite_accepted = dictionary["invite_accepted"] as? Bool ,
               let docID = dictionary["docID"] as? String , let event = dictionary["event"] as? String , let age = dictionary["age"] as? String , let sex = dictionary["sex"] as? String , let handle = dictionary["handle"] as? String
         
         else {return nil}
-        self.init(guest : guest , guestUid : guestUid , invite_accepted : invite_accepted , event : event , docID : docID , age : age , sex : sex , handle : handle)
+        self.init(firstname : firstname , lastname : lastname, guestUid : guestUid , event : event , docID : docID , age : age , sex : sex , handle : handle)
         
         
         

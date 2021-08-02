@@ -42,13 +42,8 @@ class eventViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-       
-        
-        
         self.loadData()
-    
-        
-    self.createLayer()
+        self.createLayer()
 
         
       //Test Data
@@ -147,7 +142,7 @@ extension eventViewController : UITableViewDelegate, UITableViewDataSource
         
         let data = cellData[indexPath.row]
         cell.nameLabel.text = "\(data.name)"
-        cell.timeLabel.text = "\(data.date) | @\(data.time)"
+        cell.timeLabel.text = "\(data.date) | \(data.time)"
         cell.likesLabel.text = "\(randomInt)"
         cell.sharesLabel.text = "\(randomInt2)"
         

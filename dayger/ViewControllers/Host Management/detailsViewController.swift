@@ -8,18 +8,23 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import FirebaseAuth
 
 class detailsViewController: UIViewController {
     var name : String = "" 
     var docID : String = ""
     
     let currentUserEmail = Auth.auth().currentUser!.email
-   
     let db = Firestore.firestore()
     //this is the event name
     
+    var guestData = [GuestListDataModel]()
+    
+    //array
     
     
+    @IBOutlet weak var tableView: UITableView!
+    //for guest list
     @IBOutlet weak var guestView: UIView!
     
     @IBOutlet weak var infoView: UIView!
@@ -53,19 +58,29 @@ class detailsViewController: UIViewController {
         self.infoView.layer.shadowOffset = .zero
         self.infoView.layer.shadowRadius = 2
         
+        //registerTableView Here
+        
+        self.tableView.register(UINib(nibName: "guestListTableViewCell", bundle: nil), forCellReuseIdentifier: "guestlistCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+   
         
         
+        print("\(docID)")
+        print("\(currentUserEmail!)")
         
         
         
         //self.infoView.layer.borderColor = UIColor.black.cgColor
-        //self.infoView.layer.borderWidth = 1.75
+        //self.infoView.layer.borderWidth = 1.7
+        
         
         retrieveData()
         configureSwitches()
         enableCapSwitch()   
         //call this function to load data for the view controller
         
+        getDocCount()
         
         // Do any additional setup after loading the view.
     }
@@ -177,9 +192,43 @@ class detailsViewController: UIViewController {
         
         
     }
+    func loadData() {
+        print("\(docID)")
+        //fuck this dumbass fucking fuction. I doesn't work and I hate it. Caused me so much pain for no fucking reason.
+        db.collection("active_events").document("\(docID)").collection("guest-list").getDocuments { (querySnapshot,error) in
+            if let error = error {
+               print("\(error) the data failed to load")
+            } else {
+                print(" from load data function!\(querySnapshot?.documents.count)")
+                print("func loadData has loaded \(querySnapshot?.documents.count) documents")
+                self.guestData = querySnapshot!.documents.compactMap({GuestListDataModel(dictionary: $0.data())})
+                DispatchQueue.main.async {
+                
+                    self.tableView.reloadData()
+            
+          //this query's a snapshot of documents. Now we must implement it from the inbox section.
+                }
+            }
+        }
+    }
     
-    
-    
+    func getDocCount () {
+    //this function saved my life
+        db.collection("active_events").document("\(docID)").collection("guest_list").getDocuments { (querySnapshot,error) in
+                if let error = error {
+                   print("\(error)")
+                } else{
+                    
+                    print("\(querySnapshot?.documents.count)")
+                    
+                    self.guestData = querySnapshot!.documents.compactMap({GuestListDataModel(dictionary: $0.data())})
+                    DispatchQueue.main.async {
+                    
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
     
     
     
@@ -222,4 +271,37 @@ class detailsViewController: UIViewController {
     }
     */
 
+}
+extension detailsViewController : UITableViewDelegate , UITableViewDataSource {
+    
+    
+  public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+  
+    
+  
+    return guestData.count
+        
+        
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "guestlistCell" ,
+                                                 
+                                                 for: indexPath) as! guestListTableViewCell
+        
+       let data = guestData[indexPath.row]
+        
+        cell.nameLabel.text = "\(data.firstname)" + " " + "\(data.lastname)" //firstname and lastname
+        
+        cell.socialLabel.text = "\(data.social)"
+        cell.selectionStyle = .none
+        
+        return cell
+    }
+    
+    
+    
+    
 }

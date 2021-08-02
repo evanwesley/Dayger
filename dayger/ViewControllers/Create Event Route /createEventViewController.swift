@@ -12,18 +12,30 @@
 import UIKit
 import FirebaseDatabase
 import Firebase
-class createEventViewController: UIViewController, UITextViewDelegate {
+import SCSDKBitmojiKit
+import SCSDKCoreKit
+import SCSDKLoginKit
 
-    
+class createEventViewController: UIViewController, UITextViewDelegate
 
+
+
+{
     
+ 
     
     //Top Half View Controller
-    @IBOutlet weak var createEventLabel: UILabel!
-    
-    @IBOutlet weak var userImage: UIImageView!
+  
     //This will be sourced from snapchat
     //Bottom Half View
+    
+    
+    
+  
+    @IBOutlet weak var circleView: UIView!
+   
+    @IBOutlet weak var selfieImage: UIImageView!
+    
     
     @IBOutlet weak var stackViewBg: UIView!
     @IBOutlet weak var eventNameTextField: UITextField!
@@ -72,12 +84,26 @@ class createEventViewController: UIViewController, UITextViewDelegate {
         self.capacityTextField.layer.cornerRadius = 5
     
         self.stackViewBg.layer.cornerRadius = 10
-        self.stackViewBg.layer.shadowColor = UIColor.black.cgColor
-        self.stackViewBg.layer.shadowOpacity = 0.25
-        self.stackViewBg.layer.shadowOffset = .zero
-        self.stackViewBg.layer.shadowRadius = 3
-        
-            //ensure when the view is instantiated their is no text showing
+        self.stackViewBg.layer.borderColor = UIColor.black.cgColor
+        self.stackViewBg.layer.borderWidth = 1.75
+            
+            self.circleView.layer.cornerRadius = 25
+            self.circleView.layer.shadowColor = UIColor.black.cgColor
+            self.circleView.layer.shadowOpacity = 0.25
+            self.circleView.layer.shadowOffset = .zero
+            self.circleView.layer.shadowRadius = 2
+            
+            self.view.layoutIfNeeded()
+            self.selfieImage.layer.masksToBounds = true
+            self.selfieImage.layer.cornerRadius = selfieImage.bounds.width / 2
+            self.selfieImage.layer.borderWidth = 2
+            self.selfieImage.layer.borderColor = UIColor.white.cgColor
+            let image = UserDefaults.standard.object(forKey: "selfie_image") as? Data
+            let defaultImage = UserDefaults.standard.object(forKey: "default_image") as! Data
+            
+            selfieImage.image = UIImage(data: image ?? defaultImage)
+         
+            
         createTimePicker()
         createDatePicker()
             
@@ -86,6 +112,9 @@ class createEventViewController: UIViewController, UITextViewDelegate {
             
         // Do any additional setup after loading the view.
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    } 
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
@@ -133,6 +162,8 @@ class createEventViewController: UIViewController, UITextViewDelegate {
         let eventInformation = userEmail.collection("events").document("event-1")
         
         eventInformation.setData(docData, merge: true)
+        
+        
         
         
         

@@ -40,7 +40,10 @@ class testViewController: UIViewController {
         let handle : [Int:String] = [1 : "cranappleradio", 2: "817evan" , 3: "sosa" , 4: "frat_g0d" , 5 : "art_junkie" , 6 : "big30"]
         let age : [Int:String] = [1:"16", 2: "21" , 3:"25" , 4: "18", 5:"23"]
         
-        let nameData : [Int : String] = [ 1:"Evan Wesley", 2: "Gigi Lancisi" , 3 : "Max Antinone" , 4 : "Alex Boydstun", 5 : "Ellis Wesley" , 6 : "Laura Jovien" ]
+        let nameData : [Int : String] = [ 1:"Evan", 2: "Gigi" , 3 : "Max" , 4 : "Alex", 5 : "Ellis" , 6 : "Laura"]
+        
+        let lastNameData : [Int : String] = [ 1:"Delgado", 2: "Lancisi" , 3 : "Antinone" , 4 : "Boydstun", 5 : "Wesley" , 6 : "Jovien"]
+        
         
         let eventData : [Int : String] = [1 : "Nicks Kickback" , 2 : "SF Trip" , 3 : "Dinner at Mas" , 4 : "Saturdayge" , 5 : "Pi Kapp Latenight"]
         
@@ -52,13 +55,14 @@ class testViewController: UIViewController {
         let ref =
         self.db.collection("users").document("\(currentUserEmail!)").collection("inbox").document()
         
-        let docID = ref.documentID
+       // let docID = ref.documentID
+        let docID = "JTrJ8F92cL2MYlXXCfYK"
         print("document \(docID) added to inbox")
         
-        self.db.collection("users").document("\(currentUserEmail!)").collection("inbox").document("\(docID)").setData(["guest":nameData[Int.random(in: 1..<7)]! , "guestUid" : "\(uid)" , "invite_accepted" : invite_accepted[Int.random(in: 1..<3)]! , "event" : eventData[Int.random(in: 1..<6)]! , "docID" : "\(docID)", "sex" : sex[Int.random(in: 1..<3)]! , "handle" : handle[Int.random(in: 1..<7)]! , "age" : age[Int.random(in: 1..<6)]!])
+        self.db.collection("users").document("\(currentUserEmail!)").collection("inbox").document("\(docID)").setData(["firstname":nameData[Int.random(in: 1..<7)]! , "lastname" : lastNameData[Int.random(in: 1..<7)]! , "guestUid" : "\(uid)" , "invite_accepted" : invite_accepted[Int.random(in: 1..<3)]! , "event" : eventData[Int.random(in: 1..<6)]! , "docID" : "JTrJ8F92cL2MYlXXCfYK", "sex" : sex[Int.random(in: 1..<3)]! , "handle" : handle[Int.random(in: 1..<7)]! , "age" : age[Int.random(in: 1..<6)]!])
         
         
-        
+        //doc ID is hard coded. This will change eventually
     }
     
     

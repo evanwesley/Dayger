@@ -18,10 +18,12 @@ class HomePageTableViewCell: UITableViewCell {
     @IBOutlet weak var liveLabel: UILabel!
     @IBOutlet weak var liveLine: UIView!
     
-    @IBOutlet weak var bitmoji: UIImageView!
+    @IBOutlet weak var circleView: UIView!
+    @IBOutlet weak var selfieImage: UIImageView!
+    
     @IBOutlet weak var hostNameLabel: UILabel!
     
-    @IBOutlet weak var eventIDLabel: UILabel!
+  
     
     
     override func awakeFromNib() {
@@ -30,7 +32,17 @@ class HomePageTableViewCell: UITableViewCell {
         self.ticketView.layer.cornerRadius = 10
         self.ticketView.layer.borderWidth = 1.75
         self.ticketView.layer.borderColor = UIColor.black.cgColor
+       
+        self.circleView.layer.cornerRadius = 25
+        self.circleView.layer.shadowColor = UIColor.black.cgColor
+        self.circleView.layer.shadowOpacity = 0.25
+        self.circleView.layer.shadowOffset = .zero
+        self.circleView.layer.shadowRadius = 2
         
+        self.selfieImage.layer.masksToBounds = true
+        self.selfieImage.layer.cornerRadius = selfieImage.bounds.width / 2
+        self.selfieImage.layer.borderWidth = 2
+        self.selfieImage.layer.borderColor = UIColor.white.cgColor
       
         // Initialization code
         

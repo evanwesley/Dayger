@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2C881CB19A2235B32BC77EAD /* Pods_dayger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5A0040F88686BAFF713538 /* Pods_dayger.framework */; };
+		510A6C2826A7B81100C2AC57 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510A6C2626A7B81100C2AC57 /* CollectionViewCell.swift */; };
+		510A6C2926A7B81100C2AC57 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510A6C2726A7B81100C2AC57 /* CollectionViewCell.xib */; };
 		510DCD97268A47F1007ADA29 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510DCD95268A47F1007ADA29 /* TableViewCell.swift */; };
 		510DCD98268A47F1007ADA29 /* managerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510DCD96268A47F1007ADA29 /* managerCell.xib */; };
+		51362F4A26B3E99B0061A2D0 /* verifiedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51362F4926B3E99B0061A2D0 /* verifiedViewController.swift */; };
 		51363A3C267C6075000EFF1A /* cellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51363A3B267C6075000EFF1A /* cellDataModel.swift */; };
 		51386FD4269E666A0086FF0A /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51386FD3269E666A0086FF0A /* testViewController.swift */; };
 		51386FE4269E81C30086FF0A /* inboxDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51386FE3269E81C30086FF0A /* inboxDetailsViewController.swift */; };
@@ -23,6 +26,8 @@
 		51612EEA259D9B350014119B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51612EE9259D9B350014119B /* Constants.swift */; };
 		5168D193269E091B00A0F57D /* inboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5168D191269E091B00A0F57D /* inboxTableViewCell.swift */; };
 		5168D194269E091B00A0F57D /* inboxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5168D192269E091B00A0F57D /* inboxTableViewCell.xib */; };
+		517289F426B61C830073399D /* requestsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517289F326B61C830073399D /* requestsDataModel.swift */; };
+		517289F626B61C970073399D /* invitesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517289F526B61C970073399D /* invitesDataModel.swift */; };
 		517A68A726825CE100A1E9F0 /* mainFeedDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517A68A626825CE100A1E9F0 /* mainFeedDataModel.swift */; };
 		517A68C4268439FD00A1E9F0 /* ticketCreationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517A68C3268439FD00A1E9F0 /* ticketCreationDataModel.swift */; };
 		51856E6F259BB93100802C9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51856E6E259BB93100802C9E /* AppDelegate.swift */; };
@@ -34,10 +39,15 @@
 		51856E91259BB93300802C9E /* daygerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51856E90259BB93300802C9E /* daygerUITests.swift */; };
 		51856EBD259BBCCB00802C9E /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51856EBC259BBCCB00802C9E /* loginViewController.swift */; };
 		51856EC2259BBCDC00802C9E /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51856EC1259BBCDC00802C9E /* homeViewController.swift */; };
+		518FA0C926ABDB4C00595D9A /* SCSDKCoreKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F3840026A2940F0029E851 /* SCSDKCoreKit.xcframework */; };
+		518FA0CC26ABDB4E00595D9A /* SCSDKLoginKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F3840626A2941F0029E851 /* SCSDKLoginKit.xcframework */; };
 		51936AB325A178B90066C223 /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51936AB125A178B90066C223 /* HomePageTableViewCell.swift */; };
 		51936AB425A178B90066C223 /* HomePageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51936AB225A178B90066C223 /* HomePageTableViewCell.xib */; };
 		5199C108266593FA00B7EE49 /* activitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5199C107266593FA00B7EE49 /* activitiesViewController.swift */; };
 		519AA32725BE6CC20066AE28 /* QRCodeViewFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519AA32625BE6CC10066AE28 /* QRCodeViewFile.swift */; };
+		519BF94926A628DA0038CE44 /* guestListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519BF94826A628DA0038CE44 /* guestListDataModel.swift */; };
+		519BF94C26A633670038CE44 /* guestListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519BF94A26A633670038CE44 /* guestListTableViewCell.swift */; };
+		519BF94D26A633670038CE44 /* guestListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 519BF94B26A633670038CE44 /* guestListTableViewCell.xib */; };
 		51AE019D263B9AC700809032 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AE019C263B9AC700809032 /* File.swift */; };
 		51AEE9FD259D1E990093E5FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51AEE9FC259D1E990093E5FD /* GoogleService-Info.plist */; };
 		51AEEA20259D1FBC0093E5FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51AEE9FC259D1E990093E5FD /* GoogleService-Info.plist */; };
@@ -45,6 +55,8 @@
 		51AEEA2C259D3E2D0093E5FD /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AEEA2B259D3E2D0093E5FD /* utilities.swift */; };
 		51C55E6326814D76000795A6 /* statisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C55E6226814D76000795A6 /* statisticsViewController.swift */; };
 		51C6A04525E459D10055BA30 /* startViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C6A04425E459D10055BA30 /* startViewController.swift */; };
+		51DDFDAB26A8DCCD000C13AC /* scannerDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDFDAA26A8DCCD000C13AC /* scannerDataModel.swift */; };
+		51DDFDAD26A8EF85000C13AC /* uidDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDFDAC26A8EF85000C13AC /* uidDataModel.swift */; };
 		51EC828E25E4DCCC007737E4 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EC828D25E4DCCC007737E4 /* profileViewController.swift */; };
 		51F3521A26899E5700525D60 /* eventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F3521926899E5700525D60 /* eventViewController.swift */; };
 		51F7710E266EB17C005D369F /* finalizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F7710D266EB17C005D369F /* finalizeViewController.swift */; };
@@ -77,8 +89,11 @@
 		31400AF03B8C55C9C1DD49A1 /* Pods_daygerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daygerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3640CFF6C3365535E825E909 /* Pods_dayger_daygerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dayger_daygerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E1C1A1EF5C1987916CE07B /* Pods-dayger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayger.release.xcconfig"; path = "Target Support Files/Pods-dayger/Pods-dayger.release.xcconfig"; sourceTree = "<group>"; };
+		510A6C2626A7B81100C2AC57 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		510A6C2726A7B81100C2AC57 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		510DCD95268A47F1007ADA29 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		510DCD96268A47F1007ADA29 /* managerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = managerCell.xib; sourceTree = "<group>"; };
+		51362F4926B3E99B0061A2D0 /* verifiedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifiedViewController.swift; sourceTree = "<group>"; };
 		51363A3B267C6075000EFF1A /* cellDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellDataModel.swift; sourceTree = "<group>"; };
 		51386FD3269E666A0086FF0A /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		51386FE3269E81C30086FF0A /* inboxDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inboxDetailsViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +107,8 @@
 		51612EE9259D9B350014119B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5168D191269E091B00A0F57D /* inboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inboxTableViewCell.swift; sourceTree = "<group>"; };
 		5168D192269E091B00A0F57D /* inboxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = inboxTableViewCell.xib; sourceTree = "<group>"; };
+		517289F326B61C830073399D /* requestsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestsDataModel.swift; sourceTree = "<group>"; };
+		517289F526B61C970073399D /* invitesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = invitesDataModel.swift; sourceTree = "<group>"; };
 		517A68A626825CE100A1E9F0 /* mainFeedDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainFeedDataModel.swift; sourceTree = "<group>"; };
 		517A68C3268439FD00A1E9F0 /* ticketCreationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ticketCreationDataModel.swift; sourceTree = "<group>"; };
 		51856E6B259BB93100802C9E /* dayger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dayger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,11 +130,16 @@
 		51936AB225A178B90066C223 /* HomePageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageTableViewCell.xib; sourceTree = "<group>"; };
 		5199C107266593FA00B7EE49 /* activitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activitiesViewController.swift; sourceTree = "<group>"; };
 		519AA32625BE6CC10066AE28 /* QRCodeViewFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewFile.swift; sourceTree = "<group>"; };
+		519BF94826A628DA0038CE44 /* guestListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guestListDataModel.swift; sourceTree = "<group>"; };
+		519BF94A26A633670038CE44 /* guestListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guestListTableViewCell.swift; sourceTree = "<group>"; };
+		519BF94B26A633670038CE44 /* guestListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = guestListTableViewCell.xib; sourceTree = "<group>"; };
 		51AE019C263B9AC700809032 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		51AEE9FC259D1E990093E5FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		51AEEA2B259D3E2D0093E5FD /* utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
 		51C55E6226814D76000795A6 /* statisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = statisticsViewController.swift; sourceTree = "<group>"; };
 		51C6A04425E459D10055BA30 /* startViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startViewController.swift; sourceTree = "<group>"; };
+		51DDFDAA26A8DCCD000C13AC /* scannerDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scannerDataModel.swift; sourceTree = "<group>"; };
+		51DDFDAC26A8EF85000C13AC /* uidDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uidDataModel.swift; sourceTree = "<group>"; };
 		51EC828D25E4DCCC007737E4 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
 		51F3521926899E5700525D60 /* eventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventViewController.swift; sourceTree = "<group>"; };
 		51F3840026A2940F0029E851 /* SCSDKCoreKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SCSDKCoreKit.xcframework; path = Pods/SnapSDK/SCSDKCoreKit.xcframework; sourceTree = "<group>"; };
@@ -134,6 +156,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				518FA0C926ABDB4C00595D9A /* SCSDKCoreKit.xcframework in Frameworks */,
+				518FA0CC26ABDB4E00595D9A /* SCSDKLoginKit.xcframework in Frameworks */,
 				2C881CB19A2235B32BC77EAD /* Pods_dayger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +181,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		510A6C2526A7B7E400C2AC57 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				510A6C2626A7B81100C2AC57 /* CollectionViewCell.swift */,
+				510A6C2726A7B81100C2AC57 /* CollectionViewCell.xib */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		51363A30267C126C000EFF1A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +204,9 @@
 			isa = PBXGroup;
 			children = (
 				5142A10026A0A84D007D22C2 /* scannerViewController.swift */,
+				51DDFDAC26A8EF85000C13AC /* uidDataModel.swift */,
+				51DDFDAA26A8DCCD000C13AC /* scannerDataModel.swift */,
+				510A6C2526A7B7E400C2AC57 /* Buttons */,
 			);
 			path = scanner;
 			sourceTree = "<group>";
@@ -194,6 +230,8 @@
 				51EC828D25E4DCCC007737E4 /* profileViewController.swift */,
 				51856EC1259BBCDC00802C9E /* homeViewController.swift */,
 				517A68A626825CE100A1E9F0 /* mainFeedDataModel.swift */,
+				517289F326B61C830073399D /* requestsDataModel.swift */,
+				517289F526B61C970073399D /* invitesDataModel.swift */,
 				5142A0FF26A0A81F007D22C2 /* scanner */,
 				5160C7F02697C28E008336C8 /* inbox */,
 			);
@@ -229,6 +267,7 @@
 				51856EC6259BBDAD00802C9E /* ViewControllers */,
 				51386FD3269E666A0086FF0A /* testViewController.swift */,
 				51856E74259BB93100802C9E /* Main.storyboard */,
+				51362F4926B3E99B0061A2D0 /* verifiedViewController.swift */,
 				51856E6E259BB93100802C9E /* AppDelegate.swift */,
 				51856E70259BB93100802C9E /* SceneDelegate.swift */,
 				51856E77259BB93300802C9E /* Assets.xcassets */,
@@ -310,8 +349,19 @@
 				51363A30267C126C000EFF1A /* Cell */,
 				51C55E6226814D76000795A6 /* statisticsViewController.swift */,
 				513959DF269128A2006F9AC7 /* detailsViewController.swift */,
+				519BF94726A628830038CE44 /* guest list */,
 			);
 			path = "Host Management";
+			sourceTree = "<group>";
+		};
+		519BF94726A628830038CE44 /* guest list */ = {
+			isa = PBXGroup;
+			children = (
+				519BF94826A628DA0038CE44 /* guestListDataModel.swift */,
+				519BF94A26A633670038CE44 /* guestListTableViewCell.swift */,
+				519BF94B26A633670038CE44 /* guestListTableViewCell.xib */,
+			);
+			path = "guest list";
 			sourceTree = "<group>";
 		};
 		51AE019B263B9A8A00809032 /* ViewModels */ = {
@@ -457,11 +507,13 @@
 			files = (
 				51936AB425A178B90066C223 /* HomePageTableViewCell.xib in Resources */,
 				510DCD98268A47F1007ADA29 /* managerCell.xib in Resources */,
+				519BF94D26A633670038CE44 /* guestListTableViewCell.xib in Resources */,
 				51856E7B259BB93300802C9E /* LaunchScreen.storyboard in Resources */,
 				51856E78259BB93300802C9E /* Assets.xcassets in Resources */,
 				5168D194269E091B00A0F57D /* inboxTableViewCell.xib in Resources */,
 				51856E76259BB93100802C9E /* Main.storyboard in Resources */,
 				51AEE9FD259D1E990093E5FD /* GoogleService-Info.plist in Resources */,
+				510A6C2926A7B81100C2AC57 /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +651,7 @@
 				5160C7D1269577FE008336C8 /* inboxViewController.swift in Sources */,
 				51C6A04525E459D10055BA30 /* startViewController.swift in Sources */,
 				513959E0269128A2006F9AC7 /* detailsViewController.swift in Sources */,
+				51362F4A26B3E99B0061A2D0 /* verifiedViewController.swift in Sources */,
 				51936AB325A178B90066C223 /* HomePageTableViewCell.swift in Sources */,
 				514C8AFC25F1DA5A0080C3D8 /* signUpViewController.swift in Sources */,
 				517A68C4268439FD00A1E9F0 /* ticketCreationDataModel.swift in Sources */,
@@ -612,15 +665,22 @@
 				51856E71259BB93100802C9E /* SceneDelegate.swift in Sources */,
 				517A68A726825CE100A1E9F0 /* mainFeedDataModel.swift in Sources */,
 				5160C7F22697C2BC008336C8 /* inboxDataModel.swift in Sources */,
+				517289F626B61C970073399D /* invitesDataModel.swift in Sources */,
 				51F3521A26899E5700525D60 /* eventViewController.swift in Sources */,
 				51386FD4269E666A0086FF0A /* testViewController.swift in Sources */,
 				510DCD97268A47F1007ADA29 /* TableViewCell.swift in Sources */,
+				519BF94926A628DA0038CE44 /* guestListDataModel.swift in Sources */,
 				5142A10126A0A84D007D22C2 /* scannerViewController.swift in Sources */,
 				51856EBD259BBCCB00802C9E /* loginViewController.swift in Sources */,
 				5199C108266593FA00B7EE49 /* activitiesViewController.swift in Sources */,
 				51612EEA259D9B350014119B /* Constants.swift in Sources */,
 				515BE35826A2CAEA00ECA810 /* snapchatViewController.swift in Sources */,
+				51DDFDAD26A8EF85000C13AC /* uidDataModel.swift in Sources */,
+				519BF94C26A633670038CE44 /* guestListTableViewCell.swift in Sources */,
 				514DDBC925B524FE007AF34B /* createEventViewController.swift in Sources */,
+				51DDFDAB26A8DCCD000C13AC /* scannerDataModel.swift in Sources */,
+				517289F426B61C830073399D /* requestsDataModel.swift in Sources */,
+				510A6C2826A7B81100C2AC57 /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

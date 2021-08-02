@@ -104,12 +104,17 @@ extension inboxViewController : UITableViewDelegate, UITableViewDataSource {
         
         let data = cellData[indexPath.row]
         cell.infoLabel.text = "Would like to attend: \(data.event)"
-        cell.nameLabel.text = "\(data.guest)"
+        cell.nameLabel.text = "\(data.firstname)" + " " +  " \(data.lastname)"
         cell.delegate = self
-        cell.guest = data.guest
+        cell.guestUid = data.guestUid
         
         cell.docID = data.docID
+        cell.firstname = data.firstname
+        cell.lastname = data.lastname
+        cell.sex = data.sex
+        cell.handle = data.handle //social
         
+        //adding iceName and number, this makes it 8
      
         
        
@@ -128,10 +133,12 @@ extension inboxViewController : UITableViewDelegate, UITableViewDataSource {
         
             guard let destinationVC = segue.destination as? inboxDetailsViewController else {return}
             
-            destinationVC.name = cellData[indexPath.row].guest
+            destinationVC.guestUid = cellData[indexPath.row].guestUid
             destinationVC.handle = cellData[indexPath.row].handle
             destinationVC.age = cellData[indexPath.row].age
             destinationVC.sex = cellData[indexPath.row].sex
+            destinationVC.guestName = cellData[indexPath.row].firstname + cellData[indexPath.row].lastname
+            
             //all of this passes data from the inbox data model to the details view.
             //this data is going to be sourced from a profile. For now we are going to generate sample data
         }
@@ -144,7 +151,7 @@ extension inboxViewController : inboxTableViewCellDelegate {
    
   
     
-    func inboxTableViewCell(_ inboxTableViewCell: inboxTableViewCell, acceptButtonTappedFor guest: String) {
+    func inboxTableViewCell(_ inboxTableViewCell: inboxTableViewCell, acceptButtonTappedFor guestUID: String) {
         // quality control
         
        

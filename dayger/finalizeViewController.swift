@@ -27,9 +27,12 @@ class finalizeViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var circleView: UIView!
+    @IBOutlet weak var selfieImage: UIImageView!
+    
     // all regarding Ticket View. The data in these strings are going to be sourced from same document in firebase
     
-    @IBOutlet weak var bitMojiImage: UIImageView!
+ 
     @IBOutlet weak var ticketView: UIView!
     @IBOutlet weak var qrCodeView: UIView!
     
@@ -45,6 +48,8 @@ class finalizeViewController: UIViewController {
     @IBOutlet var toggleInviteCodeSwitch: UISwitch!
     
     @IBOutlet weak var finalizeButton: UIButton!
+    
+    @IBOutlet weak var hostLabel: UILabel!
     //FinalizeButton
     
 
@@ -62,6 +67,8 @@ class finalizeViewController: UIViewController {
     var live : Bool = false
     var atCapacity = false
     var anonymous = false
+    var userFirstname : String = ""
+    var userLastname : String = ""
     
     let userID = (Auth.auth().currentUser?.uid)!
     
@@ -89,6 +96,8 @@ class finalizeViewController: UIViewController {
         self.mapView.layer.shadowRadius = 2
         //formatting the map view
         self.toggleView.layer.cornerRadius = 10
+        self.toggleView.layer.borderColor = UIColor.black.cgColor
+        self.toggleView.layer.borderWidth = 1.75
       //formatting map View UI
         self.mapViewUI.layer.cornerRadius = 10
         self.mapViewUI.layer.shadowColor = UIColor.black.cgColor
@@ -96,17 +105,21 @@ class finalizeViewController: UIViewController {
         self.mapViewUI.layer.shadowOffset = .zero
         self.mapViewUI.layer.shadowRadius = 2
         
+        self.qrCodeView.layer.magnificationFilter = CALayerContentsFilter.nearest
         
-        
+        getUserFirstLastName()
         assignTicketDataLabels()
         displayMapCoordinates()
         formatTicketView()
         generateQRCode()
+        
+        print("\(userLastname)")
+        print("\(userFirstname)")
        
     }
     
     func formatTicketView () {
-        
+        //formats everything
         
         self.ticketView.layer.cornerRadius = 10
         self.ticketView.layer.borderWidth = 1.75
@@ -118,7 +131,47 @@ class finalizeViewController: UIViewController {
         self.qrCodeView.layer.shadowOffset = .zero
         self.qrCodeView.layer.shadowRadius = 2
         
+        self.circleView.layer.cornerRadius = 25
+        self.circleView.layer.shadowColor = UIColor.black.cgColor
+        self.circleView.layer.shadowOpacity = 0.25
+        self.circleView.layer.shadowOffset = .zero
+        self.circleView.layer.shadowRadius = 2
         
+        self.view.layoutIfNeeded()
+        self.selfieImage.layer.masksToBounds = true
+        self.selfieImage.layer.cornerRadius = selfieImage.bounds.width / 2
+        self.selfieImage.layer.borderWidth = 2
+        self.selfieImage.layer.borderColor = UIColor.white.cgColor
+        let image = UserDefaults.standard.object(forKey: "selfie_image") as? Data
+        let defaultImage = UserDefaults.standard.object(forKey: "default_image") as! Data
+        
+        selfieImage.image = UIImage(data: image ?? defaultImage)
+    
+        //selfie
+        
+        
+    }
+    func getUserFirstLastName () {
+        //getting users first and last name. Assigned below
+        db.collection("users").document("\(currentUserEmail!)").getDocument { (document, error) in
+            if let document = document, document.exists {
+                   let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                   print("Document data: \(dataDescription)")
+                   //this this is too retrieve data from the document.
+                   let data = document.data()
+                   let firstname = data?["firstname"] as! String
+                   let lastname = data?["lastname"] as! String
+               
+                //we could move this line of code
+                
+                self.userFirstname = firstname
+                self.userLastname = lastname
+                
+                self.hostLabel.text = "\(self.userFirstname) \(self.userLastname)"
+                
+           }
+            
+        }
         
     }
     
@@ -127,6 +180,8 @@ class finalizeViewController: UIViewController {
     
     func assignTicketDataLabels() {
         
+        getUserFirstLastName()
+   
         db.collection("users").document("\(currentUserEmail!)").collection("events").document("event-1").getDocument { (document, error) in
             if let document = document, document.exists {
                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
@@ -150,11 +205,11 @@ class finalizeViewController: UIViewController {
                
                 
                 
-                self.timeLabel.text = "@\(time)"
+                self.timeLabel.text = "\(time)"
                 self.dateLabel.text = date
                 self.eventNameLabel.text = eventName
                 
-                
+         
                } else {
                    print("Document does not exist")
                }
@@ -202,21 +257,13 @@ class finalizeViewController: UIViewController {
     
     @IBAction func toggleQRCodePressed(_ sender: Any) {
         
-        
         if toggleQRCodeSwitch.isOn {
-        
-            
+
             QRImage.alpha = 1
             qrCodeConfig = true
-    
-            
-       
-           
             //we are going to generate custom qr code for our user here
             //going to add boolean value to firebase
         } else{
-            
-            
             //turns off the value in firebase
             QRImage.alpha = 0.20
             qrCodeConfig = false
@@ -236,27 +283,11 @@ class finalizeViewController: UIViewController {
        }
      print(inviteConfig)
     }
+   
     func generateQRCode () {
-        
-        
-        
-        db.collection("users").document("\(currentUserEmail!)").getDocument(source: .cache) { (document, error) in
-            if let document = document {
-              let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-              print("Cached document data: \(dataDescription)")
-                
-                
-                let docData = document.data()
-                let firstName : String  = docData?["firstname"] as! String
-                let lastName : String = docData?["lastname"] as! String
-                
-                let userInformation = "\(firstName)-\(lastName)"
-                
-                //grabs document data
-                //
                 
                 // all of this is for the qr code input
-                let qrCodeInput = "\(self.userID)" + "-\(userInformation)"
+                let qrCodeInput = "This is Your QR CODE!!"
                
                 
                 //this is going to be out first input for now: User ID + Name
@@ -267,19 +298,8 @@ class finalizeViewController: UIViewController {
                 let img = UIImage(ciImage: (filter?.outputImage)!)
                 
                 self.QRImage.image = img
-                
-                
-            } else
-            
-            {
-             
-            }
-         }
-    }
-    
-    
-    
-    
+       }
+
     @IBAction func backButtonPressed(_ sender: Any) {
         
         self.transitionToCreateEventVC()
@@ -295,14 +315,6 @@ class finalizeViewController: UIViewController {
         self.view.window?.makeKeyAndVisible()
         //function for transitioning to Party Manager
     }
-    
-    func getCoordinates () {
-        
-        
-        
-        
-    }
-    
     
     
     @IBAction func finalizeButtonTapped(_ sender: Any) {
@@ -332,9 +344,19 @@ class finalizeViewController: UIViewController {
             let name = self.eventNameLabel.text!
             let time = self.timeLabel.text!
             let uid = "\(self.userID)"
-        let firstname = UserDefaults.standard.string(forKey: "First_Name")!
-        let lastname = UserDefaults.standard.string(forKey: "Last_Name")!
             
+            
+            
+            
+            let userName = self.nameLabel.text!.components(separatedBy: " ")
+            //separates the text. There is def a better way to do this but I am too lazy.
+            print("\(userName)")
+            let firstname = userName[0]
+            let lastname = userName[1]
+            
+            
+            //Def a better way to do this
+            //Sourced from when User first signs up
             
        //for the bottom/////////// we wanna eventually store the data up top into the users own thing
         var ref:DocumentReference? = nil
@@ -375,6 +397,11 @@ class finalizeViewController: UIViewController {
                             self.db.collection("users").document("\(self.currentUserEmail!)").collection("active_events").document(docID!).setData(newEvent.dictionary)
                             //we could clean this up (added on data)
                             self.db.collection("users").document("\(self.currentUserEmail!)").collection("active_events").document(docID!).setData(["docID": docID!] , merge: true)
+                            
+                            let socialStats : [String:Int] = ["likes" : 0 , "shares": 0 ]
+                            
+                            self.db.collection("users").document("\(self.currentUserEmail!)").collection("active_events").document(docID!).setData(socialStats , merge: true)
+                          //These functions add additional data that Im too lazy to add to the data model. It will be retrieved in other data model though
                     }
                 }
             }
@@ -382,7 +409,7 @@ class finalizeViewController: UIViewController {
             
             
          
-        //self.transitionToHostManagementVC()
+        self.transitionToHomeVC()
     }
     }
     }
@@ -396,13 +423,13 @@ class finalizeViewController: UIViewController {
     }
     
     
-    func transitionToHostManagementVC () {
+    func transitionToHomeVC () {
         
-       let hostManagementVC =
+       let homeVC =
         
-        self.storyboard?.instantiateViewController(identifier: "hostManagementVC")
+        self.storyboard?.instantiateViewController(identifier: "HomeVC")
     
-    self.view.window?.rootViewController = hostManagementVC
+    self.view.window?.rootViewController = homeVC
     self.view.window?.makeKeyAndVisible()
         
         

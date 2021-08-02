@@ -7,12 +7,14 @@
 
 import UIKit
 import SCSDKLoginKit
+import SCSDKLoginKit
 
 
 class snapchatViewController: UIViewController {
 // this whole view controller's purpose is to retrieve the users snapchat data.
     
     
+    @IBOutlet weak var errorLabel: UILabel!
     
     @IBOutlet weak var connectToSnapButton: UIButton!
 //
@@ -23,8 +25,14 @@ class snapchatViewController: UIViewController {
     let graphQLQuery = "{me{displayName, bitmoji{avatar}}}"
     let variables = ["page": "bitmoji"]
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.errorLabel.alpha = 0
+        
+        self.fetchSnapUserInfo()
 
         // Do any additional setup after loading the view.
     }
@@ -36,7 +44,8 @@ class snapchatViewController: UIViewController {
 
           let displayName = me["displayName"] as? String
           var bitmojiAvatarUrl: String?
-          if let bitmoji = me["bitmoji"] as? [String: Any] {
+         
+            if let bitmoji = me["bitmoji"] as? [String: Any] {
             bitmojiAvatarUrl = bitmoji["avatar"] as? String
             
             print("\(displayName ?? "nil")")
@@ -44,24 +53,32 @@ class snapchatViewController: UIViewController {
             
           }
         }, failure: { (error: Error?, isUserLoggedOut: Bool) in
-            // handle error
+            
         })
         
     }
     
+    
     @IBAction func snapchatButtonPressed(_ sender: Any) {
         
-        
+       
+       
         SCSDKLoginClient.login(from: self, completion: { success, error in
 
               if let error = error {
-                  print(error.localizedDescription)
-                  return
+                print("This is your fucking error \(error.localizedDescription)")
+                      
+                  print("There was a problem connecting to your account/////")
+                
+                self.errorLabel.alpha = 1
+                self.errorLabel.text = "There was an problem connecting your account"
               }
 
               if success {
-                  self.fetchSnapUserInfo() //example code
-                  self.transitionToHome() 
+                
+                print("Success in grabbing the users account") //example code
+                  self.transitionToHome()
+         
                 //this code works. The user has not been logged in yet however.
               }
           })
@@ -76,6 +93,7 @@ class snapchatViewController: UIViewController {
         self.view.window?.makeKeyAndVisible()
         
     }
+   
     /*
     // MARK: - Navigation
 
