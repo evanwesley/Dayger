@@ -1,1 +1,1 @@
-# Dayger Hello, this is the project Dayger. I am completely new to coding but have been working on this app and gaining more and more IOS dev skills along the way. This is honestly my magnum opus as of right now, and I treat it as such.
+# Dayger This is for school
