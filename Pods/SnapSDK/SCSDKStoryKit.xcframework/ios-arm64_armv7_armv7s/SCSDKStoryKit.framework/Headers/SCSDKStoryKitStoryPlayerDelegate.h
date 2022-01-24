@@ -11,6 +11,7 @@
 @class SCSDKStoryKitStoryPlayer;
 @class SCSDKStoryKitSnap;
 
+/// Delegate with callbacks for StoryPlayer events
 @protocol SCSDKStoryKitStoryPlayerDelegate <NSObject>
 
 @optional

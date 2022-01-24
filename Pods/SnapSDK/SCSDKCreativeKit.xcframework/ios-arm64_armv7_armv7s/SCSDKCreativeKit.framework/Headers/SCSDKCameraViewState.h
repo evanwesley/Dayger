@@ -15,6 +15,7 @@ typedef NS_ENUM(NSInteger, SCSDKCameraPosition) {
     SCSDKCameraPositionBack,
 };
 
+/// Describes the state the camera will be in after sharing is complete
 @interface SCSDKCameraViewState : NSObject
 
 - (instancetype)initWithCameraPosition:(SCSDKCameraPosition)cameraPosition;

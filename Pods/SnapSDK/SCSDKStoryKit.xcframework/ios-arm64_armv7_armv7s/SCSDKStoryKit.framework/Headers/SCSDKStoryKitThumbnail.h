@@ -6,6 +6,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+/// Thumbnail for representing a story
 @interface SCSDKStoryKitThumbnail : NSObject <NSCopying, NSCoding>
 
 @property (nonatomic, readonly, copy) UIImage *image;

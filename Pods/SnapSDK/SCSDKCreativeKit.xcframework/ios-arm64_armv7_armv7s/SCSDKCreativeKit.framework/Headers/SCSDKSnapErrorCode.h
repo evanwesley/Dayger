@@ -5,10 +5,11 @@
 //  Copyright © 2017 Snap, Inc. All rights reserved.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 #define SC_SDK_SNAP_ERROR_DOMAIN @"SCSDKCreativeKitErrorDomain"
 
+/// Creative Kit Error Codes
 typedef NS_ENUM(NSInteger, SCSDKCreativeKitErrorCode) {
     SCSDKCreativeKitErrorCodeUnknown,
     SCSDKCreativeKitErrorCodeInvalidArgument,

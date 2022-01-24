@@ -12,6 +12,7 @@
 typedef void (^SCSDKStoryKitSnapVideoMatchHandler)(SCSDKStoryKitSnapInfo *snapInfo, SCSDKStoryKitSnapVideoInfo *videoInfo);
 typedef void (^SCSDKStoryKitSnapImageMatchHandler)(SCSDKStoryKitSnapInfo *snapInfo, SCSDKStoryKitSnapImageInfo *imageInfo);
 
+/// Class that represents a StoryKit Snap
 @interface SCSDKStoryKitSnap : NSObject <NSCopying, NSCoding>
 
 + (instancetype)imageWithSnapInfo:(SCSDKStoryKitSnapInfo *)snapInfo imageInfo:(SCSDKStoryKitSnapImageInfo *)imageInfo

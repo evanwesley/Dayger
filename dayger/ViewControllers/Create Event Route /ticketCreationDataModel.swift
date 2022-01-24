@@ -42,11 +42,16 @@ struct StoredTicketInfo {
     
     var anonymous : Bool
     
-    var fun : Int = 0 //later
+    var likes : Int
+    
+    var shares : Int
+    
+    
+//later
     
 
     var dictionary : [String:Any]{
-        return ["name":name,"date":date,"time":time , "address" : address, "firstname" : firstname , "lastname" : lastname, "location" : location , "additionalInformation" : additionalInformation, "qrCode" : qrCode , "closed_invite" : closed_invite , "live" : live, "atCapacity" : atCapacity , "anonymous" : anonymous]
+        return ["name":name,"date":date,"time":time , "address" : address, "firstname" : firstname , "lastname" : lastname, "location" : location , "additionalInformation" : additionalInformation, "qrCode" : qrCode , "closed_invite" : closed_invite , "live" : live, "atCapacity" : atCapacity , "anonymous" : anonymous , "likes" : likes , "shares" : shares]
         
     }
     
@@ -65,11 +70,12 @@ extension StoredTicketInfo : createEventDocumentSerializeable {
           let location = dictionary["location"] as? GeoPoint,
           let additionalInformation = dictionary["additionalInformation"] as? String,
           let qrCode = dictionary["qrCode"] as? Bool,
-          let closed_invite = dictionary["closed_invite"] as? Bool, let live = dictionary["live"] as? Bool , let atCapacity = dictionary["atCapacity"] as? Bool, let anonymous = dictionary["anonymous"] as? Bool
+          let closed_invite = dictionary["closed_invite"] as? Bool, let live = dictionary["live"] as? Bool , let atCapacity = dictionary["atCapacity"] as? Bool, let anonymous = dictionary["anonymous"] as? Bool,
+          let likes = dictionary["likes"] as? Int , let shares = dictionary["shares"] as? Int
     
     
           else {return nil}
-        self.init(name : name, date : date, time : time , address : address, firstname : firstname , lastname : lastname, location : location , additionalInformation : additionalInformation , qrCode : qrCode , closed_invite : closed_invite , live : live , atCapacity : atCapacity , anonymous : anonymous )
+        self.init(name : name, date : date, time : time , address : address, firstname : firstname , lastname : lastname, location : location , additionalInformation : additionalInformation , qrCode : qrCode , closed_invite : closed_invite , live : live , atCapacity : atCapacity , anonymous : anonymous , likes : likes , shares : shares )
  
     }
     

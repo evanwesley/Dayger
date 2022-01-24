@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C881CB19A2235B32BC77EAD /* Pods_dayger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5A0040F88686BAFF713538 /* Pods_dayger.framework */; };
+		49F3733D1956922DB69E6310 /* Pods_dayger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E63B5FC4E9DF292D124A7CD8 /* Pods_dayger.framework */; };
 		510A6C2826A7B81100C2AC57 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510A6C2626A7B81100C2AC57 /* CollectionViewCell.swift */; };
 		510A6C2926A7B81100C2AC57 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510A6C2726A7B81100C2AC57 /* CollectionViewCell.xib */; };
+		510AAF06277BAE7C006C6BCB /* socialFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510AAF05277BAE7C006C6BCB /* socialFeedViewController.swift */; };
+		510AAF09277BB2CE006C6BCB /* socialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510AAF07277BB2CE006C6BCB /* socialTableViewCell.swift */; };
+		510AAF0A277BB2CE006C6BCB /* socialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510AAF08277BB2CE006C6BCB /* socialTableViewCell.xib */; };
 		510DCD97268A47F1007ADA29 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510DCD95268A47F1007ADA29 /* TableViewCell.swift */; };
 		510DCD98268A47F1007ADA29 /* managerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510DCD96268A47F1007ADA29 /* managerCell.xib */; };
+		5111EE2A274749F6004C25EE /* friendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5111EE28274749F6004C25EE /* friendsTableViewCell.swift */; };
+		5111EE2B274749F6004C25EE /* friendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5111EE29274749F6004C25EE /* friendsTableViewCell.xib */; };
+		5111EE2F27474C62004C25EE /* friendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5111EE2E27474C62004C25EE /* friendsTableViewController.swift */; };
+		5117B4F426CF056800BB1EC1 /* guestlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5117B4F326CF056800BB1EC1 /* guestlistViewController.swift */; };
+		511FED8526C5EFEA005949C9 /* invitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FED8426C5EFEA005949C9 /* invitationViewController.swift */; };
 		51362F4A26B3E99B0061A2D0 /* verifiedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51362F4926B3E99B0061A2D0 /* verifiedViewController.swift */; };
 		51363A3C267C6075000EFF1A /* cellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51363A3B267C6075000EFF1A /* cellDataModel.swift */; };
 		51386FD4269E666A0086FF0A /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51386FD3269E666A0086FF0A /* testViewController.swift */; };
 		51386FE4269E81C30086FF0A /* inboxDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51386FE3269E81C30086FF0A /* inboxDetailsViewController.swift */; };
+		513925682720DAE500C371C7 /* sideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513925672720DAE500C371C7 /* sideMenuTableViewController.swift */; };
 		513959E0269128A2006F9AC7 /* detailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513959DF269128A2006F9AC7 /* detailsViewController.swift */; };
 		5142A10126A0A84D007D22C2 /* scannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5142A10026A0A84D007D22C2 /* scannerViewController.swift */; };
 		514C8AFC25F1DA5A0080C3D8 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514C8AFB25F1DA5A0080C3D8 /* signUpViewController.swift */; };
@@ -26,10 +35,15 @@
 		51612EEA259D9B350014119B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51612EE9259D9B350014119B /* Constants.swift */; };
 		5168D193269E091B00A0F57D /* inboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5168D191269E091B00A0F57D /* inboxTableViewCell.swift */; };
 		5168D194269E091B00A0F57D /* inboxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5168D192269E091B00A0F57D /* inboxTableViewCell.xib */; };
+		51727ECE2750408100DE81C9 /* messageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51727ECD2750408100DE81C9 /* messageViewController.swift */; };
+		51727ED027517AC400DE81C9 /* messageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51727ECF27517AC400DE81C9 /* messageDataModel.swift */; };
+		51727ED327517CE300DE81C9 /* messageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51727ED127517CE300DE81C9 /* messageTableViewCell.swift */; };
+		51727ED427517CE300DE81C9 /* messageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51727ED227517CE300DE81C9 /* messageTableViewCell.xib */; };
 		517289F426B61C830073399D /* requestsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517289F326B61C830073399D /* requestsDataModel.swift */; };
 		517289F626B61C970073399D /* invitesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517289F526B61C970073399D /* invitesDataModel.swift */; };
 		517A68A726825CE100A1E9F0 /* mainFeedDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517A68A626825CE100A1E9F0 /* mainFeedDataModel.swift */; };
 		517A68C4268439FD00A1E9F0 /* ticketCreationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517A68C3268439FD00A1E9F0 /* ticketCreationDataModel.swift */; };
+		517C10242751BDA10086001D /* messagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517C10232751BDA10086001D /* messagesTableViewController.swift */; };
 		51856E6F259BB93100802C9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51856E6E259BB93100802C9E /* AppDelegate.swift */; };
 		51856E71259BB93100802C9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51856E70259BB93100802C9E /* SceneDelegate.swift */; };
 		51856E76259BB93100802C9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51856E74259BB93100802C9E /* Main.storyboard */; };
@@ -53,16 +67,27 @@
 		51AEEA20259D1FBC0093E5FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51AEE9FC259D1E990093E5FD /* GoogleService-Info.plist */; };
 		51AEEA24259D1FBC0093E5FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51AEE9FC259D1E990093E5FD /* GoogleService-Info.plist */; };
 		51AEEA2C259D3E2D0093E5FD /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AEEA2B259D3E2D0093E5FD /* utilities.swift */; };
+		51AFD9CD273F6771008B7E25 /* friendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AFD9CB273F6771008B7E25 /* friendsViewController.swift */; };
+		51AFD9D827430ED6008B7E25 /* friendsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AFD9D727430ED6008B7E25 /* friendsDetailViewController.swift */; };
+		51BD046C274EB7FD00C539DA /* coHostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD046A274EB7FD00C539DA /* coHostCollectionViewCell.swift */; };
+		51BD046D274EB7FD00C539DA /* coHostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51BD046B274EB7FD00C539DA /* coHostCollectionViewCell.xib */; };
+		51BD046F274EB8F400C539DA /* coHostCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD046E274EB8F400C539DA /* coHostCellDataModel.swift */; };
+		51BD0473274ED3EA00C539DA /* friendsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD0471274ED3EA00C539DA /* friendsCollectionViewCell.swift */; };
+		51BD0474274ED3EA00C539DA /* friendsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51BD0472274ED3EA00C539DA /* friendsCollectionViewCell.xib */; };
+		51BDDD502702963000E9F170 /* launchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BDDD4F2702963000E9F170 /* launchScreenViewController.swift */; };
+		51BDDD52270B9EE800E9F170 /* guestListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BDDD51270B9EE700E9F170 /* guestListDetailViewController.swift */; };
 		51C55E6326814D76000795A6 /* statisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C55E6226814D76000795A6 /* statisticsViewController.swift */; };
 		51C6A04525E459D10055BA30 /* startViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C6A04425E459D10055BA30 /* startViewController.swift */; };
+		51D48B912766ADAA004B561D /* qrCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D48B902766ADAA004B561D /* qrCodeViewController.swift */; };
+		51DD25AA26B90AAF00EFDF3F /* likes&sharesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD25A926B90AAF00EFDF3F /* likes&sharesDataModel.swift */; };
 		51DDFDAB26A8DCCD000C13AC /* scannerDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDFDAA26A8DCCD000C13AC /* scannerDataModel.swift */; };
 		51DDFDAD26A8EF85000C13AC /* uidDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDFDAC26A8EF85000C13AC /* uidDataModel.swift */; };
 		51EC828E25E4DCCC007737E4 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EC828D25E4DCCC007737E4 /* profileViewController.swift */; };
 		51F3521A26899E5700525D60 /* eventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F3521926899E5700525D60 /* eventViewController.swift */; };
 		51F7710E266EB17C005D369F /* finalizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F7710D266EB17C005D369F /* finalizeViewController.swift */; };
 		51F7717C267025CB005D369F /* locationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F7717B267025CB005D369F /* locationSearchTableViewController.swift */; };
-		9B1E0EA5AA2C78C9A05EF017 /* Pods_daygerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31400AF03B8C55C9C1DD49A1 /* Pods_daygerTests.framework */; };
-		EF4B2D1CC25F5E6134EBC82B /* Pods_dayger_daygerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3640CFF6C3365535E825E909 /* Pods_dayger_daygerUITests.framework */; };
+		8B69A17912B5BD4E4D5B46B1 /* Pods_dayger_daygerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D744C58FD2F8F99D2BDBE32C /* Pods_dayger_daygerUITests.framework */; };
+		D37F23C24B752B6A39661EB6 /* Pods_daygerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E15D470E22C6CB0890B9C3E /* Pods_daygerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,20 +108,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B9FB2E9E05D6CC2F5330DB2 /* Pods-daygerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daygerTests.debug.xcconfig"; path = "Target Support Files/Pods-daygerTests/Pods-daygerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		1F9362D095E27E103B859587 /* Pods-daygerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daygerTests.release.xcconfig"; path = "Target Support Files/Pods-daygerTests/Pods-daygerTests.release.xcconfig"; sourceTree = "<group>"; };
-		28DA36C6E8D0344496792174 /* Pods-dayger-daygerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayger-daygerUITests.debug.xcconfig"; path = "Target Support Files/Pods-dayger-daygerUITests/Pods-dayger-daygerUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		31400AF03B8C55C9C1DD49A1 /* Pods_daygerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daygerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3640CFF6C3365535E825E909 /* Pods_dayger_daygerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dayger_daygerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		42E1C1A1EF5C1987916CE07B /* Pods-dayger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayger.release.xcconfig"; path = "Target Support Files/Pods-dayger/Pods-dayger.release.xcconfig"; sourceTree = "<group>"; };
+		0C0B3066605D4895524D1F4C /* Pods-dayger-daygerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayger-daygerUITests.debug.xcconfig"; path = "Target Support Files/Pods-dayger-daygerUITests/Pods-dayger-daygerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0EC26A349C05423484F8B5D2 /* Pods-dayger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayger.debug.xcconfig"; path = "Target Support Files/Pods-dayger/Pods-dayger.debug.xcconfig"; sourceTree = "<group>"; };
+		1E15D470E22C6CB0890B9C3E /* Pods_daygerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daygerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		510A6C2626A7B81100C2AC57 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		510A6C2726A7B81100C2AC57 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		510AAF05277BAE7C006C6BCB /* socialFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = socialFeedViewController.swift; path = dayger/socialFeedViewController.swift; sourceTree = SOURCE_ROOT; };
+		510AAF07277BB2CE006C6BCB /* socialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = socialTableViewCell.swift; sourceTree = "<group>"; };
+		510AAF08277BB2CE006C6BCB /* socialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = socialTableViewCell.xib; sourceTree = "<group>"; };
 		510DCD95268A47F1007ADA29 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		510DCD96268A47F1007ADA29 /* managerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = managerCell.xib; sourceTree = "<group>"; };
+		5111EE28274749F6004C25EE /* friendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendsTableViewCell.swift; sourceTree = "<group>"; };
+		5111EE29274749F6004C25EE /* friendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = friendsTableViewCell.xib; sourceTree = "<group>"; };
+		5111EE2E27474C62004C25EE /* friendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendsTableViewController.swift; sourceTree = "<group>"; };
+		5117B4F326CF056800BB1EC1 /* guestlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guestlistViewController.swift; sourceTree = "<group>"; };
+		511FED8426C5EFEA005949C9 /* invitationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = invitationViewController.swift; path = "dayger/ViewControllers/main feed /invitationViewController.swift"; sourceTree = SOURCE_ROOT; };
 		51362F4926B3E99B0061A2D0 /* verifiedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifiedViewController.swift; sourceTree = "<group>"; };
 		51363A3B267C6075000EFF1A /* cellDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellDataModel.swift; sourceTree = "<group>"; };
 		51386FD3269E666A0086FF0A /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		51386FE3269E81C30086FF0A /* inboxDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inboxDetailsViewController.swift; sourceTree = "<group>"; };
+		513925672720DAE500C371C7 /* sideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sideMenuTableViewController.swift; sourceTree = "<group>"; };
 		513959DF269128A2006F9AC7 /* detailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsViewController.swift; sourceTree = "<group>"; };
 		5142A10026A0A84D007D22C2 /* scannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scannerViewController.swift; sourceTree = "<group>"; };
 		514C8AFB25F1DA5A0080C3D8 /* signUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
@@ -107,10 +138,15 @@
 		51612EE9259D9B350014119B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5168D191269E091B00A0F57D /* inboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inboxTableViewCell.swift; sourceTree = "<group>"; };
 		5168D192269E091B00A0F57D /* inboxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = inboxTableViewCell.xib; sourceTree = "<group>"; };
+		51727ECD2750408100DE81C9 /* messageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageViewController.swift; sourceTree = "<group>"; };
+		51727ECF27517AC400DE81C9 /* messageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageDataModel.swift; sourceTree = "<group>"; };
+		51727ED127517CE300DE81C9 /* messageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageTableViewCell.swift; sourceTree = "<group>"; };
+		51727ED227517CE300DE81C9 /* messageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = messageTableViewCell.xib; sourceTree = "<group>"; };
 		517289F326B61C830073399D /* requestsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestsDataModel.swift; sourceTree = "<group>"; };
 		517289F526B61C970073399D /* invitesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = invitesDataModel.swift; sourceTree = "<group>"; };
 		517A68A626825CE100A1E9F0 /* mainFeedDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainFeedDataModel.swift; sourceTree = "<group>"; };
 		517A68C3268439FD00A1E9F0 /* ticketCreationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ticketCreationDataModel.swift; sourceTree = "<group>"; };
+		517C10232751BDA10086001D /* messagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = messagesTableViewController.swift; path = dayger/messagesTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		51856E6B259BB93100802C9E /* dayger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dayger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51856E6E259BB93100802C9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51856E70259BB93100802C9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,19 +172,36 @@
 		51AE019C263B9AC700809032 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		51AEE9FC259D1E990093E5FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		51AEEA2B259D3E2D0093E5FD /* utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
+		51AFD9CB273F6771008B7E25 /* friendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendsViewController.swift; sourceTree = "<group>"; };
+		51AFD9D727430ED6008B7E25 /* friendsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendsDetailViewController.swift; sourceTree = "<group>"; };
+		51B03CD526BC89E300EB9D8B /* daygerRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = daygerRelease.entitlements; sourceTree = "<group>"; };
+		51B03CD626BC941C00EB9D8B /* daygerDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = daygerDebug.entitlements; sourceTree = "<group>"; };
+		51BD046A274EB7FD00C539DA /* coHostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coHostCollectionViewCell.swift; sourceTree = "<group>"; };
+		51BD046B274EB7FD00C539DA /* coHostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = coHostCollectionViewCell.xib; path = "dayger/ViewControllers/Host Management/Cell/coHostCollectionViewCell.xib"; sourceTree = SOURCE_ROOT; };
+		51BD046E274EB8F400C539DA /* coHostCellDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coHostCellDataModel.swift; sourceTree = "<group>"; };
+		51BD0471274ED3EA00C539DA /* friendsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendsCollectionViewCell.swift; sourceTree = "<group>"; };
+		51BD0472274ED3EA00C539DA /* friendsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = friendsCollectionViewCell.xib; sourceTree = "<group>"; };
+		51BDDD4F2702963000E9F170 /* launchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = launchScreenViewController.swift; sourceTree = "<group>"; };
+		51BDDD51270B9EE700E9F170 /* guestListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guestListDetailViewController.swift; sourceTree = "<group>"; };
 		51C55E6226814D76000795A6 /* statisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = statisticsViewController.swift; sourceTree = "<group>"; };
 		51C6A04425E459D10055BA30 /* startViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startViewController.swift; sourceTree = "<group>"; };
+		51D48B902766ADAA004B561D /* qrCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = qrCodeViewController.swift; path = dayger/qrCodeViewController.swift; sourceTree = SOURCE_ROOT; };
+		51DD25A926B90AAF00EFDF3F /* likes&sharesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "likes&sharesDataModel.swift"; sourceTree = "<group>"; };
 		51DDFDAA26A8DCCD000C13AC /* scannerDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scannerDataModel.swift; sourceTree = "<group>"; };
 		51DDFDAC26A8EF85000C13AC /* uidDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uidDataModel.swift; sourceTree = "<group>"; };
 		51EC828D25E4DCCC007737E4 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
+		51ECD5552745BD22004F54F7 /* friendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendsTableViewController.swift; sourceTree = "<group>"; };
 		51F3521926899E5700525D60 /* eventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventViewController.swift; sourceTree = "<group>"; };
 		51F3840026A2940F0029E851 /* SCSDKCoreKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SCSDKCoreKit.xcframework; path = Pods/SnapSDK/SCSDKCoreKit.xcframework; sourceTree = "<group>"; };
 		51F3840626A2941F0029E851 /* SCSDKLoginKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SCSDKLoginKit.xcframework; path = Pods/SnapSDK/SCSDKLoginKit.xcframework; sourceTree = "<group>"; };
 		51F7710D266EB17C005D369F /* finalizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = finalizeViewController.swift; path = dayger/finalizeViewController.swift; sourceTree = SOURCE_ROOT; };
 		51F7717B267025CB005D369F /* locationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationSearchTableViewController.swift; sourceTree = "<group>"; };
-		BA5A0040F88686BAFF713538 /* Pods_dayger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dayger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2F0FE827437D018D27E8239 /* Pods-dayger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayger.debug.xcconfig"; path = "Target Support Files/Pods-dayger/Pods-dayger.debug.xcconfig"; sourceTree = "<group>"; };
-		D09AB797E79B6E373AFEB545 /* Pods-dayger-daygerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayger-daygerUITests.release.xcconfig"; path = "Target Support Files/Pods-dayger-daygerUITests/Pods-dayger-daygerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6E2D19CD8411E5912C64C7FA /* Pods-daygerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daygerTests.debug.xcconfig"; path = "Target Support Files/Pods-daygerTests/Pods-daygerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9C6F142F065F46309B330861 /* Pods-dayger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayger.release.xcconfig"; path = "Target Support Files/Pods-dayger/Pods-dayger.release.xcconfig"; sourceTree = "<group>"; };
+		B0C032C19B04C1BF95CAF614 /* Pods-dayger-daygerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayger-daygerUITests.release.xcconfig"; path = "Target Support Files/Pods-dayger-daygerUITests/Pods-dayger-daygerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CFA13D747BEE8FD669557E77 /* Pods-daygerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daygerTests.release.xcconfig"; path = "Target Support Files/Pods-daygerTests/Pods-daygerTests.release.xcconfig"; sourceTree = "<group>"; };
+		D744C58FD2F8F99D2BDBE32C /* Pods_dayger_daygerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dayger_daygerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E63B5FC4E9DF292D124A7CD8 /* Pods_dayger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dayger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +211,7 @@
 			files = (
 				518FA0C926ABDB4C00595D9A /* SCSDKCoreKit.xcframework in Frameworks */,
 				518FA0CC26ABDB4E00595D9A /* SCSDKLoginKit.xcframework in Frameworks */,
-				2C881CB19A2235B32BC77EAD /* Pods_dayger.framework in Frameworks */,
+				49F3733D1956922DB69E6310 /* Pods_dayger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B1E0EA5AA2C78C9A05EF017 /* Pods_daygerTests.framework in Frameworks */,
+				D37F23C24B752B6A39661EB6 /* Pods_daygerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +227,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF4B2D1CC25F5E6134EBC82B /* Pods_dayger_daygerUITests.framework in Frameworks */,
+				8B69A17912B5BD4E4D5B46B1 /* Pods_dayger_daygerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,8 +247,12 @@
 			isa = PBXGroup;
 			children = (
 				51363A3B267C6075000EFF1A /* cellDataModel.swift */,
+				51DD25A926B90AAF00EFDF3F /* likes&sharesDataModel.swift */,
 				510DCD95268A47F1007ADA29 /* TableViewCell.swift */,
 				510DCD96268A47F1007ADA29 /* managerCell.xib */,
+				51BD046A274EB7FD00C539DA /* coHostCollectionViewCell.swift */,
+				51BD046B274EB7FD00C539DA /* coHostCollectionViewCell.xib */,
+				51BD046E274EB8F400C539DA /* coHostCellDataModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -206,6 +263,7 @@
 				5142A10026A0A84D007D22C2 /* scannerViewController.swift */,
 				51DDFDAC26A8EF85000C13AC /* uidDataModel.swift */,
 				51DDFDAA26A8DCCD000C13AC /* scannerDataModel.swift */,
+				51362F4926B3E99B0061A2D0 /* verifiedViewController.swift */,
 				510A6C2526A7B7E400C2AC57 /* Buttons */,
 			);
 			path = scanner;
@@ -226,14 +284,18 @@
 		517A68A226825CB600A1E9F0 /* main feed  */ = {
 			isa = PBXGroup;
 			children = (
-				5199C107266593FA00B7EE49 /* activitiesViewController.swift */,
+				519385B9277BAD5100E36CCA /* SocialFeed */,
+				51BD0470274ED3BD00C539DA /* tickets */,
 				51EC828D25E4DCCC007737E4 /* profileViewController.swift */,
 				51856EC1259BBCDC00802C9E /* homeViewController.swift */,
 				517A68A626825CE100A1E9F0 /* mainFeedDataModel.swift */,
 				517289F326B61C830073399D /* requestsDataModel.swift */,
 				517289F526B61C970073399D /* invitesDataModel.swift */,
+				511FED8426C5EFEA005949C9 /* invitationViewController.swift */,
+				513925672720DAE500C371C7 /* sideMenuTableViewController.swift */,
 				5142A0FF26A0A81F007D22C2 /* scanner */,
 				5160C7F02697C28E008336C8 /* inbox */,
+				51AFD9D927430EFF008B7E25 /* Friends */,
 			);
 			path = "main feed ";
 			sourceTree = "<group>";
@@ -263,15 +325,17 @@
 		51856E6D259BB93100802C9E /* dayger */ = {
 			isa = PBXGroup;
 			children = (
+				51B03CD626BC941C00EB9D8B /* daygerDebug.entitlements */,
+				51B03CD526BC89E300EB9D8B /* daygerRelease.entitlements */,
 				51AE019B263B9A8A00809032 /* ViewModels */,
 				51856EC6259BBDAD00802C9E /* ViewControllers */,
 				51386FD3269E666A0086FF0A /* testViewController.swift */,
 				51856E74259BB93100802C9E /* Main.storyboard */,
-				51362F4926B3E99B0061A2D0 /* verifiedViewController.swift */,
 				51856E6E259BB93100802C9E /* AppDelegate.swift */,
 				51856E70259BB93100802C9E /* SceneDelegate.swift */,
 				51856E77259BB93300802C9E /* Assets.xcassets */,
 				51856E79259BB93300802C9E /* LaunchScreen.storyboard */,
+				51BDDD4F2702963000E9F170 /* launchScreenViewController.swift */,
 				51856E7C259BB93300802C9E /* Info.plist */,
 				51AEE9FC259D1E990093E5FD /* GoogleService-Info.plist */,
 			);
@@ -320,6 +384,16 @@
 			path = HomePageCell;
 			sourceTree = "<group>";
 		};
+		519385B9277BAD5100E36CCA /* SocialFeed */ = {
+			isa = PBXGroup;
+			children = (
+				510AAF05277BAE7C006C6BCB /* socialFeedViewController.swift */,
+				510AAF07277BB2CE006C6BCB /* socialTableViewCell.swift */,
+				510AAF08277BB2CE006C6BCB /* socialTableViewCell.xib */,
+			);
+			path = SocialFeed;
+			sourceTree = "<group>";
+		};
 		5199C0FD2664681800B7EE49 /* StartVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,8 +408,8 @@
 		5199C12426669B9800B7EE49 /* Create Event Route  */ = {
 			isa = PBXGroup;
 			children = (
-				51F7710D266EB17C005D369F /* finalizeViewController.swift */,
 				514DDBC825B524FE007AF34B /* createEventViewController.swift */,
+				51F7710D266EB17C005D369F /* finalizeViewController.swift */,
 				51F7717B267025CB005D369F /* locationSearchTableViewController.swift */,
 				517A68C3268439FD00A1E9F0 /* ticketCreationDataModel.swift */,
 			);
@@ -357,8 +431,10 @@
 		519BF94726A628830038CE44 /* guest list */ = {
 			isa = PBXGroup;
 			children = (
+				5117B4F326CF056800BB1EC1 /* guestlistViewController.swift */,
 				519BF94826A628DA0038CE44 /* guestListDataModel.swift */,
 				519BF94A26A633670038CE44 /* guestListTableViewCell.swift */,
+				51BDDD51270B9EE700E9F170 /* guestListDetailViewController.swift */,
 				519BF94B26A633670038CE44 /* guestListTableViewCell.xib */,
 			);
 			path = "guest list";
@@ -372,14 +448,43 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		51AFD9D927430EFF008B7E25 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				5111EE28274749F6004C25EE /* friendsTableViewCell.swift */,
+				5111EE29274749F6004C25EE /* friendsTableViewCell.xib */,
+				51AFD9CB273F6771008B7E25 /* friendsViewController.swift */,
+				51AFD9D727430ED6008B7E25 /* friendsDetailViewController.swift */,
+				51ECD5552745BD22004F54F7 /* friendsTableViewController.swift */,
+				5111EE2E27474C62004C25EE /* friendsTableViewController.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		51BD0470274ED3BD00C539DA /* tickets */ = {
+			isa = PBXGroup;
+			children = (
+				51D48B902766ADAA004B561D /* qrCodeViewController.swift */,
+				517C10232751BDA10086001D /* messagesTableViewController.swift */,
+				51727ECD2750408100DE81C9 /* messageViewController.swift */,
+				51727ECF27517AC400DE81C9 /* messageDataModel.swift */,
+				51727ED127517CE300DE81C9 /* messageTableViewCell.swift */,
+				51727ED227517CE300DE81C9 /* messageTableViewCell.xib */,
+				5199C107266593FA00B7EE49 /* activitiesViewController.swift */,
+				51BD0471274ED3EA00C539DA /* friendsCollectionViewCell.swift */,
+				51BD0472274ED3EA00C539DA /* friendsCollectionViewCell.xib */,
+			);
+			path = tickets;
+			sourceTree = "<group>";
+		};
 		7B7558902069F3B1AA989B8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				51F3840626A2941F0029E851 /* SCSDKLoginKit.xcframework */,
 				51F3840026A2940F0029E851 /* SCSDKCoreKit.xcframework */,
-				BA5A0040F88686BAFF713538 /* Pods_dayger.framework */,
-				3640CFF6C3365535E825E909 /* Pods_dayger_daygerUITests.framework */,
-				31400AF03B8C55C9C1DD49A1 /* Pods_daygerTests.framework */,
+				E63B5FC4E9DF292D124A7CD8 /* Pods_dayger.framework */,
+				D744C58FD2F8F99D2BDBE32C /* Pods_dayger_daygerUITests.framework */,
+				1E15D470E22C6CB0890B9C3E /* Pods_daygerTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -387,12 +492,12 @@
 		9318A4E67BCDD5C44B27C63D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C2F0FE827437D018D27E8239 /* Pods-dayger.debug.xcconfig */,
-				42E1C1A1EF5C1987916CE07B /* Pods-dayger.release.xcconfig */,
-				28DA36C6E8D0344496792174 /* Pods-dayger-daygerUITests.debug.xcconfig */,
-				D09AB797E79B6E373AFEB545 /* Pods-dayger-daygerUITests.release.xcconfig */,
-				0B9FB2E9E05D6CC2F5330DB2 /* Pods-daygerTests.debug.xcconfig */,
-				1F9362D095E27E103B859587 /* Pods-daygerTests.release.xcconfig */,
+				0EC26A349C05423484F8B5D2 /* Pods-dayger.debug.xcconfig */,
+				9C6F142F065F46309B330861 /* Pods-dayger.release.xcconfig */,
+				0C0B3066605D4895524D1F4C /* Pods-dayger-daygerUITests.debug.xcconfig */,
+				B0C032C19B04C1BF95CAF614 /* Pods-dayger-daygerUITests.release.xcconfig */,
+				6E2D19CD8411E5912C64C7FA /* Pods-daygerTests.debug.xcconfig */,
+				CFA13D747BEE8FD669557E77 /* Pods-daygerTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -404,11 +509,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51856E95259BB93300802C9E /* Build configuration list for PBXNativeTarget "dayger" */;
 			buildPhases = (
-				A3150A5030ABE848987D4E77 /* [CP] Check Pods Manifest.lock */,
+				1451394CFA2730EA74A8ADFA /* [CP] Check Pods Manifest.lock */,
 				51856E67259BB93100802C9E /* Sources */,
 				51856E68259BB93100802C9E /* Frameworks */,
 				51856E69259BB93100802C9E /* Resources */,
-				6753D36E86067CF155922E12 /* [CP] Embed Pods Frameworks */,
+				808B75C08C2A5D93815C59A9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -423,7 +528,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51856E98259BB93300802C9E /* Build configuration list for PBXNativeTarget "daygerTests" */;
 			buildPhases = (
-				AC95E97EC7EA6F52431E21C6 /* [CP] Check Pods Manifest.lock */,
+				D9F685BEAD1F017CB2F2A59A /* [CP] Check Pods Manifest.lock */,
 				51856E7D259BB93300802C9E /* Sources */,
 				51856E7E259BB93300802C9E /* Frameworks */,
 				51856E7F259BB93300802C9E /* Resources */,
@@ -442,11 +547,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51856E9B259BB93300802C9E /* Build configuration list for PBXNativeTarget "daygerUITests" */;
 			buildPhases = (
-				ACBD3E8BFB471080BA63C5F4 /* [CP] Check Pods Manifest.lock */,
+				A14947D22135F6C9DD56D9FD /* [CP] Check Pods Manifest.lock */,
 				51856E88259BB93300802C9E /* Sources */,
 				51856E89259BB93300802C9E /* Frameworks */,
 				51856E8A259BB93300802C9E /* Resources */,
-				0F18F59C23BFA71A2BE0200C /* [CP] Embed Pods Frameworks */,
+				07C4F0C1C561CC7483786447 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -465,7 +570,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1220;
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					51856E6A259BB93100802C9E = {
 						CreatedOnToolsVersion = 12.2;
@@ -507,13 +612,18 @@
 			files = (
 				51936AB425A178B90066C223 /* HomePageTableViewCell.xib in Resources */,
 				510DCD98268A47F1007ADA29 /* managerCell.xib in Resources */,
+				510AAF0A277BB2CE006C6BCB /* socialTableViewCell.xib in Resources */,
 				519BF94D26A633670038CE44 /* guestListTableViewCell.xib in Resources */,
 				51856E7B259BB93300802C9E /* LaunchScreen.storyboard in Resources */,
 				51856E78259BB93300802C9E /* Assets.xcassets in Resources */,
+				51BD046D274EB7FD00C539DA /* coHostCollectionViewCell.xib in Resources */,
 				5168D194269E091B00A0F57D /* inboxTableViewCell.xib in Resources */,
+				51727ED427517CE300DE81C9 /* messageTableViewCell.xib in Resources */,
 				51856E76259BB93100802C9E /* Main.storyboard in Resources */,
+				51BD0474274ED3EA00C539DA /* friendsCollectionViewCell.xib in Resources */,
 				51AEE9FD259D1E990093E5FD /* GoogleService-Info.plist in Resources */,
 				510A6C2926A7B81100C2AC57 /* CollectionViewCell.xib in Resources */,
+				5111EE2B274749F6004C25EE /* friendsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,7 +646,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0F18F59C23BFA71A2BE0200C /* [CP] Embed Pods Frameworks */ = {
+		07C4F0C1C561CC7483786447 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -553,24 +663,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dayger-daygerUITests/Pods-dayger-daygerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6753D36E86067CF155922E12 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dayger/Pods-dayger-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dayger/Pods-dayger-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dayger/Pods-dayger-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A3150A5030ABE848987D4E77 /* [CP] Check Pods Manifest.lock */ = {
+		1451394CFA2730EA74A8ADFA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -592,29 +685,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AC95E97EC7EA6F52431E21C6 /* [CP] Check Pods Manifest.lock */ = {
+		808B75C08C2A5D93815C59A9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dayger/Pods-dayger-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-daygerTests-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-dayger/Pods-dayger-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dayger/Pods-dayger-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ACBD3E8BFB471080BA63C5F4 /* [CP] Check Pods Manifest.lock */ = {
+		A14947D22135F6C9DD56D9FD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -636,6 +724,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D9F685BEAD1F017CB2F2A59A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-daygerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -643,20 +753,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51BDDD52270B9EE800E9F170 /* guestListDetailViewController.swift in Sources */,
 				51EC828E25E4DCCC007737E4 /* profileViewController.swift in Sources */,
 				519AA32725BE6CC20066AE28 /* QRCodeViewFile.swift in Sources */,
 				5168D193269E091B00A0F57D /* inboxTableViewCell.swift in Sources */,
 				51C55E6326814D76000795A6 /* statisticsViewController.swift in Sources */,
 				51386FE4269E81C30086FF0A /* inboxDetailsViewController.swift in Sources */,
 				5160C7D1269577FE008336C8 /* inboxViewController.swift in Sources */,
+				510AAF09277BB2CE006C6BCB /* socialTableViewCell.swift in Sources */,
 				51C6A04525E459D10055BA30 /* startViewController.swift in Sources */,
+				51BD0473274ED3EA00C539DA /* friendsCollectionViewCell.swift in Sources */,
 				513959E0269128A2006F9AC7 /* detailsViewController.swift in Sources */,
 				51362F4A26B3E99B0061A2D0 /* verifiedViewController.swift in Sources */,
+				51727ED027517AC400DE81C9 /* messageDataModel.swift in Sources */,
+				51D48B912766ADAA004B561D /* qrCodeViewController.swift in Sources */,
 				51936AB325A178B90066C223 /* HomePageTableViewCell.swift in Sources */,
+				51727ED327517CE300DE81C9 /* messageTableViewCell.swift in Sources */,
 				514C8AFC25F1DA5A0080C3D8 /* signUpViewController.swift in Sources */,
 				517A68C4268439FD00A1E9F0 /* ticketCreationDataModel.swift in Sources */,
 				51AEEA2C259D3E2D0093E5FD /* utilities.swift in Sources */,
+				511FED8526C5EFEA005949C9 /* invitationViewController.swift in Sources */,
+				51BD046F274EB8F400C539DA /* coHostCellDataModel.swift in Sources */,
 				51363A3C267C6075000EFF1A /* cellDataModel.swift in Sources */,
+				510AAF06277BAE7C006C6BCB /* socialFeedViewController.swift in Sources */,
 				51856EC2259BBCDC00802C9E /* homeViewController.swift in Sources */,
 				51F7710E266EB17C005D369F /* finalizeViewController.swift in Sources */,
 				51856E6F259BB93100802C9E /* AppDelegate.swift in Sources */,
@@ -665,20 +784,31 @@
 				51856E71259BB93100802C9E /* SceneDelegate.swift in Sources */,
 				517A68A726825CE100A1E9F0 /* mainFeedDataModel.swift in Sources */,
 				5160C7F22697C2BC008336C8 /* inboxDataModel.swift in Sources */,
+				5117B4F426CF056800BB1EC1 /* guestlistViewController.swift in Sources */,
 				517289F626B61C970073399D /* invitesDataModel.swift in Sources */,
+				5111EE2F27474C62004C25EE /* friendsTableViewController.swift in Sources */,
+				51AFD9D827430ED6008B7E25 /* friendsDetailViewController.swift in Sources */,
 				51F3521A26899E5700525D60 /* eventViewController.swift in Sources */,
+				51DD25AA26B90AAF00EFDF3F /* likes&sharesDataModel.swift in Sources */,
 				51386FD4269E666A0086FF0A /* testViewController.swift in Sources */,
 				510DCD97268A47F1007ADA29 /* TableViewCell.swift in Sources */,
 				519BF94926A628DA0038CE44 /* guestListDataModel.swift in Sources */,
 				5142A10126A0A84D007D22C2 /* scannerViewController.swift in Sources */,
 				51856EBD259BBCCB00802C9E /* loginViewController.swift in Sources */,
+				51727ECE2750408100DE81C9 /* messageViewController.swift in Sources */,
+				5111EE2A274749F6004C25EE /* friendsTableViewCell.swift in Sources */,
 				5199C108266593FA00B7EE49 /* activitiesViewController.swift in Sources */,
+				51BD046C274EB7FD00C539DA /* coHostCollectionViewCell.swift in Sources */,
 				51612EEA259D9B350014119B /* Constants.swift in Sources */,
+				513925682720DAE500C371C7 /* sideMenuTableViewController.swift in Sources */,
+				51BDDD502702963000E9F170 /* launchScreenViewController.swift in Sources */,
 				515BE35826A2CAEA00ECA810 /* snapchatViewController.swift in Sources */,
 				51DDFDAD26A8EF85000C13AC /* uidDataModel.swift in Sources */,
+				517C10242751BDA10086001D /* messagesTableViewController.swift in Sources */,
 				519BF94C26A633670038CE44 /* guestListTableViewCell.swift in Sources */,
 				514DDBC925B524FE007AF34B /* createEventViewController.swift in Sources */,
 				51DDFDAB26A8DCCD000C13AC /* scannerDataModel.swift in Sources */,
+				51AFD9CD273F6771008B7E25 /* friendsViewController.swift in Sources */,
 				517289F426B61C830073399D /* requestsDataModel.swift in Sources */,
 				510A6C2826A7B81100C2AC57 /* CollectionViewCell.swift in Sources */,
 			);
@@ -786,7 +916,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -841,7 +971,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -853,20 +983,26 @@
 		};
 		51856E96259BB93300802C9E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2F0FE827437D018D27E8239 /* Pods-dayger.debug.xcconfig */;
+			baseConfigurationReference = 0EC26A349C05423484F8B5D2 /* Pods-dayger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = dayger/daygerDebug.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NX224AY43U;
+				CURRENT_PROJECT_VERSION = 13;
+				DEVELOPMENT_TEAM = 6LU945SZR9;
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = dayger/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = co.dayger.dayger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -874,20 +1010,26 @@
 		};
 		51856E97259BB93300802C9E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42E1C1A1EF5C1987916CE07B /* Pods-dayger.release.xcconfig */;
+			baseConfigurationReference = 9C6F142F065F46309B330861 /* Pods-dayger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = dayger/daygerRelease.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NX224AY43U;
+				CURRENT_PROJECT_VERSION = 13;
+				DEVELOPMENT_TEAM = 6LU945SZR9;
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = dayger/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = co.dayger.dayger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -895,7 +1037,7 @@
 		};
 		51856E99259BB93300802C9E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B9FB2E9E05D6CC2F5330DB2 /* Pods-daygerTests.debug.xcconfig */;
+			baseConfigurationReference = 6E2D19CD8411E5912C64C7FA /* Pods-daygerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -918,7 +1060,7 @@
 		};
 		51856E9A259BB93300802C9E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F9362D095E27E103B859587 /* Pods-daygerTests.release.xcconfig */;
+			baseConfigurationReference = CFA13D747BEE8FD669557E77 /* Pods-daygerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -941,7 +1083,7 @@
 		};
 		51856E9C259BB93300802C9E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28DA36C6E8D0344496792174 /* Pods-dayger-daygerUITests.debug.xcconfig */;
+			baseConfigurationReference = 0C0B3066605D4895524D1F4C /* Pods-dayger-daygerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -962,7 +1104,7 @@
 		};
 		51856E9D259BB93300802C9E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D09AB797E79B6E373AFEB545 /* Pods-dayger-daygerUITests.release.xcconfig */;
+			baseConfigurationReference = B0C032C19B04C1BF95CAF614 /* Pods-dayger-daygerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

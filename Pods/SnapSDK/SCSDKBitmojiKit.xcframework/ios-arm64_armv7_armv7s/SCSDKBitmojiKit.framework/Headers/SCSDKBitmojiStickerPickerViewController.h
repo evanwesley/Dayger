@@ -14,6 +14,7 @@
 
 @class SCSDKBitmojiStickerPickerViewController;
 
+/// Bitmoji Sticker Picker Delegate
 @protocol SCSDKBitmojiStickerPickerViewControllerDelegate <NSObject>
 
 @required

@@ -27,9 +27,7 @@
 - (CGSize)contentSize;
 @end
 
-/**
- A player that contains the media playback components for watching a story.
- */
+/// A player that contains the media playback components for watching a story.
 @interface SCSDKStoryKitStoryPlayer : NSObject
 
 /**

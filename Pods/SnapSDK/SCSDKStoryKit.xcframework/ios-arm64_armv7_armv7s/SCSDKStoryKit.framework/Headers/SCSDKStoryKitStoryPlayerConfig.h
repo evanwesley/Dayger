@@ -9,6 +9,7 @@
 #import "SCSDKStoryKitStoryPlayer.h"
 #import "SCSDKStoryKitAppStory.h"
 
+/// Used to configure the StoryKit Player
 @interface SCSDKStoryKitStoryPlayerConfig : NSObject <NSCopying, NSCoding>
 
 @property (nonatomic, readonly, copy) SCSDKStoryKitAppStory *appStory;

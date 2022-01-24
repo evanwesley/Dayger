@@ -19,6 +19,8 @@ import CoreLocation
 class finalizeViewController: UIViewController {
 
     
+    let daygerColor = UIColor(red: 240/255.0, green: 162/255.0, blue: 87/255.0, alpha: 1)
+    
     private let mapViewManager = MKMapView()
    
     @IBOutlet weak var QRImage: UIImageView!
@@ -96,14 +98,23 @@ class finalizeViewController: UIViewController {
         self.mapView.layer.shadowRadius = 2
         //formatting the map view
         self.toggleView.layer.cornerRadius = 10
-        self.toggleView.layer.borderColor = UIColor.black.cgColor
-        self.toggleView.layer.borderWidth = 1.75
-      //formatting map View UI
+       // self.toggleView.layer.borderColor = UIColor.black.cgColor
+        //self.toggleView.layer.borderWidth = 1.75
+        self.toggleView.layer.shadowColor = UIColor.black.cgColor
+        self.toggleView.layer.shadowOpacity = 0.25
+        self.toggleView.layer.shadowOffset = .zero
+        self.toggleView.layer.shadowRadius = 2
+        
+        
+        
+        //formatting map View UI
         self.mapViewUI.layer.cornerRadius = 10
         self.mapViewUI.layer.shadowColor = UIColor.black.cgColor
         self.mapViewUI.layer.shadowOpacity = 0.25
         self.mapViewUI.layer.shadowOffset = .zero
         self.mapViewUI.layer.shadowRadius = 2
+     
+        
         
         self.qrCodeView.layer.magnificationFilter = CALayerContentsFilter.nearest
         
@@ -123,8 +134,14 @@ class finalizeViewController: UIViewController {
         
         self.ticketView.layer.cornerRadius = 10
         self.ticketView.layer.borderWidth = 1.75
-        self.ticketView.layer.borderColor = UIColor.black.cgColor
+        self.ticketView.layer.borderColor = UIColor.orange.cgColor
         // ticket
+        
+        self.ticketView.layer.shadowColor = UIColor.black.cgColor
+        self.ticketView.layer.shadowOpacity = 0.3
+        self.ticketView.layer.shadowOffset = .zero
+        self.ticketView.layer.shadowRadius = 2
+        
         
         self.qrCodeView.layer.cornerRadius = 5
         self.qrCodeView.layer.shadowOpacity = 0.25
@@ -288,8 +305,7 @@ class finalizeViewController: UIViewController {
                 
                 // all of this is for the qr code input
                 let qrCodeInput = "This is Your QR CODE!!"
-               
-                
+        
                 //this is going to be out first input for now: User ID + Name
                 let data = qrCodeInput.data(using: .ascii , allowLossyConversion: false)
                 let filter = CIFilter(name: "CIQRCodeGenerator")
@@ -302,7 +318,7 @@ class finalizeViewController: UIViewController {
 
     @IBAction func backButtonPressed(_ sender: Any) {
         
-        self.transitionToCreateEventVC()
+        self.performSegue(withIdentifier: "finalizeUW", sender: self)
     }
     
     func transitionToCreateEventVC () {
@@ -318,6 +334,13 @@ class finalizeViewController: UIViewController {
     
     
     @IBAction func finalizeButtonTapped(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Event Created", message: "Go to your clipboard to see your event and share it!.", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {  [self] action in
+        self.present(alert, animated: true, completion: nil)
+        self.transitionToHomeVC()
+        }))
         //this function is for pulling data from firebase, this may be the only way I know how to pull the information.
         db.collection("users").document("\(currentUserEmail!)").collection("events").document("event-1").getDocument(source: .cache) { (document, error) in
        
@@ -354,27 +377,9 @@ class finalizeViewController: UIViewController {
             let firstname = userName[0]
             let lastname = userName[1]
             
-            
-            //Def a better way to do this
-            //Sourced from when User first signs up
-            
-       //for the bottom/////////// we wanna eventually store the data up top into the users own thing
         var ref:DocumentReference? = nil
    
-        
-        
-        //let docData : [String : Any] = ["address": address , "date" : date ,"event_name" : name , "time" : time , "uid" : uid ]
-            //all of this information will be stored in the "Active Events Collection"
-            //we will retrieve this data later on when creating tickets
-            
-        //we need to implement a function that deletes the data 24 hours after the event time.
-        
-        
-        
-       // db.collection("active_events").document().setData(docData) //were gonna store this into a different route
-        //print("data has been stored, but we still want this data somewhere else")
-        ///------------------------------------
-            let newEvent = StoredTicketInfo(name: name, date: date, time: time, address: address, firstname: firstname , lastname: lastname, location: GeoPoint(latitude: lat, longitude: lon), additionalInformation: additionalInfo, qrCode: self.qrCodeConfig, closed_invite: self.inviteConfig , live : self.live , atCapacity: self.atCapacity , anonymous: self.anonymous )
+            let newEvent = StoredTicketInfo(name: name, date: date, time: time, address: address, firstname: firstname , lastname: lastname, location: GeoPoint(latitude: lat, longitude: lon), additionalInformation: additionalInfo, qrCode: self.qrCodeConfig, closed_invite: self.inviteConfig , live : self.live , atCapacity: self.atCapacity , anonymous: self.anonymous , likes: 0 , shares: 0  )
         //remember this part it is important!!!
  
         ref = self.db.collection("active_events").addDocument(data: newEvent.dictionary) {error in
@@ -387,7 +392,7 @@ class finalizeViewController: UIViewController {
                
                
                 
-                self.db.collection("active_events").document(docID!).setData(["docID" : docID! as String , "uid" : "\(uid)"] , merge: true ){error in
+                self.db.collection("active_events").document(docID!).setData(["docID" : docID! as String , "uid" : "\(uid)", "email" : self.currentUserEmail!] , merge: true ){ [self]error in
                     if let error = error {
                         
                         print("Error Adding Document \(error.localizedDescription)")}else{
@@ -395,21 +400,19 @@ class finalizeViewController: UIViewController {
                         print("documentID, document has been finalized")
                             //below data function is used to store data into users personal account info
                             self.db.collection("users").document("\(self.currentUserEmail!)").collection("active_events").document(docID!).setData(newEvent.dictionary)
+                            
+                            
                             //we could clean this up (added on data)
-                            self.db.collection("users").document("\(self.currentUserEmail!)").collection("active_events").document(docID!).setData(["docID": docID!] , merge: true)
+                            self.db.collection("users").document("\(self.currentUserEmail!)").collection("active_events").document(docID!).setData(["docID": docID! , "email" : self.currentUserEmail!] , merge: true)
                             
-                            let socialStats : [String:Int] = ["likes" : 0 , "shares": 0 ]
-                            
-                            self.db.collection("users").document("\(self.currentUserEmail!)").collection("active_events").document(docID!).setData(socialStats , merge: true)
-                          //These functions add additional data that Im too lazy to add to the data model. It will be retrieved in other data model though
+                          
                     }
                 }
             }
         }
+            self.transitionToHomeVC() //fuck this function I need an alert controller to pop up telling the user where their event is located.
+            self.db.collection("users").document(self.currentUserEmail!).updateData(["clout" : FieldValue.increment(Int64(5))])
             
-            
-         
-        self.transitionToHomeVC()
     }
     }
     }
@@ -425,12 +428,11 @@ class finalizeViewController: UIViewController {
     
     func transitionToHomeVC () {
         
-       let homeVC =
+        let homeViewController =
+        self.storyboard?.instantiateViewController(identifier: "homeNavController")
         
-        self.storyboard?.instantiateViewController(identifier: "HomeVC")
-    
-    self.view.window?.rootViewController = homeVC
-    self.view.window?.makeKeyAndVisible()
+        self.view.window?.rootViewController = homeViewController
+        self.view.window?.makeKeyAndVisible()
         
         
         

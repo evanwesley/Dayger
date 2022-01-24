@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-/**
- * Provide a Bitmoji avatar icon that shows user's up-to-date Bitmoji avatar
- * For more details, see: https://docs.snapchat.com/docs/bitmoji-kit/#features "Avatar Icon"
- */
+/// Provide a Bitmoji avatar icon that shows user's up-to-date Bitmoji avatar. For more details, see: https://docs.snapchat.com/docs/bitmoji-kit/#features "Avatar Icon"
 @interface SCSDKBitmojiIconView : UIView
 
 @property (nonatomic, strong) UIImage *defaultImage;

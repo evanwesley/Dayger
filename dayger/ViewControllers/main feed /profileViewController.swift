@@ -10,14 +10,13 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 import FirebaseStorage
-
-
 import SCSDKLoginKit
 import SCSDKBitmojiKit
+import AudioToolbox
 
 class profileViewController: UIViewController , UITextFieldDelegate , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-   
+    let generator = UINotificationFeedbackGenerator()
     let graphQLQuery = "{me{displayName, bitmoji{avatar}}}"
     let variables = ["page": "bitmoji"]
     
@@ -31,15 +30,17 @@ class profileViewController: UIViewController , UITextFieldDelegate , UIImagePic
     //this is now social media!!
     @IBOutlet weak var iceNumber2TextField: UITextField!
     //this is now nickname!!
-    @IBOutlet weak var saveLabel: UILabel!
+    @IBOutlet weak var bioTextView: UITextView!
+    
+    @IBOutlet weak var saveView: UIView!
     
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
     @IBOutlet weak var iceStackViewBg: UIView!
     @IBOutlet weak var uidLabel: UILabel!
-    @IBOutlet weak var topView: UIView!
    
+    @IBOutlet weak var topView: UIView!
     
     @IBOutlet weak var selfieImage: UIImageView!
     @IBOutlet weak var circleView: UIView!
@@ -51,8 +52,10 @@ class profileViewController: UIViewController , UITextFieldDelegate , UIImagePic
     let userID = (Auth.auth().currentUser?.uid)!
     let currentUserEmail = Auth.auth().currentUser!.email
     
+    @IBOutlet weak var whatsThisButton: UIButton!
     
     //For Bitmoji
+    @IBOutlet weak var friendsButton: UIButton!
     
   
 
@@ -62,14 +65,26 @@ class profileViewController: UIViewController , UITextFieldDelegate , UIImagePic
     
     @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var buttonView: UIView!
+    
+    @IBOutlet weak var cloutPointsLabel: UILabel!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+       
+        
+        self.buttonView.layer.cornerRadius = 20
+        self.buttonView.layer.shadowColor = UIColor.orange.cgColor
+        self.buttonView.layer.shadowOpacity = 0.25
+        self.buttonView.layer.shadowOffset = .zero
         
         self.uploadProgressView.isHidden = true
-       
+        
         self.iconView.alpha = 1
         
+        self.saveView.layer.cornerRadius = 20
+        self.saveView.layer.shadowColor = UIColor.gray.cgColor
+        self.saveView.layer.shadowOpacity = 0.25
+        self.saveView.layer.shadowOffset = .zero
         //for the text fields
    
        
@@ -77,40 +92,60 @@ class profileViewController: UIViewController , UITextFieldDelegate , UIImagePic
         //using this, we can recieve the users email. I don't really know how else to recieve user email so we will need to have someone do that.
         
         
-        let uidInfo = "\(userID)"
+       
         
         let backgroundcolor : UIColor = UIColor.white
-        let borderColor : UIColor = UIColor(red: 230/255.0, green: 165/255.0, blue: 98/255.0, alpha: 0.8)
+      
         // Do any additional setup after loading the view.
         //in regards to text fields background color 
         self.iceName1TextField.layer.backgroundColor = backgroundcolor.cgColor
         self.iceNumber1TextField.layer.backgroundColor = backgroundcolor.cgColor
         self.iceName2TextField.layer.backgroundColor = backgroundcolor.cgColor
         self.iceNumber2TextField.layer.backgroundColor = backgroundcolor.cgColor
-        //border color
-        self.iceName1TextField.layer.borderColor = borderColor.cgColor
-        self.iceNumber1TextField.layer.borderColor = borderColor.cgColor
-        self.iceName2TextField.layer.borderColor = borderColor.cgColor
-        self.iceNumber2TextField.layer.borderColor = borderColor.cgColor
-        //border
-        self.iceName1TextField.layer.borderWidth = 1.75
-        self.iceNumber1TextField.layer.borderWidth = 1.75
-        self.iceName2TextField.layer.borderWidth = 1.75
-        self.iceNumber2TextField.layer.borderWidth = 1.75
+        //shadows
+        self.iceNumber1TextField.layer.shadowColor = UIColor.gray
+            .cgColor
+        self.iceNumber1TextField.layer.shadowOpacity = 0.25
+        self.iceNumber1TextField.layer.shadowOffset = .zero
+        self.iceNumber1TextField.layer.shadowRadius = 2
+        
+        self.iceName1TextField.layer.shadowColor = UIColor.gray
+            .cgColor
+        self.iceName1TextField.layer.shadowOpacity = 0.25
+        self.iceName1TextField.layer.shadowOffset = .zero
+        self.iceName1TextField.layer.shadowRadius = 2
+        
+        self.iceNumber2TextField.layer.shadowColor = UIColor.gray
+            .cgColor
+        self.iceNumber2TextField.layer.shadowOpacity = 0.25
+        self.iceNumber2TextField.layer.shadowOffset = .zero
+        self.iceNumber2TextField.layer.shadowRadius = 2
+        
+        self.iceName2TextField.layer.shadowColor = UIColor.gray
+            .cgColor
+        self.iceName2TextField.layer.shadowOpacity = 0.25
+        self.iceName2TextField.layer.shadowOffset = .zero
+        self.iceName2TextField.layer.shadowRadius = 2
+        
+       
+        
+        
+        
+        
         //corner radius
-        self.iceNumber1TextField.layer.cornerRadius = 5.0
-        self.iceName1TextField.layer.cornerRadius = 5.0
-        self.iceNumber2TextField.layer.cornerRadius = 5.0
-        self.iceName2TextField.layer.cornerRadius = 5.0
+        self.iceNumber1TextField.layer.cornerRadius = 25
+        self.iceName1TextField.layer.cornerRadius = 25
+        self.iceNumber2TextField.layer.cornerRadius = 25
+        self.iceName2TextField.layer.cornerRadius = 25
+        
+        
         
         //in regards to background
-        self.iceStackViewBg.layer.cornerRadius = 10
-        self.iceStackViewBg.layer.borderWidth = 1.75
-        self.iceStackViewBg.layer.borderColor = UIColor.black.cgColor
+       
         self.uidLabel.text = "User ID: \(userID)"
         
         //when information is saved
-        saveLabel.alpha = 0
+   
         //for retrieving data
         self.setUpTopView() // for the user photo and bitmoji piece
         
@@ -118,13 +153,21 @@ class profileViewController: UIViewController , UITextFieldDelegate , UIImagePic
         print("This is the Bitmoji URL \(snapBitmoji)")
         
         self.getUserFirstLastName()
+        self.retrieveData()
         //yeeyee we need this bro. I am so glad we figured this roadbump out now we can actually continue with the database. Such a simple solution. June 5 2021
         
+        let swipe : UIGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(profileViewController.keyboardDismiss))
+        
+        view.addGestureRecognizer(swipe)
         //current user email is the tree want.
        
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    @objc func keyboardDismiss() {
+        view.endEditing(true)
     }
    
     func getUserFirstLastName () {
@@ -153,7 +196,7 @@ class profileViewController: UIViewController , UITextFieldDelegate , UIImagePic
         //save
         self.uploadProgressView.isHidden = false
         let uploadRef = Storage.storage().reference().child("user_selfies").child("\(userID).jpg")
-        guard let uploadImage = self.selfieImage.image?.jpegData(compressionQuality: 1.0) else {
+        guard let uploadImage = self.selfieImage.image?.jpegData(compressionQuality: 0.5) else {
             return
         }
         
@@ -174,11 +217,44 @@ class profileViewController: UIViewController , UITextFieldDelegate , UIImagePic
             print("you are \(prctComplete) there")
             self?.uploadProgressView.progress = Float(prctComplete)
             
-            
+            if prctComplete == 100 {
+                self?.uploadProgressView.alpha = 0
+            }
             
         }
+    
+    }
+    func retrieveData(){
         
-}
+        db.collection("users").document("\(currentUserEmail!)").getDocument { (document, error) in
+            if let document = document, document.exists {
+                   let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                   print("Document data: \(dataDescription)")
+                   //this this is too retrieve data from the document.
+                   let data = document.data()
+                   let bio = data?["bio"] as? String
+                   let clout = data!["clout"] as? Int
+               
+                if bio == nil {
+                    self.bioTextView.text = "No bio yet"
+                    
+                } else {
+                    self.bioTextView.text = bio
+                }
+                
+                if clout == nil {
+                    self.cloutPointsLabel.text = " | 0"
+                } else {
+                    
+                    self.cloutPointsLabel.text = " | \(clout ?? 0)"
+                    
+                }
+                
+                //we could move this line of code
+                //we are going to add stats as well
+           }
+        }
+    }
     
     
     @IBAction func saveButtonTapped(_ sender: Any) {
@@ -187,19 +263,24 @@ class profileViewController: UIViewController , UITextFieldDelegate , UIImagePic
         //save text into firebase
         if error != nil {
             
-            saveLabel.alpha = 1
-            saveLabel.text = error
-            saveLabel.textColor = UIColor.red
+            let alert = UIAlertController(title: "Profile not complete.", message: "\(String(describing: error))", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
             
         } else {
           
         let selfieImage = selfieImage.image!.pngData()
         let iceName1 = iceName1TextField.text!
         let iceNumber1 = iceNumber1TextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let bio = bioTextView.text!
         //added this for the phone numbers. We will probably change this
         let socialHandle = iceName2TextField.text!
         //this has been changed to social handle
-        let nickname = iceNumber2TextField.text!
+        
+            
+            let nickname = iceNumber2TextField.text!
         //this has been changed to nickname
             UserDefaults.standard.set(iceName1, forKey: "iceName")
             UserDefaults.standard.set(iceNumber1, forKey: "iceNumber")
@@ -209,22 +290,32 @@ class profileViewController: UIViewController , UITextFieldDelegate , UIImagePic
             
         let currentUserEmail = Auth.auth().currentUser!.email
         //using this, we can recieve the users email. I don't really know how else to recieve user email so we will need to have someone do that.
-        let docData: [String : Any] = ["ICE-Name-1" : iceName1 , "ICE-Number-1" : iceNumber1 , "social_handle" : socialHandle, "nickname" : nickname]
+            let docData: [String : Any] = ["ICE-Name-1" : iceName1 , "ICE-Number-1" : iceNumber1 , "social_handle" : socialHandle, "nickname" : nickname, "bio" : bio ]
         let userEmail = db.collection("users").document("\(currentUserEmail!)")
         //userEmail refers to the document that holds all the underlying information. Essentially, is the account.
             self.savePhoto()
         
         //omg literally all you have to do is unwrap the optional
-        // apparently the document that I am describing above may not exist, therefore, swift is creating document references that are no existent. We need to fix this.
+        
+            
+            
+        //apparently the document that I am describing above may not exist, therefore, swift is creating document references that are no existent. We need to fix this.
         
         //Update June 3rd fixed, reference S.0
         userEmail.setData(docData, merge: true)
         //store and append data into firebase
         
         //this appends following information to firebase database
-        saveLabel.text = "Updated!"
-        saveLabel.alpha = 1
-        saveLabel.textColor = UIColor.red
+        
+         
+        //this ensures that the user has set up their profile completely.
+        UserDefaults.standard.set(true, forKey: "profilecompleted")
+            
+            let alert = UIAlertController(title: "Saved!", message: "Your personal profile has been updated", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+            
+        self.present(alert, animated: true, completion: nil)
         }
         
     }
@@ -234,15 +325,13 @@ class profileViewController: UIViewController , UITextFieldDelegate , UIImagePic
         let delCharSet = NSCharacterSet(charactersIn: "@")
         //this is for deleting the @ key
         if iceNumber1TextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || iceName1TextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || iceName2TextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || iceName2TextField.text?.trimmingCharacters(in: delCharSet as CharacterSet) == "" {
-           
+           //bio added
             //nickname can be empty
                
                return "Please fill in all fields and provide a profile picture"
            }
            
            return nil
-           
-        
            
            
        }
@@ -270,15 +359,7 @@ class profileViewController: UIViewController , UITextFieldDelegate , UIImagePic
         self.circleView.layer.shadowOffset = .zero
         self.circleView.layer.shadowRadius = 2
         
-        
-     
-        
-        
-        self.topView.layer.cornerRadius = 10
-        self.topView.layer.shadowColor = UIColor.black.cgColor
-        self.topView.layer.shadowOpacity = 0.25
-        self.topView.layer.shadowOffset = .zero
-        self.topView.layer.shadowRadius = 2
+    
         
         let iceName = UserDefaults.standard.string(forKey: "iceName")
         let iceNumber = UserDefaults.standard.string(forKey: "iceNumber")
@@ -300,6 +381,7 @@ class profileViewController: UIViewController , UITextFieldDelegate , UIImagePic
     @IBAction func backButtonTapped(_ sender: Any) {
         
         self.transitionToHome()
+        
     
     }
     func transitionToHome (){
@@ -330,11 +412,28 @@ class profileViewController: UIViewController , UITextFieldDelegate , UIImagePic
         dismiss(animated: true)
     }
     
-    
-    
-    
-    
+    @IBAction func whatsThisTapped(_ sender: Any) {
         
+        let alert = UIAlertController(title: "In Case of Emergency Contact.", message: "Safety is a priority for us at Dayger. For your safety, we require that you provide the contact name and number of the person who should be notified if you are in danger. This could be your best friend, roomate, or even a parent. If need be, only the host of an event you attend has access to this information. Thank you for understanding!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil
+            ))
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
+    @IBAction func friendsButtonTapped(_ sender: Any) {
+        
+        generator.notificationOccurred(.success)
+        
+        
+    }
+    
+    
+    
+    @IBAction func unwindToProfileVC(segue: UIStoryboardSegue) {
+
+        }
             
         
 

@@ -10,18 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// API for manually initializing and deinitializing SnapKit
 @interface SCSDKSnapKit : NSObject
 
-/**
- * Initialize SnapKit SDK.
- *
- */
+/// Initialize SnapKit SDK
 + (void)initSDK;
 
-/**
- * Deinitialize SnapKit SDK.
- *
- */
+/// Deinitialize SnapKit SDK
 + (void)deinitialize;
 
 @end

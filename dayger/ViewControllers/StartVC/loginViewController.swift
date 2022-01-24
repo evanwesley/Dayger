@@ -30,19 +30,17 @@ class loginViewController: UIViewController {
         self.passwordTextField.backgroundColor = UIColor.white
        
         
-        self.emailTextField.layer.borderColor = borderColor.cgColor
-        self.passwordTextField.layer.borderColor = borderColor.cgColor
-     
-        
-        self.emailTextField.layer.borderWidth = 1.5
-        self.passwordTextField.layer.borderWidth = 1.5
-     
-     
-        
-        self.emailTextField.layer.cornerRadius = 5
-        self.passwordTextField.layer.cornerRadius = 5
+        self.emailTextField.layer.shadowColor = UIColor.black
+            .cgColor
+        self.emailTextField.layer.shadowOpacity = 0.20
+        self.emailTextField.layer.shadowOffset = .zero
+        self.emailTextField.layer.shadowRadius = 2
        
-        
+        self.passwordTextField.layer.shadowColor = UIColor.black
+            .cgColor
+        self.passwordTextField.layer.shadowOpacity = 0.20
+        self.passwordTextField.layer.shadowOffset = .zero
+        self.passwordTextField.layer.shadowRadius = 2
         
         
         
@@ -68,6 +66,7 @@ class loginViewController: UIViewController {
     @IBAction func loginButtonTapped(_ sender: Any) {
         
         
+        
         //validate text fields
         //create cleaned versions
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -82,13 +81,16 @@ class loginViewController: UIViewController {
             }
             else {
                 
+                UserDefaults.standard.set(email, forKey: "email")
+                UserDefaults.standard.set(password, forKey: "password")
+                UserDefaults.standard.set(true, forKey: "usersignedin")
+                
                 let homeViewController =
-                    self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? homeViewController
+                self.storyboard?.instantiateViewController(identifier: "homeNavController")
                 
                 self.view.window?.rootViewController = homeViewController
                 self.view.window?.makeKeyAndVisible()
-                
-                
+
                 
             }
         }

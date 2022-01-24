@@ -12,12 +12,19 @@ import FirebaseDatabase
 
 class eventViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var tableView: UITableView!
+   
+    @IBOutlet var tableView: UITableView!
     let tableCellId = "managerCell"
     let db = Firestore.firestore()
     
+
+    @IBOutlet weak var toCreateEvent: UIButton!
     
+    @IBOutlet var eventCapacitylabel: UILabel!
+    
+   
     var cellData = [ManagerDataModel]() //array
+   
     var comingFromFinalizeVC : Bool = true
     
     let currentUserEmail = Auth.auth().currentUser!.email
@@ -28,20 +35,24 @@ class eventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
-        if comingFromFinalizeVC == true {
-            
-            self.createLayer()
-            
-         }
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 38, height: 38))
+        imageView.contentMode = .scaleAspectFit
+            let image = UIImage(named: "inAppIcon")
+            imageView.image = image
+            navigationItem.titleView = imageView
+      
         
+        //this assumes that the user will head to this view controller. We will need to iron this out later. Another failsafe.
+
+        self.configureCreateEvent()
         self.tableView.register(UINib(nibName: "managerCell", bundle: nil), forCellReuseIdentifier: "managerCell")
+        
+       
         // Do any additional setup after loading the view.
         
         self.tableView.separatorStyle = .none
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
         self.loadData()
         self.createLayer()
 
@@ -73,6 +84,7 @@ class eventViewController: UIViewController {
     }
     
     
+    
     @IBAction func backButtonTapped(_ sender: Any) {
         
         self.transitionToHome()
@@ -80,15 +92,33 @@ class eventViewController: UIViewController {
         self.comingFromFinalizeVC = false
         
     }
+    
+    
+    @IBAction func toCreateEventPressed(_ sender: Any) {
+        
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+        
+        self.transitionToCreateEvent()
+    }
+    
     func transitionToHome (){
         //back button
-        let homeViewController = self.storyboard?.instantiateViewController(identifier: "HomeVC")
+        let homeViewController =
+        self.storyboard?.instantiateViewController(identifier: "homeNavController")
         
         self.view.window?.rootViewController = homeViewController
         self.view.window?.makeKeyAndVisible()
        
         
     }
+    func transitionToCreateEvent (){
+        let createEventViewController = self.storyboard?.instantiateViewController(identifier: "createEventVC")
+        
+        self.view.window?.rootViewController = createEventViewController
+        self.view.window?.makeKeyAndVisible()
+    }
+
     func loadData() {
         //need this to work
         db.collection("users").document("\(currentUserEmail!)").collection("active_events").getDocuments { (querySnapshot,error) in
@@ -96,6 +126,7 @@ class eventViewController: UIViewController {
                print("\(error) the data failed to load")
             } else{
                 self.cellData = querySnapshot!.documents.compactMap({ManagerDataModel(dictionary: $0.data())})
+                
                 DispatchQueue.main.async {
                 self.tableView.reloadData()
                     
@@ -103,6 +134,32 @@ class eventViewController: UIViewController {
         }
     }
 }
+    func checkIfatEventCapacity() -> Bool {
+        //keepsafe. The host can only generate five events for now for data's sake
+       
+        
+        if UserDefaults.standard.integer(forKey: "events") >= 5 {
+           
+            return true
+
+        } else {
+            return false
+        }
+    
+    }
+    
+    func configureCreateEvent() {
+    
+        if checkIfatEventCapacity() == true{
+            
+            self.toCreateEvent.isEnabled = false
+            
+        } else {
+            
+            return
+        }
+        
+    }
     /*
     // MARK: - Navigation
 
@@ -119,7 +176,14 @@ extension eventViewController : UITableViewDelegate, UITableViewDataSource
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-            return cellData.count
+        
+        
+        self.eventCapacitylabel.text = "Event Capacity (\(cellData.count)/5)"
+        print("The amount of events: \(cellData.count)")
+        UserDefaults.standard.set(cellData.count, forKey: "events")
+        //this works. This view controller sucks but this works
+        
+        return cellData.count
         
         
            
@@ -137,23 +201,14 @@ extension eventViewController : UITableViewDelegate, UITableViewDataSource
                                                  for: indexPath) as! TableViewCell
         
         //test data
-        let randomInt = Int.random(in: 100..<400) //likes
-        let randomInt2 = Int.random(in: 500..<1200) //shares
+       
         
         let data = cellData[indexPath.row]
         cell.nameLabel.text = "\(data.name)"
         cell.timeLabel.text = "\(data.date) | \(data.time)"
-        cell.likesLabel.text = "\(randomInt)"
-        cell.sharesLabel.text = "\(randomInt2)"
+        cell.eventID = "\(data.docID)"
         
-        
-        
-        
-        if data.qrCode == false {
-            cell.capacityLabel.text = "N/A"
-        }else{
-            cell.capacityLabel.text = "0"
-        }
+
         
         
         return cell
@@ -169,7 +224,10 @@ extension eventViewController : UITableViewDelegate, UITableViewDataSource
         
         }
         
+      
     }
-    
+    @IBAction func unwindToEventVC(segue: UIStoryboardSegue) {
+
+        }
     
 }

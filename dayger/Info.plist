@@ -7,9 +7,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Dayger</string>
 	<key>CFBundleDocumentTypes</key>
-	<array>
-		<dict/>
-	</array>
+	<array/>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -21,40 +19,36 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleURLSchemes</key>
-	<array>
-		<string>dayger-app</string>
-	</array>
+	<array/>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Bundle ID</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>dayger-app</string>
+				<string>co.dayger.dayger</string>
 			</array>
-			<key>CFBundleURLName</key>
-			<string>dayger-app://snap-kit/oauth2</string>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.lifestyle</string>
 	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>snapchat</string>
-		<string>bitmoji-sdk</string>
-		<string>itms-apps</string>
-	</array>
+	<array/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Dayger uses camera in order to verify guest tickets.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Dayger uses a photo of your choice as a profile picture</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Dayger uses location services to pinpoint events for users</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Dayger uses a photo of your choice as a profile picture</string>
 	<key>SCSDKClientId</key>
 	<string>3892bae1-edb4-4a00-a3e5-768093bfc7cb</string>
 	<key>SCSDKRedirectUrl</key>
@@ -85,6 +79,11 @@
 	</dict>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -130,5 +129,7 @@
 			<dict/>
 		</dict>
 	</array>
+	<key>co.dayger.dayger</key>
+	<string></string>
 </dict>
 </plist>

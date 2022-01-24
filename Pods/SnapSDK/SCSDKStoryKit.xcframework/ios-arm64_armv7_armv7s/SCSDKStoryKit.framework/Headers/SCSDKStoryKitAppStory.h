@@ -6,6 +6,7 @@
 #import <Foundation/Foundation.h>
 #import "SCSDKStoryKitSnap.h"
 
+/// Class that represents an App Story 
 @interface SCSDKStoryKitAppStory : NSObject <NSCopying, NSCoding>
 
 @property (nonatomic, readonly, copy) NSArray<SCSDKStoryKitSnap *> *snaps;

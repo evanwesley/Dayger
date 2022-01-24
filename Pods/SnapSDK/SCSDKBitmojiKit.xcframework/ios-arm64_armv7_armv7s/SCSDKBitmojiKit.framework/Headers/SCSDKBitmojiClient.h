@@ -18,9 +18,7 @@ extern NSString *const kSCSDKBitmojiClientRequiredScope;
  */
 typedef void(^BitmojiGetAvatarURLCompletionBlock)(NSString * _Nullable avatarURL, NSError * _Nullable error);
 
-/**
- * This is the interface for fetching Bitmoji content from resource servers
- */
+/// This is the interface for fetching Bitmoji content from resource servers
 @interface SCSDKBitmojiClient : NSObject
 
 /**

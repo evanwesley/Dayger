@@ -53,39 +53,60 @@ class createEventViewController: UIViewController, UITextViewDelegate
         super.viewDidLoad()
         
         //infotext is the text view. Following code it Textboxt setup
-        let borderColor : UIColor = UIColor(red: 230/255.0, green: 165/255.0, blue: 98/255.0, alpha: 0.8)
+        
         //for the border
-        self.additionalInfoTextView.layer.borderColor = borderColor.cgColor
-        self.additionalInfoTextView.layer.borderWidth = 1.5
+            
         let infotext = additionalInfoTextView
         infotext!.delegate = self
-        infotext!.text = "This is where you can inform your guests of any more details. Is there a theme? Will there be a preformer? Any Rules? Is this a birthday party, a meeting, a fun cookout, or a small kickback? Let your guests know!"
-        infotext!.textColor = UIColor.lightGray
+        
+        infotext!.textColor = UIColor.darkGray
         infotext!.layer.cornerRadius = 5
         //following code is in regards to text fields
         self.eventNameTextField.backgroundColor = UIColor.white
         self.dateTextField.backgroundColor = UIColor.white
         self.timeTextField.backgroundColor = UIColor.white
         self.capacityTextField.backgroundColor = UIColor.white
-        
-        self.eventNameTextField.layer.borderColor = borderColor.cgColor
-        self.dateTextField.layer.borderColor = borderColor.cgColor
-        self.timeTextField.layer.borderColor = borderColor.cgColor
-        self.capacityTextField.layer.borderColor = borderColor.cgColor
-        
-        self.eventNameTextField.layer.borderWidth = 1.5
-        self.dateTextField.layer.borderWidth = 1.5
-        self.timeTextField.layer.borderWidth = 1.5
-        self.capacityTextField.layer.borderWidth = 1.5
-        
+
         self.eventNameTextField.layer.cornerRadius = 5
         self.dateTextField.layer.cornerRadius = 5
         self.timeTextField.layer.cornerRadius = 5
         self.capacityTextField.layer.cornerRadius = 5
     
+            self.eventNameTextField.layer.shadowColor = UIColor.black
+                .cgColor
+            self.eventNameTextField.layer.shadowOpacity = 0.20
+            self.eventNameTextField.layer.shadowOffset = .zero
+            self.eventNameTextField.layer.shadowRadius = 2
+            
+            self.dateTextField.layer.shadowColor = UIColor.black
+                .cgColor
+            self.dateTextField.layer.shadowOpacity = 0.20
+            self.dateTextField.layer.shadowOffset = .zero
+            self.dateTextField.layer.shadowRadius = 2
+            
+            self.timeTextField.layer.shadowColor = UIColor.black
+                .cgColor
+            self.timeTextField.layer.shadowOpacity = 0.20
+            self.timeTextField.layer.shadowOffset = .zero
+            self.timeTextField.layer.shadowRadius = 2
+            
+            self.capacityTextField.layer.shadowColor = UIColor.black
+                .cgColor
+            self.capacityTextField.layer.shadowOpacity = 0.20
+            self.capacityTextField.layer.shadowOffset = .zero
+            self.capacityTextField.layer.shadowRadius = 2
+            
+            
+            
+            
         self.stackViewBg.layer.cornerRadius = 10
-        self.stackViewBg.layer.borderColor = UIColor.black.cgColor
-        self.stackViewBg.layer.borderWidth = 1.75
+            
+            self.circleView.layer.cornerRadius = 25
+           // self.stackViewBg.layer.shadowColor = UIColor.black.cgColor
+           // self.stackViewBg.layer.shadowOpacity = 0.3
+           // self.stackViewBg.layer.shadowOffset = .zero
+           // self.stackViewBg.layer.shadowRadius = 2
+       
             
             self.circleView.layer.cornerRadius = 25
             self.circleView.layer.shadowColor = UIColor.black.cgColor
@@ -116,14 +137,7 @@ class createEventViewController: UIViewController, UITextViewDelegate
         self.view.endEditing(true)
     } 
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
-            textView.text = nil
-            textView.textColor = UIColor.black
-            //we want to make it so that if user starts editing the text goes away but if there is no user text, placeholder stays.
-        }
-
-    }
+    
     
    
     
@@ -133,16 +147,34 @@ class createEventViewController: UIViewController, UITextViewDelegate
     
     func transitionToHome (){
         //back button
-        let homeViewController = self.storyboard?.instantiateViewController(identifier: "HomeVC")
+        let homeViewController =
+        self.storyboard?.instantiateViewController(identifier: "homeNavController")
         
         self.view.window?.rootViewController = homeViewController
         self.view.window?.makeKeyAndVisible()
         
         
     }
+    
+    func validateFields() -> Bool {
+           
+           //check that all fields filled in
+        //this is for deleting the @ key
+        if capacityTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || timeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || dateTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || eventNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+               
+               return false
+           }
+        
+                print("true")
+              return true
+      
+       }
    
     @IBAction func continueButtonTapped(_ sender: Any) {
         //when this button is tapped we are adding all the information into firebase
+        
+        if self.validateFields() == true {
+        
         let db = Firestore.firestore()
         let currentUserEmail = Auth.auth().currentUser!.email
         let userEmail = db.collection("users").document("\(currentUserEmail!)")
@@ -152,7 +184,6 @@ class createEventViewController: UIViewController, UITextViewDelegate
         let eventName = eventNameTextField.text!
         let eventDate = dateTextField.text!
         let eventTime = timeTextField.text!
-        let capacity = capacityTextField.text!
         let additionalInformation = additionalInfoTextView.text!
         //This means that we need to implement a function where everything must be filled in.
         //for capacity we might want to have this be automatic.
@@ -168,8 +199,15 @@ class createEventViewController: UIViewController, UITextViewDelegate
         
         
         //adds the event information into the equation
-        self.transitionToFinalizeVC()
-    
+       
+        }
+        else if self.validateFields() == false {
+            
+            let alert = UIAlertController(title: "Please fill in all fields", message: "All fields must be filled out to continue", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil
+                ))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func transitionToFinalizeVC () {
@@ -211,6 +249,8 @@ class createEventViewController: UIViewController, UITextViewDelegate
     }
     //this function corresponds to the function above
     @objc func donePressedDate() {
+        createDatePicker()
+        
         dateTextField.text = "\(datePicker.date)"
         self.view.endEditing(true)
         //formatter for the date text field.
@@ -223,7 +263,7 @@ class createEventViewController: UIViewController, UITextViewDelegate
         UserDefaults.standard.set(formatter.string(from: datePicker.date), forKey: "eventCreation:Date")
     }
     //for the time
-    func createTimePicker() {
+     func createTimePicker() {
         
         datePicker.preferredDatePickerStyle = .wheels //we might wanna change this to the modern date picker
         let toolbar = UIToolbar()
@@ -238,10 +278,11 @@ class createEventViewController: UIViewController, UITextViewDelegate
         timeTextField.inputView = datePicker
         
         //just show the time
-        datePicker.datePickerMode =  .time //eventually we can merge date and time. For now, we riding solo.
+        datePicker.datePickerMode =  .dateAndTime //eventually we can merge date and time. For now, we riding solo.
         //like right now the datepicker is displaying both components. I literally have no idea why we don't have an individual time picker but whatever works is cool. This line of code is basically not needed. 
     }
     @objc func donePressedTime() {
+        createTimePicker()
         timeTextField.text = "\(datePicker.date)"
         self.view.endEditing(true)
         //formatter for the date text field.
@@ -294,6 +335,9 @@ class createEventViewController: UIViewController, UITextViewDelegate
             }
         }
     }
+    @IBAction func unwindToCreateEventVC(segue: UIStoryboardSegue) {
+
+        }
 }
 extension createEventViewController : UITextFieldDelegate {
     

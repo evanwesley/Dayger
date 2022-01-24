@@ -12,6 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// SCSDKLensLaunchDataBuilder class allows you to build launch data for a Lens attachment
 @interface SCSDKLensLaunchDataBuilder : NSObject
 
 /**

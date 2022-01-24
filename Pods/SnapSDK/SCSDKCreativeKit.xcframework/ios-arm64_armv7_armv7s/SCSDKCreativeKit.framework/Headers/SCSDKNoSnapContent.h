@@ -13,6 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// SCSDKNoSnapContent class is an implementation of the SCSDKSnapContent protocol. It provides a way to model a share into Snapchat without a base image or video content. An attachment URL, a caption, or a sticker can be added
 @interface SCSDKNoSnapContent : NSObject<SCSDKSnapContent>
 
 /**

@@ -5,6 +5,7 @@
 
 #import <Foundation/Foundation.h>
 
+/// Model info for a StoryKit Snap
 @interface SCSDKStoryKitSnapInfo : NSObject <NSCopying, NSCoding>
 
 @property (nonatomic, readonly, copy) NSString *snapId;

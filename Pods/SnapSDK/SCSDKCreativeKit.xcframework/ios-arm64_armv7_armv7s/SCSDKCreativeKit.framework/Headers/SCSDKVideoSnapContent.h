@@ -13,6 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// SCSDKVideoSnapContent is an implementation of the SCSDKSnapContent protocol. It provides a way to model a video Snap for sharing to Snapchat
 @interface SCSDKVideoSnapContent : NSObject<SCSDKSnapContent>
 
 /**

@@ -59,7 +59,7 @@ class testViewController: UIViewController {
         let docID = "JTrJ8F92cL2MYlXXCfYK"
         print("document \(docID) added to inbox")
         
-        self.db.collection("users").document("\(currentUserEmail!)").collection("inbox").document("\(docID)").setData(["firstname":nameData[Int.random(in: 1..<7)]! , "lastname" : lastNameData[Int.random(in: 1..<7)]! , "guestUid" : "\(uid)" , "invite_accepted" : invite_accepted[Int.random(in: 1..<3)]! , "event" : eventData[Int.random(in: 1..<6)]! , "docID" : "JTrJ8F92cL2MYlXXCfYK", "sex" : sex[Int.random(in: 1..<3)]! , "handle" : handle[Int.random(in: 1..<7)]! , "age" : age[Int.random(in: 1..<6)]!])
+        self.db.collection("users").document("\(currentUserEmail!)").collection("inbox").document().setData(["firstname":nameData[Int.random(in: 1..<7)]! , "lastname" : lastNameData[Int.random(in: 1..<7)]! , "guestUid" : "\(uid)" , "invite_accepted" : invite_accepted[Int.random(in: 1..<3)]! , "event" : eventData[Int.random(in: 1..<6)]! , "docID" : "JTrJ8F92cL2MYlXXCfYK", "sex" : sex[Int.random(in: 1..<3)]! , "handle" : handle[Int.random(in: 1..<7)]! , "age" : age[Int.random(in: 1..<6)]!])
         
         
         //doc ID is hard coded. This will change eventually

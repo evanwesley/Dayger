@@ -13,3 +13,7 @@
 
 #import "SCSDKLoginKitErrorCode.h"
 #import "SCSnapKitFeatureOptions.h"
+
+#import "SCSDKUserDataQueryBuilder.h"
+#import "SCSDKUserDataQuery.h"
+#import "SCSDKUserData.h"

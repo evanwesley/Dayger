@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// Spotlight Topics to be auto filled for eligible content in Send-To
 @interface SCSDKContentTopics : NSObject
 
 /**

@@ -5,6 +5,7 @@
 
 #import <Foundation/Foundation.h>
 
+/// Model info for a StoryKit Snap Image
 @interface SCSDKStoryKitSnapImageInfo : NSObject <NSCopying, NSCoding>
 
 @property (nonatomic, readonly) NSInteger durationInSecs;

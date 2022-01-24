@@ -11,7 +11,7 @@
 @class SCSDKStoryKitStoryPlayer;
 @class SCSDKStoryKitSnap;
 
-
+/// StoryPlayer Error Delegate
 @protocol SCSDKStoryKitStoryPlayerErrorDelegate <NSObject>
 
 - (void)player:(nonnull SCSDKStoryKitStoryPlayer *)player

@@ -5,22 +5,19 @@ target 'dayger' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 	
-        
+  pod 'Firebase/DynamicLinks'
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Auth'
 	pod 'Firebase/Firestore'
 	pod 'Firebase/Database'
 	pod 'SnapSDK'
-        pod 'PINCache' 
+  pod 'PINCache'
 	pod 'Firebase/Storage'
-	
+  pod 'Firebase/Messaging'
+
   # pod for menu page
 
-	pod 'SideMenu'
 	pod 'SnapSDK'
-
-
-
 
 
   # Pods for dayger

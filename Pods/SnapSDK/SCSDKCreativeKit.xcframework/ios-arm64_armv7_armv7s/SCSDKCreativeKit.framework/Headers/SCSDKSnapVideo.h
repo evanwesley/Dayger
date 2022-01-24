@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// This class lets you initialize videos that users can share to Snapchat.
 @interface SCSDKSnapVideo : NSObject<SCSDKCreativeKitModelValidating>
 
 /**

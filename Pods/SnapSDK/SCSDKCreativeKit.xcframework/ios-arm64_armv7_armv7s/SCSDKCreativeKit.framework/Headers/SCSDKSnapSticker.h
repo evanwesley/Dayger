@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// SCSDKSnapSticker class provides a way to model stickers for overlaying on top of Snaps shared using SnapKit
 @interface SCSDKSnapSticker : NSObject
 
 /**

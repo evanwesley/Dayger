@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// This class lets you initialize images that users can share to Snapchat
 @interface SCSDKSnapPhoto : NSObject<SCSDKCreativeKitModelValidating>
 
 /**

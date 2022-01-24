@@ -5,6 +5,7 @@
 
 #import <Foundation/Foundation.h>
 
+/// Model info for a StoryKit Snap Video
 @interface SCSDKStoryKitSnapVideoInfo : NSObject <NSCopying, NSCoding>
 
 @property (nonatomic, readonly) BOOL shouldLoop;

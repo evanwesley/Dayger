@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 typedef void (^SCSDKSnapAPICompletionHandler)(NSError * _Nullable error );
 
+/// The SCSDKSnapAPI class provides an interface for sharing content into Snapchat camera or preview.
 @interface SCSDKSnapAPI : NSObject
 
 - (instancetype)init NS_DESIGNATED_INITIALIZER;

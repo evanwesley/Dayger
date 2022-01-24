@@ -10,6 +10,7 @@
 
 @class SCSDKBitmojiStickerPickerThemeBuilder;
 
+/// Theme for Bitmoji Sticker Picker
 @interface SCSDKBitmojiStickerPickerTheme : NSObject
 
 @property (class, nonatomic, strong, nonnull, readonly) SCSDKBitmojiStickerPickerTheme *lightTheme;
@@ -41,6 +42,8 @@
 - (nonnull SCSDKBitmojiStickerPickerThemeBuilder *)toBuilder;
 
 @end
+
+/// Builder for Bitmoji Sticker Picker Theme
 
 @interface SCSDKBitmojiStickerPickerThemeBuilder : NSObject
 

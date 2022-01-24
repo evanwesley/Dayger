@@ -26,16 +26,23 @@ class HomePageTableViewCell: UITableViewCell {
   
     
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.ticketView.layer.cornerRadius = 10
-        self.ticketView.layer.borderWidth = 1.75
-        self.ticketView.layer.borderColor = UIColor.black.cgColor
+        self.ticketView.layer.cornerRadius = 15
+       // self.ticketView.layer.borderWidth = 1.75
+       // self.ticketView.layer.borderColor = UIColor.black.cgColor
+        self.ticketView.layer.shadowColor = UIColor.gray.cgColor
+        self.ticketView.layer.shadowOpacity = 0.3
+        self.ticketView.layer.shadowOffset = .zero
+        self.ticketView.layer.shadowRadius = 2
+        
+        
        
         self.circleView.layer.cornerRadius = 25
-        self.circleView.layer.shadowColor = UIColor.black.cgColor
-        self.circleView.layer.shadowOpacity = 0.25
+        self.circleView.layer.shadowColor = UIColor.gray.cgColor
+        self.circleView.layer.shadowOpacity = 0.3
         self.circleView.layer.shadowOffset = .zero
         self.circleView.layer.shadowRadius = 2
         

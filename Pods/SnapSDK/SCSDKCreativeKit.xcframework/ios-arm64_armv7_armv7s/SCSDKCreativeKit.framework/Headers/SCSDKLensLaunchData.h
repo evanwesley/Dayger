@@ -13,6 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// SCSDKLensLaunchData class allows you to initialize launch data for a Lens attachment
 @interface SCSDKLensLaunchData : NSObject
 
 /**

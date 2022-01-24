@@ -8,23 +8,43 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@class SCSDKUserDataQuery;
+@class SCSDKUserData;
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * Callback to trigger when fetch resource success.
+ * DEPRECATED Callback to trigger when fetch resource success.
  *
  * @param resources that contain user data.
  */
-typedef void(^SCOAuth2GetResourcesSuccessCompletionBlock)(NSDictionary * _Nullable resources);
+typedef void(^SCOAuth2GetResourcesSuccessCompletionBlock)(NSDictionary * _Nullable resources) DEPRECATED_ATTRIBUTE;
 
 /**
- * Callback to trigger when fetch resource failed.
+ * DEPRECATED Callback to trigger when fetch resource failed.
  *
  * @param error Error responsible for user data fetchinf failure
  * @param isUserLoggedOut Set to YES if the connection between 3PA and Snapchat is broken or user is not logged in to
  *                        3PA using Snapchat. Set to NO if other errors occur while fetching data from Snapchat
  */
-typedef void(^SCOAuth2GetResourcesFailureCompletionBlock)(NSError * _Nullable error, BOOL isUserLoggedOut);
+typedef void(^SCOAuth2GetResourcesFailureCompletionBlock)(NSError * _Nullable error, BOOL isUserLoggedOut) DEPRECATED_ATTRIBUTE;
+
+/**
+ * Callback to trigger when fetch resource success.
+ *
+ * @param userData SCSDKUserData object that contains fetched user data
+ * @param partialError NSError containing any errors in the case of a partial success response
+ */
+typedef void(^SCSDKUserDataSuccessCompletion)(SCSDKUserData * _Nullable userData, NSError * _Nullable partialError);
+
+/**
+ * Callback to trigger when fetch resource failed.
+ *
+ * @param error Error responsible for user data fetching failure
+ * @param isUserLoggedOut Set to YES if the connection between 3PA and Snapchat is broken or user is not logged in to
+ *                        3PA using Snapchat. Set to NO if other errors occur while fetching data from Snapchat
+ */
+typedef void(^SCSDKUserDataFailureCompletion)(NSError * _Nullable error, BOOL isUserLoggedOut);
 
 /**
  * The completion handler to when getting a refreshed access token is complete. The access token returned, if present,
@@ -85,8 +105,10 @@ typedef void(^SCFetchCodeVerifierBlock)(NSString *state, SCFetchCodeVerifierComp
 
 @class SCSnapKitFeatureOptions;
 
+/// This class contains all the methods associated for authentication, session control, and information retrieval
 @interface SCSDKLoginClient : NSObject
 
+/// Whether the user is logged in or not
 @property (class, assign, readonly) BOOL isUserLoggedIn;
 
 /**
@@ -105,6 +127,33 @@ typedef void(^SCFetchCodeVerifierBlock)(NSString *state, SCFetchCodeVerifierComp
 + (void)loginFromViewController:(nullable UIViewController *)viewController
                         options:(SCSnapKitFeatureOptions *)options
                      completion:(void (^)(BOOL success, NSError *error))completion;
+
+extern NSString *const SCSDKLoginKitFirebaseErrorDomain;
+
+typedef NS_ENUM(NSInteger, SCSDKLoginKitFirebaseErrorCode) {
+   SCSDKLoginKitFirebaseErrorCodeUnknown,
+   SCSDKLoginKitFirebaseErrorCodeAuthorizationFailure,
+   SCSDKLoginKitFirebaseErrorCodeCustomTokenFetchFailure,
+};
+
+/**
+* Callback triggered when OAuth Authorization for Firebase Authentication is complete.
+*
+* @param customToken that can be used to authentication with Firebase
+* @param error indicating that something went wrong
+*/
+typedef void(^SCFirebaseAuthCompletionBlock)(NSString * _Nullable customToken, NSError * _Nullable error);
+
+/**
+* Start Snapchat OAuth 2.0 authorization for Firebase Authentication
+*
+* @param viewController that the in-app auth web view is presented on top of in case Snapchat is not installed or
+                        deep-linking fails more than 3 consecutive times. The current top view controller is used
+                        if not provided.
+* @param completion callback triggered when OAuth Authorization for Firebase Authentication is complete.
+*/
++ (void)startFirebaseAuthFromViewController:(nullable UIViewController *)viewController
+                                 completion:(SCFirebaseAuthCompletionBlock)completion;
 
 /**
  * Finish auth with Snapchat.
@@ -151,7 +200,7 @@ completion:(void (^)(BOOL success, NSError *error))completion;
 + (void)clearToken;
 
 /**
- * Interface to fetch user data from resource server.
+ * DEPRECATED - Interface to fetch user data from resource server.
  *
  * @param query GraphQL query to fetch user data.
  * @param success Success block when fetch data succeed.
@@ -160,7 +209,18 @@ completion:(void (^)(BOOL success, NSError *error))completion;
 + (void)fetchUserDataWithQuery:(NSString *)query
                      variables:(nullable NSDictionary<NSString *, id> *)variables
                        success:(SCOAuth2GetResourcesSuccessCompletionBlock)success
-                       failure:(SCOAuth2GetResourcesFailureCompletionBlock)failure;
+                       failure:(SCOAuth2GetResourcesFailureCompletionBlock)failure DEPRECATED_ATTRIBUTE;
+
+/**
+ * Interface to fetch user data from resource server.
+ *
+ * @param query Query object to fetch user data.
+ * @param success Success block when fetch data succeeds.
+ * @param failure Failure block when fetch data fails.
+ */
++ (void)fetchUserDataWithQuery:(SCSDKUserDataQuery *)query
+                       success:(SCSDKUserDataSuccessCompletion)success
+                       failure:(SCSDKUserDataFailureCompletion)failure;
 
 /**
  * Gets the access token cached locally.
@@ -173,6 +233,13 @@ completion:(void (^)(BOOL success, NSError *error))completion;
  * @param completion The completion handler to call when tak to refresh the access token is complete.
  */
 + (void)refreshAccessTokenWithCompletion:(nullable SCOAuth2RefreshAccessTokenCompletionBlock)completion;
+
+/**
+ * Fetches an up-to-date access token, refreshing if needed.
+ *
+ * @param completion The completion handler to call when tak to refresh the access token is complete.
+ */
++ (void)fetchAccessToken:(nullable SCOAuth2RefreshAccessTokenCompletionBlock)completion;
 
 /**
  * Determines whether the user has authorized the current session to have access to resources

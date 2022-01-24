@@ -30,6 +30,7 @@ typedef void (^SCSDKVerifyCompletionBlock)(NSString * _Nullable phoneId, NSStrin
 typedef void (^SCSDKVerifyAndLoginCompletionBlock)(BOOL success, NSString * _Nullable phoneId, NSString * _Nullable verifyId, NSError * _Nullable error);
 
 
+/// This class contains all the methods associated with Verify with Snap
 @interface SCSDKVerifyClient : NSObject
 
 /**

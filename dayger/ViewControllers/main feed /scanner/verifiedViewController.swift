@@ -11,11 +11,11 @@ import FirebaseStorage
 
 class verifiedViewController: UIViewController {
 
-    
     var firstname = ""
     var lastname = ""
     var uid = ""
     var social = ""
+    let generator = UINotificationFeedbackGenerator()
     
     @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var selfieImage: UIImageView!
@@ -42,6 +42,8 @@ class verifiedViewController: UIViewController {
         
         self.assignLabels()
         self.displayHostSelfie()
+        
+        generator.notificationOccurred(.success)
         // Do any additional setup after loading the view.
     }
     
@@ -49,12 +51,12 @@ class verifiedViewController: UIViewController {
         
         
         self.nameLabel.text = "\(firstname) \(lastname)!"
-        self.socialLabel.text = "@\(social)"
+        self.socialLabel.text = "\(social)"
         
         
     }
     func displayHostSelfie () {
-        
+        //guest
         let storageRef = Storage.storage().reference(withPath: "user_selfies/\(uid).jpg")
         storageRef.getData(maxSize: 4 * 1024 * 1024) { [weak self] data, error in
             if let error = error {

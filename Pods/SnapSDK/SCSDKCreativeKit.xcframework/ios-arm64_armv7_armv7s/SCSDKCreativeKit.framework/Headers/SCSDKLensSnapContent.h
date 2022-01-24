@@ -14,6 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// SCSDKLensSnapContent class is an implementation of the SCSDKSnapContent protocol. It provides a way to model a share into Snapchat with a Lens attachment. An attachment URL or a caption can be included, whereas stickers cannot
 @interface SCSDKLensSnapContent : NSObject<SCSDKSnapContent>
 
 /**

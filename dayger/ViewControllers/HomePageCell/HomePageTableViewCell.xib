@@ -13,7 +13,7 @@
         <tableViewCell contentMode="scaleToFill" restorationIdentifier="HomePageTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomePageTableViewCell" rowHeight="164" id="KGk-i7-Jjw" customClass="HomePageTableViewCell" customModule="dayger" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="328" height="164"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000000000000004" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="328" height="164"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -104,6 +104,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="aOt-NH-0RX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="9BE-fq-2TX"/>
                     <constraint firstAttribute="bottom" secondItem="aOt-NH-0RX" secondAttribute="bottom" constant="8" id="HYI-Z1-KTZ"/>

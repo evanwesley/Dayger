@@ -13,6 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// SCSDKPhotoSnapContent is an implementation of the SCSDKSnapContent protocol. It provides a way to model a photo Snap for sharing to Snapchat
 @interface SCSDKPhotoSnapContent : NSObject<SCSDKSnapContent>
 
 /**

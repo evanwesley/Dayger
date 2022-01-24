@@ -10,6 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
+/// Configuration for Bitmoji Sticker Picker
 @interface SCSDKBitmojiStickerPickerConfig : NSObject
 
 @property (nonatomic, assign, readonly) BOOL showSearchBar;
@@ -20,6 +21,7 @@
 
 @end
 
+/// Builder for Bitmoji Sticker Picker configuration
 @interface SCSDKBitmojiStickerPickerConfigBuilder : NSObject
 
 - (instancetype)withShowSearchBar:(BOOL)showSearchBar;

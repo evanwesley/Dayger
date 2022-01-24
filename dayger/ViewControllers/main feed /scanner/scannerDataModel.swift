@@ -18,7 +18,6 @@ struct EventInfoDataModel {
     
     var docID : String
     
-    
     var dictionary : [String:Any] {
         
         return ["name" : name , "docID" : docID]

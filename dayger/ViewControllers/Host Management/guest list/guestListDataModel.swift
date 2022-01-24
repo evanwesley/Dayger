@@ -18,16 +18,27 @@ struct GuestListDataModel {
     
     var firstname : String
     var lastname : String
-    var uid : String
+    var uid : String //guest UID
     
     var icename : String
-    var icenumber : String
+    var icenumber : String //handle
    
-    var sex : String
+    var sex : Bool
     var social : String
     
+    var email : String
+    
+    
     var dictionary : [String:Any]{
-        return ["firstname": firstname , "lastname" : lastname , "uid" : uid , "icename" : icename , "icenumber" : icenumber , "sex" : sex , "social" : social , "eventID" : eventID]
+        return ["firstname": firstname ,
+                "lastname" : lastname ,
+                "uid" : uid ,
+                "icename" : icename ,
+                "icenumber" : icenumber ,
+                "sex" : sex ,
+                "social" : social ,
+                "eventID" : eventID ,
+                "email" : email]
 
     }
 }
@@ -41,8 +52,9 @@ extension GuestListDataModel : guestListDocumentSerializeable {
               let icename = dictionary["icename"] as? String ,
               let icenumber = dictionary["icenumber"] as? String ,
               let social = dictionary["social"] as? String,
-              let sex = dictionary["sex"] as? String
+              let sex = dictionary["sex"] as? Bool,
+        let email = dictionary["email"] as? String
     else {return nil}
-        self.init(eventID : eventID, firstname : firstname , lastname : lastname , uid : uid , icename : icename , icenumber : icenumber, sex : sex  , social : social)
+        self.init(eventID : eventID, firstname : firstname , lastname : lastname , uid : uid , icename : icename , icenumber : icenumber, sex : sex  , social : social , email : email)
     }
 }

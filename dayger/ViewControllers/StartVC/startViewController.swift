@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 
 
 class startViewController: UIViewController {
@@ -21,8 +21,7 @@ class startViewController: UIViewController {
     
     
 
-    let graphQLQuery = "{me{displayName, bitmoji{avatar}}}"
-    let variables = ["page": "bitmoji"]
+   
     
     
     override func viewDidLoad() {
@@ -35,9 +34,34 @@ class startViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
-   
-    
+    override func viewDidAppear(_ animated: Bool) {
+      let loggedInUserEmail =  UserDefaults.standard.string(forKey: "email")
+      let loggedInUserPassword =  UserDefaults.standard.string(forKey: "password")
+        
+        
+        if UserDefaults.standard.bool(forKey: "usersignedin") == true {
+            Auth.auth().signIn(withEmail: loggedInUserEmail!, password: loggedInUserPassword!, completion: { result, error in
+                
+                        if error == nil {
+                            UserDefaults.standard.set(true, forKey: "usersignedin")
+                            UserDefaults.standard.synchronize()
+                            print("\(String(describing: result?.user.email!))")
+                            
+                            let homeViewController =
+                            self.storyboard?.instantiateViewController(identifier: "homeNavController")
+                            
+                            self.view.window?.rootViewController = homeViewController
+                            self.view.window?.makeKeyAndVisible()
+                            
+                        } else {
+                            if error != nil {
+                                print("user is not logged in, they may need to signup")
+                             
+           }
+        }
+    }
+)}
+}
     /*    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

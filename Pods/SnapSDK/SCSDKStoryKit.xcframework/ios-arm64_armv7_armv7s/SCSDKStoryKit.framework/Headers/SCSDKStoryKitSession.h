@@ -18,10 +18,8 @@
 @protocol SCSDKStoryKitStoryPlayerDelegate;
 @protocol SCSDKStoryKitStoryPlayerErrorDelegate;
 
-/**
- A session for creating players and maintaining the cache.
- */
 
+/// A session for creating players and maintaining the cache.
 @interface SCSDKStoryKitSession : NSObject
 
 /**

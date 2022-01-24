@@ -38,6 +38,7 @@ class scannerViewController: UIViewController {
     var uid = ""
     var social = ""
     
+    var didSelectAnEvent : Bool = false
     @IBOutlet weak var guestFoundButton: UIButton!
     
     let iconView = SCSDKBitmojiIconView()
@@ -73,7 +74,7 @@ class scannerViewController: UIViewController {
             session.addInput(input) //defining input constant
         }
         catch {
-            
+        
             print("error from capturing device")
             
         }
@@ -87,11 +88,13 @@ class scannerViewController: UIViewController {
         
         video = AVCaptureVideoPreviewLayer(session: session)
         video.frame = view.layer.bounds
-        
+       
         view.layer.addSublayer(video)
+        
+        self.view.bringSubviewToFront(backButton)
         self.view.bringSubviewToFront(infoLabel)
         self.view.bringSubviewToFront(collectionView)
-        
+        self.view.bringSubviewToFront(nameLabel)
         self.view.bringSubviewToFront(iconView)
         
         session.startRunning() // starts the bullshit
@@ -112,22 +115,25 @@ class scannerViewController: UIViewController {
     
     @IBAction func backButtonPressed(_ sender: Any) {
         
-        self.transitionToHome()
+
+        transitionToHome()
         
     }
     
     func transitionToHome (){
         //back button
-        let homeViewController = self.storyboard?.instantiateViewController(identifier: "HomeVC")
+        let homeViewController =
+        self.storyboard?.instantiateViewController(identifier: "homeNavController")
         
         self.view.window?.rootViewController = homeViewController
         self.view.window?.makeKeyAndVisible()
+        
        
         
     }
     @IBAction func guestFoundButtonTapped(_ sender: Any) {
         
-        
+        db.collection("users").document(self.currentUserEmail!).updateData(["clout" : FieldValue.increment(Int64(3))])
         self.view.sendSubviewToBack(self.guestFoundButton)
         self.guestFoundButton.isEnabled = false
         
@@ -148,6 +154,18 @@ class scannerViewController: UIViewController {
         }
       }
     }
+    func setBlurView() {
+          // Init a UIVisualEffectView which going to do the blur for us
+          let blurView = UIVisualEffectView()
+          // Make its frame equal the main view frame so that every pixel is under blurred
+          blurView.frame = view.frame
+          // Choose the style of the blur effect to regular.
+          // You can choose dark, light, or extraLight if you wants
+          blurView.effect = UIBlurEffect(style: .regular)
+          // Now add the blur view to the main view
+          view.addSubview(blurView)
+      }
+    
 }
 extension scannerViewController : AVCaptureMetadataOutputObjectsDelegate {
     
@@ -191,6 +209,18 @@ extension scannerViewController : AVCaptureMetadataOutputObjectsDelegate {
     func verifyUser () {
         //this is being scanned from the qr code and sent to the above function.
         let qrCodeItems = finalOutput.components(separatedBy: "_")
+        
+        
+        if didSelectAnEvent == false {
+            
+            let alert = UIAlertController(title: "Please Select an Event Below", message: "Before you can scan your guest's tickets, select one of your previously created events.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+            
+            
+        } else {
+        
         //separates the function and returns an array
         if qrCodeItems.count != 2 {
             
@@ -211,7 +241,7 @@ extension scannerViewController : AVCaptureMetadataOutputObjectsDelegate {
                    print("\(error) the data failed to load")
                    
                     let alert = UIAlertController(title: "Invalid Guest", message: "It seems that this guest isn't on the guestlist, their ticket may be doctored", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Okay", style: .destructive, handler: nil))
                     self.present(alert, animated: true, completion: nil)
         
                 } else {
@@ -234,8 +264,6 @@ extension scannerViewController : AVCaptureMetadataOutputObjectsDelegate {
                         self.lastname = lastname
                         self.uid = uid
                         self.social = social
-                         
-                        AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) { }
                    
                 }
             }
@@ -247,7 +275,7 @@ extension scannerViewController : AVCaptureMetadataOutputObjectsDelegate {
             //return alert that this is the wrong event or user needs to make sure right event is selected. //this is the event ID
             print("this is the wrong event or user needs to make sure right event is selected")
             
-            let alert = UIAlertController(title: "Uh oh...", message: "It seems that this guest isn't on the guest list. Make sure you've selected the right event", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Hmm...", message: "It seems that this guest isn't on the guest list. Make sure you've selected the right event", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
@@ -259,8 +287,8 @@ extension scannerViewController : AVCaptureMetadataOutputObjectsDelegate {
     
     
     //take array and cross reference it with data in the guest list documents
-  
-   
+
+}
 }
 
 extension scannerViewController : UICollectionViewDelegate , UICollectionViewDataSource {
@@ -274,16 +302,22 @@ extension scannerViewController : UICollectionViewDelegate , UICollectionViewDat
        
         let data = cellData[indexPath.row]
         
-        
         cell.eventLabel.text = "\(data.name)"
         //sets the label of the cell to particular name
-        cell.subView.layer.borderWidth = 1.75
-        cell.subView.layer.borderColor = UIColor.black.cgColor
-        cell.subView.layer.cornerRadius = 25
+        //cell.subView.layoutIfNeeded()
+       
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "buttonCell", for: indexPath) as! CollectionViewCell
+       
+
+        cell.subView.layer.borderWidth = 2
+        cell.subView.layer.borderColor = UIColor.lightGray.cgColor
         
         let data = cellData[indexPath.row]
         
@@ -292,10 +326,14 @@ extension scannerViewController : UICollectionViewDelegate , UICollectionViewDat
         //passes the string of the eventID and
         
         
-        self.nameLabel.text = "For: \(eventName)"
+        self.nameLabel.text = "\(eventName)"
+        self.didSelectAnEvent = true
         //sets the event ID to the name
     }
-    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        //cell.layer.cornerRadius = 30
+          //  cell.clipsToBounds = true
+    }
     
     
     

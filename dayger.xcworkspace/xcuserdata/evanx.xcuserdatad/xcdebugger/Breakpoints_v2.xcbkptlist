@@ -1,695 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "F9B4D34C-C6E1-4EDD-9A39-3B68C58A3ADC"
+   uuid = "653C6537-0C5A-4BFF-97BC-A18CC1C82B1F"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C4DE836F-11AD-4D8A-824E-93DFAFAD87D4"
+            uuid = "CDF4BCF7-A01C-4EAF-926D-D5DEB50F47D6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/signUpViewController.swift"
+            filePath = "dayger/ViewControllers/main feed /inbox/inboxViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C4DE836F-11AD-4D8A-824E-93DFAFAD87D4 - be47a75af3afc707"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.signUpViewController.firstNameTextField.getter : Swift.Optional&lt;__C.UITextField&gt;"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/signUpViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "88">
-               </Location>
-               <Location
-                  uuid = "C4DE836F-11AD-4D8A-824E-93DFAFAD87D4 - 3667df0840d21b3b"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.signUpViewController.firstNameTextField.setter : Swift.Optional&lt;__C.UITextField&gt;"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/signUpViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "155">
-               </Location>
-               <Location
-                  uuid = "C4DE836F-11AD-4D8A-824E-93DFAFAD87D4 - 8e03c0eaeb645e1a"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.signUpViewController.firstNameTextField.modify : Swift.Optional&lt;__C.UITextField&gt;"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/signUpViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "59">
-               </Location>
-               <Location
-                  uuid = "C4DE836F-11AD-4D8A-824E-93DFAFAD87D4 - 3f3a3ab473434cc"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.signUpViewController.firstNameTextField.modify : Swift.Optional&lt;__C.UITextField&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/signUpViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "64">
-               </Location>
-               <Location
-                  uuid = "C4DE836F-11AD-4D8A-824E-93DFAFAD87D4 - 4816359498f70249"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.signUpViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; dayger.signUpViewController"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/signUpViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "328">
-               </Location>
-               <Location
-                  uuid = "C4DE836F-11AD-4D8A-824E-93DFAFAD87D4 - 14daf0e6f99f4813"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.signUpViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;dayger.signUpViewController&gt;"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/signUpViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "269">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ACFC3F1F-0001-4A16-9E46-F5F6BA191F80"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/signUpViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "279395A4-A4F8-4EC4-837D-81A20ABD649C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/signUpViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3E54E1A6-C478-4A8A-BC59-9EA5EBE8192A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/Create Event Route /finalizeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "finalizeViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1BA5B3DA-D7F7-4B98-A9A5-A8E8CAF66B31"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/Create Event Route /finalizeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "finalizeViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4825627C-6DF5-40EC-89F9-EAF009E8B69F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/Host Management/Cell/CollectionViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
-            landmarkName = "CollectionViewCell"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "4825627C-6DF5-40EC-89F9-EAF009E8B69F - 6371fd8627ef1bdf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.CollectionViewCell.ticketColor.getter : __C.UIColor"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/Host%20Management/Cell/CollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  uuid = "4825627C-6DF5-40EC-89F9-EAF009E8B69F - f5f57a02bbb8f31e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.CollectionViewCell.init(frame: __C.CGRect) -&gt; dayger.CollectionViewCell"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/Host%20Management/Cell/CollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "110">
-               </Location>
-               <Location
-                  uuid = "4825627C-6DF5-40EC-89F9-EAF009E8B69F - f9ec3218be7c0e9a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.CollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;dayger.CollectionViewCell&gt;"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/Host%20Management/Cell/CollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "108">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "002F813F-3DFF-4E55-BF65-2AF6CF47AC94"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/StartVC/main feed /homeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "loadData()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "002F813F-3DFF-4E55-BF65-2AF6CF47AC94 - 3187afa89104c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.homeViewController.loadData() -&gt; ()"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/StartVC/main%20feed%20/homeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "23">
-               </Location>
-               <Location
-                  uuid = "002F813F-3DFF-4E55-BF65-2AF6CF47AC94 - 2aff3472a9aa43e0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in dayger.homeViewController.loadData() -&gt; ()"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/StartVC/main%20feed%20/homeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81"
-                  offsetFromSymbolStart = "231">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9BEE24A6-57B8-4809-BF17-689BCC40314A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/StartVC/main feed /homeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "loadData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8CC5E9FC-741F-4DD7-9ADA-2BEEB5960612"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/Host Management/detailsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6B770944-F2CA-46B6-980C-94E07267EE3B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/Host Management/eventViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "eventViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "92F66B44-2B45-489B-849A-F3DC854DFB9C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/StartVC/main feed /inbox/inboxDataModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "dictionary"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BFFBA7DC-EB60-4ED2-8B1A-A59F68DF8412"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/StartVC/main feed /homeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D5D45D09-879E-4894-98EB-2DAE3F92B92A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/Host Management/detailsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "detailsViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BE8FB284-CA14-4C0D-862C-10E388EA70CC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/Host Management/detailsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "detailsViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "BE8FB284-CA14-4C0D-862C-10E388EA70CC - ebef391c0d8b4802"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.detailsViewController.name.getter : Swift.String"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/Host%20Management/detailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "120">
-               </Location>
-               <Location
-                  uuid = "BE8FB284-CA14-4C0D-862C-10E388EA70CC - bdddd1b58c92587e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.detailsViewController.name.setter : Swift.String"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/Host%20Management/detailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "156">
-               </Location>
-               <Location
-                  uuid = "BE8FB284-CA14-4C0D-862C-10E388EA70CC - 196f1ddf063a4a59"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.detailsViewController.name.modify : Swift.String"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/Host%20Management/detailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "BE8FB284-CA14-4C0D-862C-10E388EA70CC - 7e2f1f8631eec47e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.detailsViewController.name.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/Host%20Management/detailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "BE8FB284-CA14-4C0D-862C-10E388EA70CC - 887a5881a49553a1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.detailsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; dayger.detailsViewController"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/Host%20Management/detailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "296">
-               </Location>
-               <Location
-                  uuid = "BE8FB284-CA14-4C0D-862C-10E388EA70CC - ffdea728d106e0e6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.detailsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;dayger.detailsViewController&gt;"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/Host%20Management/detailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "272">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8C38AD5C-82B7-4E29-A40B-354AAA4F9B5B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/Host Management/detailsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "292"
-            endingLineNumber = "292"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EF5A3D39-0D4F-4A07-9ACD-CAC10ADDF795"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/main feed /inbox/inboxDataModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AB2014A7-695D-4C64-9CF6-4719AEDDBC55"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/Host Management/detailsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "detailsViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "88F4946A-02FD-4B66-9437-F0C574ED9236"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/main feed /scanner/Buttons/CollectionViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "10"
-            endingLineNumber = "10"
-            landmarkName = "CollectionViewCell"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "88F4946A-02FD-4B66-9437-F0C574ED9236 - 3c5c0a1ae2c110e6"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.CollectionViewCell.__allocating_init(frame: __C.CGRect) -&gt; dayger.CollectionViewCell"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/main%20feed%20/scanner/Buttons/CollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "88F4946A-02FD-4B66-9437-F0C574ED9236 - 1cd88d00cfcc01ca"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.CollectionViewCell.init(frame: __C.CGRect) -&gt; dayger.CollectionViewCell"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/main%20feed%20/scanner/Buttons/CollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "100">
-               </Location>
-               <Location
-                  uuid = "88F4946A-02FD-4B66-9437-F0C574ED9236 - 4dad46242edf3db1"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.CollectionViewCell.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;dayger.CollectionViewCell&gt;"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/main%20feed%20/scanner/Buttons/CollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "88F4946A-02FD-4B66-9437-F0C574ED9236 - 10c1c51aca08fc4e"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.CollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;dayger.CollectionViewCell&gt;"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/main%20feed%20/scanner/Buttons/CollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "64">
-               </Location>
-               <Location
-                  uuid = "88F4946A-02FD-4B66-9437-F0C574ED9236 - f1b90064abb1b48b"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "dayger.CollectionViewCell.__deallocating_deinit"
-                  moduleName = "dayger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/main%20feed%20/scanner/Buttons/CollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "871DE559-592D-40CB-A790-052AE0ECBD3D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/main feed /profileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
-            landmarkName = "setUpTopView()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9A82CE15-80AC-4C53-BBBE-1086A21F9079"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/Create Event Route /createEventViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3865D2E0-C2E3-4DCE-8D40-141FA41870A5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/ViewControllers/Create Event Route /createEventViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CE1FAA09-858B-42D9-84C8-A7673744568C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dayger/finalizeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "6"
+            endingLineNumber = "6"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -697,32 +23,581 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E90707D2-7072-482F-99D9-FF5F533C80B4"
+            uuid = "1D093BC5-73F5-4636-85D1-42B574A92908"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dayger/ViewControllers/main feed /inbox/inboxViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "transitionToHome()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "35EB9176-E02C-40F5-8ADF-D1D741E67213"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dayger/ViewControllers/main feed /invitationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E1DD100-3BF8-44D8-8536-160B71651195"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dayger/ViewControllers/main feed /invitationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "getEventDetails()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FB9902FF-1CCC-4E66-BFAA-0AD48FE5CC2E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dayger/ViewControllers/main feed /invitationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "invitationViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "FB9902FF-1CCC-4E66-BFAA-0AD48FE5CC2E - 6dffe5cd4979bf98"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.invitationViewController.incomingURL.getter : Swift.String"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/main%20feed%20/invitationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "FB9902FF-1CCC-4E66-BFAA-0AD48FE5CC2E - bc1dda76e4324fbc"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.invitationViewController.incomingURL.setter : Swift.String"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/main%20feed%20/invitationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "FB9902FF-1CCC-4E66-BFAA-0AD48FE5CC2E - 7592c7e9788a3e1e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.invitationViewController.incomingURL.modify : Swift.String"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/main%20feed%20/invitationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "FB9902FF-1CCC-4E66-BFAA-0AD48FE5CC2E - b1243a421fba3be"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.invitationViewController.incomingURL.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/main%20feed%20/invitationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "FB9902FF-1CCC-4E66-BFAA-0AD48FE5CC2E - 9c8c5401db9e16d1"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.invitationViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; dayger.invitationViewController"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/main%20feed%20/invitationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "244">
+               </Location>
+               <Location
+                  uuid = "FB9902FF-1CCC-4E66-BFAA-0AD48FE5CC2E - 718e3be9e04bbda"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.invitationViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;dayger.invitationViewController&gt;"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/main%20feed%20/invitationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "220">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8D100F77-1002-4500-A765-82F52155E4F7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dayger/ViewControllers/main feed /invitationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "invitationViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "8D100F77-1002-4500-A765-82F52155E4F7 - 6dffe5cd4979bf98"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.invitationViewController.incomingURL.getter : Swift.String"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/main%20feed%20/invitationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "8D100F77-1002-4500-A765-82F52155E4F7 - bc1dda76e4324fbc"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.invitationViewController.incomingURL.setter : Swift.String"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/main%20feed%20/invitationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "8D100F77-1002-4500-A765-82F52155E4F7 - 7592c7e9788a3e1e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.invitationViewController.incomingURL.modify : Swift.String"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/main%20feed%20/invitationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "8D100F77-1002-4500-A765-82F52155E4F7 - b1243a421fba3be"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.invitationViewController.incomingURL.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/main%20feed%20/invitationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "8D100F77-1002-4500-A765-82F52155E4F7 - 9c8c5401db9e16d1"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.invitationViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; dayger.invitationViewController"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/main%20feed%20/invitationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "244">
+               </Location>
+               <Location
+                  uuid = "8D100F77-1002-4500-A765-82F52155E4F7 - 718e3be9e04bbda"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.invitationViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;dayger.invitationViewController&gt;"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/main%20feed%20/invitationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "220">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7A84AB4E-192A-49DF-9A3F-8F15B865816D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dayger/finalizeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "finalizeViewController"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
+            landmarkName = "displayMapCoordinates()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1EE835F0-BB6B-4EE8-85EA-D805EB1DE9B3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dayger/ViewControllers/StartVC/signUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
+            landmarkName = "showError(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1A280F1C-6B99-45C5-A445-A2BA16CFC233"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dayger/ViewControllers/main feed /homeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EF9E5FF0-16BC-464B-AACA-DE8D1B33B325"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dayger/ViewControllers/main feed /Friends/friendsDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "displayGuestSelfie()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47AA4956-503C-45C9-A012-B2A3C684940A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dayger/ViewControllers/main feed /inbox/inboxDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "5"
+            endingLineNumber = "5"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2043623E-F662-4536-8260-BA6E9B717BAE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dayger/ViewControllers/main feed /tickets/messageTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "6"
+            endingLineNumber = "6"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8954D15D-8470-4487-976B-A980BF136411"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dayger/messagesTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "messagesTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "8954D15D-8470-4487-976B-A980BF136411 - 95b8e8cf72caabaf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.messagesTableViewController.db.getter : __C.FIRFirestore"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/messagesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "8954D15D-8470-4487-976B-A980BF136411 - 383f20aa48080f27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.messagesTableViewController.init(style: __C.UITableViewStyle) -&gt; dayger.messagesTableViewController"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/messagesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "8954D15D-8470-4487-976B-A980BF136411 - 46cb570416fb27d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.messagesTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; dayger.messagesTableViewController"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/messagesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "8954D15D-8470-4487-976B-A980BF136411 - 211697540c9be2f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.messagesTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;dayger.messagesTableViewController&gt;"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/messagesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "196">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "59F13159-E63A-4F9F-B89C-2B8BB4FE61ED"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dayger/ViewControllers/StartVC/signUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "41ED4750-F0F3-4AE7-8F4B-5CE379960E7F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dayger/ViewControllers/StartVC/signUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "signUpViewController"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7D099998-C2CB-430B-B4F7-D5D83A4F33C8"
+            uuid = "819628C9-11F2-4E83-B9F4-FC703255D671"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "dayger/finalizeViewController.swift"
+            filePath = "dayger/ViewControllers/Create Event Route /createEventViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "formatTicketView()"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
+            landmarkName = "createDatePicker()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D4571308-55D9-43DE-9022-D44ECF618188"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dayger/ViewControllers/Host Management/detailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "322"
+            endingLineNumber = "322"
+            landmarkName = "loadData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6932E52F-28B4-472B-973E-6A7458F09412"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dayger/ViewControllers/Host Management/guest list/guestListDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "guestListDetailViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "6932E52F-28B4-472B-973E-6A7458F09412 - 60c8f182f648b098"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.guestListDetailViewController.currentUserEmail.getter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/Host%20Management/guest%20list/guestListDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "6932E52F-28B4-472B-973E-6A7458F09412 - 7a8a1d11bca6e275"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.guestListDetailViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; dayger.guestListDetailViewController"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/Host%20Management/guest%20list/guestListDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "352">
+               </Location>
+               <Location
+                  uuid = "6932E52F-28B4-472B-973E-6A7458F09412 - a0d115aa6db4d28b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dayger.guestListDetailViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;dayger.guestListDetailViewController&gt;"
+                  moduleName = "dayger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evanx/Desktop/DaygerBETA/dayger/dayger/ViewControllers/Host%20Management/guest%20list/guestListDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "328">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "05A9D528-14D8-4C8A-86E9-046C946C2BEE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dayger/ViewControllers/Host Management/guest list/guestListDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
+            landmarkName = "addFriendButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
