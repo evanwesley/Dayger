@@ -1,1 +1,109 @@
-<mxfile host="app.diagrams.net" modified="2022-02-07T02:13:47.659Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36" version="16.5.3" etag="wtvXpHHUnrsRy4-dPREw" type="github"><diagram id="y5s_Z1S6tr9iw9ung-gs">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-02-07T02:58:00.475Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36" etag="7y9cgDSbhEvNlA_A-htH" version="16.5.3" type="github">
+  <diagram id="y5s_Z1S6tr9iw9ung-gs" name="Page-1">
+    <mxGraphModel dx="1113" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="POpoHUW9I0YEL5gntSoS-1" value="Users" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-2" value="Reports" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-3" value="active_events" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="400" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-6" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="POpoHUW9I0YEL5gntSoS-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="280" as="sourcePoint" />
+            <mxPoint x="210" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-7" value="user emails" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="60" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-8" value="events*" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="380" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-9" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="POpoHUW9I0YEL5gntSoS-3" target="POpoHUW9I0YEL5gntSoS-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="280" as="sourcePoint" />
+            <mxPoint x="330" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-12" value="Additional Information (String)&lt;br&gt;Address (String)&lt;br&gt;anonymous (String)&lt;br&gt;atCapacity (Bool)&lt;br&gt;closedInvite (Bool)&lt;br&gt;docID (string)&lt;br&gt;email (string)&lt;br&gt;firstname (string)&lt;br&gt;lastname (string)&lt;br&gt;likes (Int)&lt;br&gt;live (bool)&lt;br&gt;location (geo-point)&lt;br&gt;name (string)&lt;br&gt;qrCode (bool)&lt;br&gt;shares (int)&lt;br&gt;time (string)&lt;br&gt;uid (string)" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="125" y="500" width="250" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-13" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="POpoHUW9I0YEL5gntSoS-8" target="POpoHUW9I0YEL5gntSoS-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="560" as="sourcePoint" />
+            <mxPoint x="330" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-14" value="guest_list" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="400" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-15" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="POpoHUW9I0YEL5gntSoS-8" target="POpoHUW9I0YEL5gntSoS-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="560" as="sourcePoint" />
+            <mxPoint x="330" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-16" value="docID" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="380" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-17" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="POpoHUW9I0YEL5gntSoS-14" target="POpoHUW9I0YEL5gntSoS-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="560" as="sourcePoint" />
+            <mxPoint x="330" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-18" value="email (string)&lt;br&gt;eventID (string)&lt;br&gt;firstname (string)&lt;br&gt;icename (string)&lt;br&gt;&amp;nbsp;icenumber (string)&lt;br&gt;lastname (string)&lt;br&gt;sex (bool)&lt;br&gt;social (string)&lt;br&gt;uid (string)" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="475" y="500" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-19" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="POpoHUW9I0YEL5gntSoS-16" target="POpoHUW9I0YEL5gntSoS-18">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="410" as="sourcePoint" />
+            <mxPoint x="550" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-21" value="requests" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="80" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-22" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="POpoHUW9I0YEL5gntSoS-7" target="POpoHUW9I0YEL5gntSoS-21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="410" as="sourcePoint" />
+            <mxPoint x="550" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-24" value="Personal data entered in profile" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="210" y="170" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-25" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="POpoHUW9I0YEL5gntSoS-24" target="POpoHUW9I0YEL5gntSoS-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="280" as="sourcePoint" />
+            <mxPoint x="550" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-26" value="event requests*" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="60" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-27" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="POpoHUW9I0YEL5gntSoS-21" target="POpoHUW9I0YEL5gntSoS-26">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="230" as="sourcePoint" />
+            <mxPoint x="550" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-29" value="accepted(bool)&lt;br&gt;docID (String)" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="505" y="165" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="POpoHUW9I0YEL5gntSoS-30" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="POpoHUW9I0YEL5gntSoS-26" target="POpoHUW9I0YEL5gntSoS-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="220" as="sourcePoint" />
+            <mxPoint x="550" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
